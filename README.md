@@ -81,8 +81,8 @@ Cada bloque incluye un `block-direction` con la indicación técnica (toma, plan
 
 Cada reel se divide en **3 partes grandes** que Mer puede grabar por separado. Esta estructura le saca a Mer la carga de pensar en cortes/escenas — solo graba dos cosas y nosotros montamos en edición.
 
-### Parte 1 — A cámara (monólogo completo)
-Un único bloque `block-camera` con TODO lo que Mer dice, de corrido, sin cortes. El contenido va en `<div class="block-content">` con `<p>` por párrafos y `<span class="cue">…</span>` para indicaciones intercaladas (pausas, intenciones, bajadas de ritmo).
+### Parte 1 — A cámara (lo que decís)
+Un único bloque `block-camera` con TODO lo que Mer dice, de corrido, sin cortes. El contenido va en `<div class="block-content">` con `<p>` por párrafos y `<span class="cue">…</span>` para indicaciones intercaladas (pausas, intenciones, bajadas de ritmo). El label del bloque debe ser **"Lo que decís"** (voseo, casual — nunca "monólogo" ni "guion hablado").
 
 Ejemplo:
 ```html
