@@ -98,7 +98,15 @@ El `block-direction` al final indica encuadre, luz y tono general para todo el m
 ### Parte 2 — B-rolls (lista de tomas)
 Una secuencia de bloques `block-broll`, uno por cada toma. Numerados en el label: `B-roll 1 — [descripción corta]`. Pueden grabarse en cualquier orden. Cada uno con su descripción + `block-direction` técnica.
 
-### Parte 3 — Texto en pantalla
-Bloques `block-overlay` con las frases sobreimpresas. Cada uno indica tipografía y momento (sobre qué B-roll aparece, cuánto dura).
+### Parte 3 — Texto en pantalla (doble cierre)
+Dos bloques `block-overlay` secuenciales sobre el mismo B-roll final:
+
+1. **Overlay reflexivo** — frase flotante elegante (BodoniModa Italic). Cierra el concepto del reel con paralelismo o contradicción metafórica. Queda 3 seg en pantalla y después funde al siguiente.
+2. **Invitación final** — texto funcional con la keyword de DM (Inter, weight 500, **REFUGIO** en mayúsculas con weight 600). Aparece después del reflexivo, queda 3-4 seg hasta el corte final.
+
+**Texto estándar de invitación final:**
+> "Escribime REFUGIO para revisar el cuarto de tu hijo desde otro lugar."
+
+Si el reel cambia de keyword (LUNA, HOGAR), adaptar la invitación pero mantener la estructura. La invitación va SIEMPRE en pantalla — **nunca dicha por Mer en el audio** (rompe el tono oral, ver soul.md).
 
 **Importante:** este formato es deliberadamente simple. Mer no necesita pensar en qué B-roll cubre qué frase del monólogo — eso se decide en edición. Ella solo se preocupa por grabar bien el monólogo y los B-rolls por separado.
