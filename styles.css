@@ -328,9 +328,35 @@ body {
   font-weight: 300;
 }
 
+.block-content p {
+  margin: 0 0 0.95em 0;
+}
+
+.block-content p:last-child {
+  margin-bottom: 0;
+}
+
+.block-content .cue {
+  display: block;
+  font-style: italic;
+  color: var(--text-dim);
+  font-size: 0.875rem;
+  margin: 0.7em 0;
+  padding-left: 1.25em;
+  position: relative;
+  line-height: 1.5;
+}
+
+.block-content .cue::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--text-dim);
+}
+
 .block-camera .block-content {
   font-size: 1.15rem;
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
 .block-overlay .block-content {

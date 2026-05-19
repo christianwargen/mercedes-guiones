@@ -71,8 +71,34 @@ Si después se quiere algo más prolijo tipo `guiones.mercedesponte.com`, se con
 
 | Bloque | Clase CSS | Color | Uso |
 |---|---|---|---|
-| 🎬 A cámara | `block-camera` | Dorado | Lo que Mer dice frente a cámara |
-| 📹 B-roll | `block-broll` | Azul gris | Lo que se ve mientras habla |
+| 🎙️ A cámara | `block-camera` | Dorado | Lo que Mer dice frente a cámara |
+| 📹 B-roll | `block-broll` | Azul gris | Lo que se ve cubriendo el monólogo |
 | ✍️ Texto en pantalla | `block-overlay` | Rosa apagado | Sobreimpresos / frases flotantes |
 
 Cada bloque incluye un `block-direction` con la indicación técnica (toma, plano, luz, ritmo).
+
+## Estructura de un reel — 3 partes secuenciales
+
+Cada reel se divide en **3 partes grandes** que Mer puede grabar por separado. Esta estructura le saca a Mer la carga de pensar en cortes/escenas — solo graba dos cosas y nosotros montamos en edición.
+
+### Parte 1 — A cámara (monólogo completo)
+Un único bloque `block-camera` con TODO lo que Mer dice, de corrido, sin cortes. El contenido va en `<div class="block-content">` con `<p>` por párrafos y `<span class="cue">…</span>` para indicaciones intercaladas (pausas, intenciones, bajadas de ritmo).
+
+Ejemplo:
+```html
+<div class="block-content">
+  <p>"Cuando un bebé llora y no encontrás la razón…"</p>
+  <span class="cue">Pausa. Mirá fuera de cámara y volvé.</span>
+  <p>"Pero hay un lugar donde casi nadie mira primero…"</p>
+</div>
+```
+
+El `block-direction` al final indica encuadre, luz y tono general para todo el monólogo.
+
+### Parte 2 — B-rolls (lista de tomas)
+Una secuencia de bloques `block-broll`, uno por cada toma. Numerados en el label: `B-roll 1 — [descripción corta]`. Pueden grabarse en cualquier orden. Cada uno con su descripción + `block-direction` técnica.
+
+### Parte 3 — Texto en pantalla
+Bloques `block-overlay` con las frases sobreimpresas. Cada uno indica tipografía y momento (sobre qué B-roll aparece, cuánto dura).
+
+**Importante:** este formato es deliberadamente simple. Mer no necesita pensar en qué B-roll cubre qué frase del monólogo — eso se decide en edición. Ella solo se preocupa por grabar bien el monólogo y los B-rolls por separado.
