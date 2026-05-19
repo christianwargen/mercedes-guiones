@@ -66,11 +66,10 @@ body {
 }
 
 .brand {
-  font-family: var(--font-serif);
-  font-weight: 400;
-  font-style: italic;
-  font-size: 0.95rem;
-  letter-spacing: 0.15em;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
   color: var(--text-muted);
   text-transform: uppercase;
   margin-bottom: 0.75rem;
@@ -130,8 +129,8 @@ body {
 }
 
 .reel-card-number {
-  font-family: var(--font-serif);
-  font-style: italic;
+  font-family: var(--font-sans);
+  font-weight: 600;
   color: var(--camera);
 }
 
@@ -191,10 +190,10 @@ body {
 }
 
 .reel-number {
-  font-family: var(--font-serif);
-  font-style: italic;
+  font-family: var(--font-sans);
+  font-weight: 600;
   color: var(--camera);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   letter-spacing: 0.05em;
 }
 
@@ -373,10 +372,10 @@ body {
 }
 
 .closing-title {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 1.05rem;
-  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text);
   margin-bottom: 1rem;
   letter-spacing: 0.02em;
 }
