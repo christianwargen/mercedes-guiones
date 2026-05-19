@@ -98,6 +98,53 @@ body {
   gap: 0.75rem;
 }
 
+.proximos-link {
+  display: block;
+  background: var(--camera-bg);
+  border: 1px solid var(--camera);
+  border-radius: var(--radius);
+  padding: 1.15rem 1.4rem;
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.proximos-link:hover,
+.proximos-link:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(166, 133, 72, 0.12);
+  background: rgba(166, 133, 72, 0.08);
+}
+
+.proximos-link-tag {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--camera);
+  margin-bottom: 0.4rem;
+}
+
+.proximos-link-titulo {
+  display: block;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+
+.proximos-link-detalle {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
 .reel-card {
   display: block;
   background: var(--bg-card);
@@ -471,10 +518,550 @@ body {
 }
 
 /* ============================================
+   PRÓXIMOS — Página de plan de contenidos
+   ============================================ */
+
+.proximos-page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.proximos-header {
+  padding: 1rem 0 2.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2.5rem;
+}
+
+.proximos-header .back-link {
+  display: inline-flex;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.proximos-title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 2.25rem;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--text);
+}
+
+.proximos-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 0.85rem;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.proximos-section {
+  margin-bottom: 3.5rem;
+}
+
+.proximos-h2 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  color: var(--text);
+  margin-bottom: 1rem;
+  letter-spacing: -0.005em;
+}
+
+.proximos-section p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 0.9rem;
+}
+
+.proximos-section p strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.proximos-section p em {
+  font-style: italic;
+  color: var(--text);
+}
+
+.seccion-intro {
+  margin-bottom: 1.75rem !important;
+  color: var(--text-muted);
+  font-size: 0.9rem !important;
+}
+
+/* === Grid: lo que ya cubriste === */
+
+.cubierto-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.cubierto-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.95rem 1.15rem;
+}
+
+.cubierto-label {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--camera);
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.cubierto-detalle {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* === Grid: competencia === */
+
+.competencia-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+  margin-top: 1.25rem;
+}
+
+.competencia-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.4rem;
+}
+
+.competencia-card.competencia-peligro {
+  border-left: 3px solid var(--overlay);
+}
+
+.competencia-card h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.15rem;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+
+.competencia-quien {
+  font-size: 0.78rem !important;
+  color: var(--text-dim) !important;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.65rem !important;
+  font-style: italic;
+}
+
+.competencia-que {
+  font-size: 0.9rem !important;
+  margin-bottom: 0.65rem !important;
+}
+
+.competencia-gap {
+  font-size: 0.88rem !important;
+  color: var(--text-muted) !important;
+  padding-top: 0.7rem;
+  border-top: 1px dashed var(--border);
+  margin-bottom: 0 !important;
+}
+
+.conclusion-competencia {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.4rem;
+  background: var(--camera-bg);
+  border-left: 3px solid var(--camera);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.conclusion-competencia p {
+  margin-bottom: 0;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+/* === Grid: ángulos === */
+
+.angulos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.angulo-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  position: relative;
+}
+
+.angulo-numero {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 1;
+  color: var(--camera);
+  opacity: 0.5;
+  margin-bottom: 0.4rem;
+}
+
+.angulo-card h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.3rem;
+  color: var(--text);
+  margin-bottom: 0.7rem;
+  line-height: 1.25;
+}
+
+.angulo-card p {
+  font-size: 0.92rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 0.7rem !important;
+}
+
+.angulo-por-que {
+  margin-top: 0.85rem;
+  padding-top: 0.85rem;
+  border-top: 1px dashed var(--border);
+  font-size: 0.85rem !important;
+  color: var(--text-muted) !important;
+  margin-bottom: 0 !important;
+}
+
+/* === Sagas (details/summary) === */
+
+.saga {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 0.85rem;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.saga[open] {
+  border-color: var(--camera);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.saga-summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1.15rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  user-select: none;
+  transition: background 0.15s ease;
+}
+
+.saga-summary::-webkit-details-marker {
+  display: none;
+}
+
+.saga-summary::after {
+  content: "+";
+  margin-left: auto;
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--text-dim);
+  transition: transform 0.2s ease;
+  line-height: 1;
+}
+
+.saga[open] .saga-summary::after {
+  content: "−";
+  color: var(--camera);
+}
+
+.saga-summary:hover {
+  background: var(--bg-elevated);
+}
+
+.saga-numero {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--camera);
+}
+
+.saga-titulo {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.15rem;
+  color: var(--text);
+  line-height: 1.3;
+  flex: 1;
+  min-width: 200px;
+}
+
+.saga-conteo {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+}
+
+.saga-body {
+  padding: 0.5rem 1.4rem 1.5rem;
+  border-top: 1px solid var(--border-soft);
+}
+
+.saga-premisa {
+  font-size: 0.92rem !important;
+  font-style: italic;
+  color: var(--text-muted) !important;
+  padding: 1rem 0 1.5rem !important;
+  border-bottom: 1px dashed var(--border);
+  margin-bottom: 1.5rem !important;
+}
+
+/* === Reel propuesta (dentro de saga) === */
+
+.reel-propuesta {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.reel-propuesta:last-child {
+  border-bottom: none;
+  padding-bottom: 0.5rem;
+}
+
+.reel-propuesta:first-of-type {
+  padding-top: 0.5rem;
+}
+
+.reel-propuesta-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 0.65rem;
+}
+
+.reel-propuesta-num {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--camera);
+}
+
+.reel-keyword {
+  font-weight: 600;
+  color: var(--overlay);
+  letter-spacing: 0.12em;
+}
+
+.reel-tag-nuevo {
+  background: var(--camera-bg);
+  color: var(--camera);
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  letter-spacing: 0.05em;
+}
+
+.reel-propuesta-titulo {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 1.25;
+  color: var(--text);
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.005em;
+}
+
+.reel-propuesta-hook {
+  background: var(--camera-bg);
+  border-left: 3px solid var(--camera);
+  padding: 1rem 1.15rem;
+  margin: 0 0 0.95rem;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--text);
+  font-weight: 300;
+  font-style: italic;
+  border-radius: 0 4px 4px 0;
+}
+
+.hook-pausa {
+  display: block;
+  margin: 0.6rem 0;
+  font-style: normal;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+  font-weight: 400;
+  text-transform: lowercase;
+  font-family: var(--font-sans);
+}
+
+.reel-propuesta-capas p {
+  font-size: 0.9rem !important;
+  line-height: 1.6 !important;
+  color: var(--text-muted) !important;
+  margin-bottom: 0.55rem !important;
+}
+
+.reel-propuesta-capas p:last-child {
+  margin-bottom: 0 !important;
+}
+
+.reel-propuesta-capas p strong {
+  color: var(--text);
+}
+
+.reel-propuesta-nota {
+  margin-top: 0.85rem !important;
+  padding: 0.7rem 0.85rem !important;
+  background: var(--overlay-bg);
+  border-left: 2px solid var(--overlay);
+  font-size: 0.85rem !important;
+  font-style: italic;
+  border-radius: 0 4px 4px 0;
+}
+
+/* === Decisión final === */
+
+.proximos-decision {
+  margin-top: 4rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.decision-opciones {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+}
+
+.decision-opcion {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.4rem;
+}
+
+.decision-orden {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--camera);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.decision-opcion h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+
+.decision-opcion p {
+  font-size: 0.9rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 0.65rem !important;
+}
+
+.decision-riesgo {
+  font-size: 0.82rem !important;
+  color: var(--text-dim) !important;
+  padding-top: 0.6rem;
+  border-top: 1px dashed var(--border);
+  margin-bottom: 0 !important;
+}
+
+/* === Footer === */
+
+.proximos-footer {
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.proximos-footer p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem !important;
+}
+
+.footer-detalles {
+  font-family: var(--font-sans) !important;
+  font-style: normal !important;
+  font-size: 0.82rem !important;
+  color: var(--text-dim) !important;
+  font-weight: 300;
+  max-width: 480px;
+  margin: 0.75rem auto 0 !important;
+  line-height: 1.55 !important;
+}
+
+/* === Desktop ajustes para proximos === */
+
+@media (min-width: 768px) {
+  .proximos-title {
+    font-size: 3rem;
+  }
+
+  .proximos-h2 {
+    font-size: 1.85rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .cubierto-grid,
+  .competencia-grid,
+  .angulos-grid,
+  .decision-opciones {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .saga-titulo {
+    font-size: 1.35rem;
+  }
+
+  .reel-propuesta-titulo {
+    font-size: 1.55rem;
+  }
+
+  .reel-propuesta-hook {
+    font-size: 1.1rem;
+    padding: 1.15rem 1.35rem;
+  }
+}
+
+/* ============================================
    IMPRESIÓN / SCREENSHOT-FRIENDLY
    ============================================ */
 
 @media print {
   body { background: white; color: black; }
   .scene, .closing-block { break-inside: avoid; }
+  .saga[open] .saga-body { display: block; }
+  .saga-summary::after { display: none; }
 }
