@@ -820,15 +820,16 @@ body {
   content: "+";
   margin-left: auto;
   font-family: var(--font-serif);
-  font-size: 1.4rem;
-  color: var(--text-dim);
-  transition: transform 0.2s ease;
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--camera);
+  transition: transform 0.2s ease, color 0.2s ease;
   line-height: 1;
 }
 
 .saga[open] .saga-summary::after {
   content: "−";
-  color: var(--camera);
+  color: var(--text);
 }
 
 .saga-summary:hover {
