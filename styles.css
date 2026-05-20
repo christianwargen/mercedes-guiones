@@ -518,6 +518,200 @@ body {
 }
 
 /* ============================================
+   INDEX — Sección Historias (preview)
+   ============================================ */
+
+.index-historias {
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.index-historias-header {
+  margin-bottom: 1.75rem;
+}
+
+.index-historias-titulo {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.65rem;
+  line-height: 1.2;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.005em;
+}
+
+.index-historias-sub {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  font-weight: 300;
+}
+
+.historias-preview {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin: 0 0 1.5rem 0;
+  padding: 0;
+}
+
+.historias-preview li {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  transition: border-color 0.2s ease;
+}
+
+.historias-preview li:hover {
+  border-color: var(--overlay);
+}
+
+.historia-preview-meta {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--overlay);
+  margin-bottom: 0.45rem;
+}
+
+.historia-preview-titulo {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.3;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+
+.historia-preview-texto {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  font-style: italic;
+  font-family: var(--font-serif);
+}
+
+.historias-link {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--overlay);
+  text-decoration: none;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--overlay);
+  transition: opacity 0.2s ease;
+}
+
+.historias-link:hover {
+  opacity: 0.7;
+}
+
+/* ============================================
+   HISTORIAS — Página completa de historias
+   ============================================ */
+
+.historias-page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.historia-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.historia-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 0.65rem;
+}
+
+.historia-num {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--overlay);
+}
+
+.historia-cat {
+  color: var(--text-dim);
+}
+
+.historia-titulo {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.35rem;
+  line-height: 1.25;
+  color: var(--text);
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.005em;
+}
+
+.historia-pantalla {
+  background: var(--overlay-bg);
+  border-left: 3px solid var(--overlay);
+  padding: 0.95rem 1.15rem;
+  margin: 0 0 1.1rem;
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: var(--text);
+  font-weight: 300;
+  font-style: italic;
+  font-family: var(--font-serif);
+  border-radius: 0 4px 4px 0;
+}
+
+.historia-detalles p {
+  font-size: 0.9rem !important;
+  line-height: 1.6 !important;
+  color: var(--text-muted) !important;
+  margin-bottom: 0.55rem !important;
+}
+
+.historia-detalles p:last-child {
+  margin-bottom: 0 !important;
+}
+
+.historia-detalles p strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .index-historias-titulo {
+    font-size: 1.9rem;
+  }
+
+  .historias-preview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+  }
+
+  .historia-titulo {
+    font-size: 1.5rem;
+  }
+
+  .historia-pantalla {
+    font-size: 1.1rem;
+    padding: 1.1rem 1.3rem;
+  }
+}
+
+/* ============================================
    PRÓXIMOS — Página de plan de contenidos
    ============================================ */
 
@@ -731,6 +925,135 @@ body {
   margin-bottom: 0;
   color: var(--text);
   font-size: 0.95rem;
+}
+
+/* === Competencia en vivo (scrape reciente) === */
+
+.competencia-vivo-meta {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.cuentas-vivo-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.cuenta-vivo {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.4rem;
+}
+
+.cuenta-vivo-header {
+  padding-bottom: 0.9rem;
+  border-bottom: 1px dashed var(--border);
+  margin-bottom: 1rem;
+}
+
+.cuenta-vivo-handle {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+
+.cuenta-vivo-cifras {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  letter-spacing: 0.03em;
+  font-style: italic;
+}
+
+.cuenta-vivo-bio {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+  margin-bottom: 0;
+}
+
+.reel-vivo-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.reel-vivo-item {
+  padding: 0.7rem 0.85rem;
+  background: var(--bg);
+  border-radius: calc(var(--radius) - 4px);
+  border-left: 2px solid var(--border);
+}
+
+.reel-vivo-item.reel-vivo-top {
+  border-left-color: var(--camera);
+}
+
+.reel-vivo-meta {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.35rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.reel-vivo-meta-sep {
+  opacity: 0.5;
+}
+
+.reel-vivo-caption {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--text);
+  margin: 0;
+}
+
+.reel-vivo-caption em {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.cuenta-vivo-patron {
+  padding-top: 0.85rem;
+  border-top: 1px dashed var(--border);
+  margin-bottom: 0.85rem;
+}
+
+.cuenta-vivo-patron h4,
+.cuenta-vivo-leccion h4 {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+}
+
+.cuenta-vivo-patron p {
+  font-size: 0.88rem !important;
+  color: var(--text-muted) !important;
+  margin-bottom: 0 !important;
+}
+
+.cuenta-vivo-leccion {
+  padding-top: 0.85rem;
+  border-top: 1px dashed var(--border);
+}
+
+.cuenta-vivo-leccion p {
+  font-size: 0.88rem !important;
+  color: var(--text) !important;
+  margin-bottom: 0 !important;
 }
 
 /* === Grid: ángulos === */
@@ -1091,6 +1414,7 @@ body {
 
   .cubierto-grid,
   .competencia-grid,
+  .cuentas-vivo-grid,
   .angulos-grid,
   .decision-opciones {
     grid-template-columns: 1fr 1fr;
