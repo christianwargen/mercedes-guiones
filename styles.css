@@ -195,6 +195,29 @@ body {
   line-height: 1.5;
 }
 
+.serie-divisor {
+  margin: 1.75rem 0 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.serie-divisor-tag {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--camera);
+  margin-bottom: 0.4rem;
+}
+
+.serie-divisor-detalle {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
 /* ============================================
    REEL PAGE — Vista de guion
    ============================================ */
