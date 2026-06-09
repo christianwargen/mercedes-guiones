@@ -3,106 +3,320 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guiones — Mercedes Ponte</title>
+  <title>Panel del proyecto — Mercedes Ponte</title>
+  <meta name="description" content="Panel del proyecto Mercedes Ponte × Vertra. Estado de reels, sitios, campaña y lo que está esperando tu decisión.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="index-page">
+<body class="dashboard-page">
 
-  <header class="index-header">
-    <p class="brand">Mercedes Ponte</p>
-    <h1 class="index-title">Guiones de Reels</h1>
-    <p class="index-subtitle">Serie: dormitorio infantil en los primeros años</p>
+  <header class="dash-hero">
+    <p class="dash-brand">Mercedes Ponte × Vertra</p>
+    <h1 class="dash-title">Panel del proyecto</h1>
+    <p class="dash-subtitle">Todo el proyecto en un solo lugar. Por dónde vamos, qué está en marcha y qué te toca decidir a vos — sin tener que abrir diez chats para entenderlo.</p>
+    <p class="dash-fecha">Actualizado · 9 de junio 2026</p>
   </header>
 
-  <a href="proximos.html" class="proximos-link">
-    <span class="proximos-link-tag">Plan estratégico</span>
-    <span class="proximos-link-titulo">Próximos contenidos →</span>
-    <span class="proximos-link-detalle">Mapa de los próximos 16 reels en 4 sagas. Para que elijas por dónde empezamos.</span>
-  </a>
+  <section class="dash-pulse" aria-label="Resumen rápido">
+    <a class="dash-pulse-item dash-pulse-vos" href="#vos">
+      <span class="dash-pulse-num">3</span>
+      <span class="dash-pulse-label">te esperan a vos</span>
+    </a>
+    <a class="dash-pulse-item" href="#reels">
+      <span class="dash-pulse-num">4</span>
+      <span class="dash-pulse-label">reels en producción</span>
+    </a>
+    <a class="dash-pulse-item" href="proximos.html#plan">
+      <span class="dash-pulse-num">16</span>
+      <span class="dash-pulse-label">reels en el plan</span>
+    </a>
+    <a class="dash-pulse-item" href="#sitios">
+      <span class="dash-pulse-num">2</span>
+      <span class="dash-pulse-label">sitios online</span>
+    </a>
+  </section>
 
-  <ul class="reel-list">
+  <nav class="dash-nav" aria-label="Secciones">
+    <div class="dash-nav-inner">
+      <a href="#vos" class="dash-chip dash-chip-vos"><span class="dash-dot is-vos"></span>Lo tuyo</a>
+      <a href="#reels" class="dash-chip">Reels del mes</a>
+      <a href="#frentes" class="dash-chip">Frentes</a>
+      <a href="#sitios" class="dash-chip">Los sitios</a>
+      <a href="#linea" class="dash-chip">Línea de tiempo</a>
+    </div>
+  </nav>
 
-    <li>
-      <a href="reels/bebe-contencion.html" class="reel-card">
-        <div class="reel-card-meta">
-          <span class="reel-card-number">01</span>
-          <span class="reel-meta-sep">·</span>
-          <span>Cámara hablada</span>
-          <span class="reel-meta-sep">·</span>
-          <span>~40 seg</span>
+  <!-- ============ LO QUE NECESITAMOS DE VOS ============ -->
+  <section id="vos" class="dash-section dash-section-vos">
+    <p class="dash-eyebrow">Lo tuyo</p>
+    <h2 class="dash-h2">Lo que necesitamos de vos, Mer</h2>
+    <p class="dash-intro">Lo que está esperándote. Nada urgente al punto de hoy, pero cada cosa destraba algo. Tocá la que quieras y te lleva al detalle.</p>
+
+    <div class="dash-tareas">
+
+      <article class="dash-tarea">
+        <div class="dash-tarea-top">
+          <span class="dash-tarea-num">01</span>
+          <span class="dash-status is-vos">Te toca</span>
         </div>
-        <h2 class="reel-card-title">El bebé no necesita una habitación perfecta</h2>
-        <p class="reel-card-hook">"¿Sabías que muchos bebés se sienten más seguros rodeados de tonos rosados suaves después de nacer?"</p>
-      </a>
-    </li>
+        <h3 class="dash-tarea-titulo">Revisar los guiones de la Saga IV</h3>
+        <p class="dash-tarea-porque">«La casa antes de la casa»: cuatro reels para la mujer que diseña desde cero — tu cliente prioritario. Es por donde más conviene arrancar.</p>
+        <a class="dash-tarea-link" href="proximos.html#plan">Ver la saga en Próximos contenidos →</a>
+      </article>
 
-    <li>
-      <a href="reels/bebe-luna-natal.html" class="reel-card">
-        <div class="reel-card-meta">
-          <span class="reel-card-number">02</span>
-          <span class="reel-meta-sep">·</span>
-          <span>Cámara hablada</span>
-          <span class="reel-meta-sep">·</span>
-          <span>~50 seg</span>
+      <article class="dash-tarea">
+        <div class="dash-tarea-top">
+          <span class="dash-tarea-num">02</span>
+          <span class="dash-status is-vos">Te toca</span>
         </div>
-        <h2 class="reel-card-title">El cuarto del bebé, desde su Luna natal</h2>
-        <p class="reel-card-hook">"La Luna con la que nació tu bebé dice algo muy concreto: cómo necesita sentirse para estar tranquilo."</p>
-      </a>
-    </li>
+        <h3 class="dash-tarea-titulo">Grabar los bebés 02 y 03</h3>
+        <p class="dash-tarea-porque">El 01 ya está grabado. Faltan el 02 y el 03 — los guiones ya están escritos en tu voz y listos.</p>
+        <a class="dash-tarea-link" href="guiones.html">Abrir los guiones →</a>
+      </article>
 
-    <li>
-      <a href="reels/bebe-absorbe-energia.html" class="reel-card">
-        <div class="reel-card-meta">
-          <span class="reel-card-number">03</span>
-          <span class="reel-meta-sep">·</span>
-          <span>Cámara hablada</span>
-          <span class="reel-meta-sep">·</span>
-          <span>~40 seg</span>
+      <article class="dash-tarea dash-tarea-clave">
+        <div class="dash-tarea-top">
+          <span class="dash-tarea-num">03</span>
+          <span class="dash-status is-trabado">Destraba todo</span>
         </div>
-        <h2 class="reel-card-title">Los bebés absorben la energía del espacio</h2>
-        <p class="reel-card-hook">"Muchas veces creemos que un bebé 'todavía no entiende' el espacio… pero sí lo siente."</p>
-      </a>
-    </li>
+        <h3 class="dash-tarea-titulo">Definir la oferta</h3>
+        <p class="dash-tarea-porque">Precio y formato del Diagnóstico Refugio. Es la pieza que falta para que la campaña convierta y para cerrar el botón del Método. Hoy las visitas que escriben <strong>HOGAR</strong> se enfrían sin una oferta clara adelante.</p>
+      </article>
 
-  </ul>
+      <article class="dash-tarea dash-tarea-standby">
+        <div class="dash-tarea-top">
+          <span class="dash-tarea-num">04</span>
+          <span class="dash-status is-definir">En standby</span>
+        </div>
+        <h3 class="dash-tarea-titulo">Elegir el arranque del Reel 02</h3>
+        <p class="dash-tarea-porque">El de la Luna natal tiene cuatro hooks posibles. Sin apuro — ese reel todavía no tiene fecha de grabación. Cuando se defina, elegís uno.</p>
+        <a class="dash-tarea-link" href="reels/bebe-luna-natal.html">Ver las opciones →</a>
+      </article>
 
-  <section class="index-historias">
-    <div class="index-historias-header">
-      <h2 class="index-historias-titulo">Historias para Instagram</h2>
-      <p class="index-historias-sub">Sugerencias del día a día para mover la cuenta — sin tutorial, sin tendencia. Cuatro destacadas, una por categoría.</p>
     </div>
 
-    <ul class="historias-preview">
-      <li>
-        <div class="historia-preview-meta">De camino</div>
-        <p class="historia-preview-titulo">La casa que crucé hoy</p>
-        <p class="historia-preview-texto">"Crucé esta puerta volviendo del colegio. La proporción no es normal — alguien lo decidió. Y se nota."</p>
-      </li>
-
-      <li>
-        <div class="historia-preview-meta">Detrás del oficio</div>
-        <p class="historia-preview-titulo">Lo primero que miro al entrar a una casa</p>
-        <p class="historia-preview-texto">"No la pintura. La luz que entra a las cuatro de la tarde."</p>
-      </li>
-
-      <li>
-        <div class="historia-preview-meta">Su propia casa</div>
-        <p class="historia-preview-titulo">La luz de las dieciocho del martes</p>
-        <p class="historia-preview-texto">"La luz de las dieciocho del martes. No la de las nueve. No la del finde."</p>
-      </li>
-
-      <li>
-        <div class="historia-preview-meta">Pequeñas conversaciones</div>
-        <p class="historia-preview-titulo">El rincón que más esquivás</p>
-        <p class="historia-preview-texto">"¿Cuál es el rincón de tu casa que más esquivás?"</p>
-      </li>
-    </ul>
-
-    <a href="historias.html" class="historias-link">Ver las 16 historias →</a>
+    <div class="dash-fondo">
+      <p class="dash-fondo-titulo">Y cuando puedas, dos definiciones de marca</p>
+      <ul class="dash-fondo-lista">
+        <li><strong>Casa 4 vs Luna Natal.</strong> El pilar dice «Luna Natal», pero el Carrusel 02 usó «Casa 4». Conviene una sola bajada para no confundir.</li>
+        <li><strong>«Sistema nervioso» en los bebés.</strong> Reaparece en los reels 01 y 03. Habías pedido evitarlo en la serie infantil — ¿lo dejamos o lo cambiamos por lenguaje sensorial?</li>
+      </ul>
+    </div>
   </section>
+
+  <!-- ============ REELS DEL MES ============ -->
+  <section id="reels" class="dash-section">
+    <p class="dash-eyebrow">Junio 2026</p>
+    <h2 class="dash-h2">Reels del mes</h2>
+    <p class="dash-intro">Lo que está sobre la mesa este mes. A la izquierda, lo que ya está en marcha; a la derecha, lo que espera tu sí para entrar a producción.</p>
+
+    <div class="dash-reels-cols">
+
+      <div class="dash-reels-col">
+        <h3 class="dash-reels-col-tit"><span class="dash-dot is-curso"></span>En marcha</h3>
+
+        <a class="dash-reel-item" href="guiones.html">
+          <div class="dash-reel-item-head">
+            <span class="dash-reel-tag">01 · 02 · 03</span>
+            <span class="dash-status is-vos">A grabar</span>
+          </div>
+          <p class="dash-reel-item-tit">Trilogía de bebés</p>
+          <p class="dash-reel-item-sub">01 grabado · faltan el 02 y el 03</p>
+        </a>
+
+        <div class="dash-reel-item dash-reel-item-static">
+          <div class="dash-reel-item-head">
+            <span class="dash-reel-tag">Ventas · Ads</span>
+            <span class="dash-status is-curso">En producción</span>
+          </div>
+          <p class="dash-reel-item-tit">Reels de ventas</p>
+          <p class="dash-reel-item-sub">Nuevos · exclusivos para Meta Ads, no van al feed</p>
+        </div>
+
+        <div class="dash-reel-item dash-reel-item-static">
+          <div class="dash-reel-item-head">
+            <span class="dash-reel-tag">24 · Cachafaz</span>
+            <span class="dash-status is-curso">Editado</span>
+          </div>
+          <p class="dash-reel-item-tit">Ver lo que nadie ve</p>
+          <p class="dash-reel-item-sub">Primer case study real · frase cerrada, afinando música</p>
+        </div>
+
+        <div class="dash-reel-item dash-reel-item-static">
+          <div class="dash-reel-item-head">
+            <span class="dash-reel-tag">2º Cachafaz</span>
+            <span class="dash-status is-definir">A definir</span>
+          </div>
+          <p class="dash-reel-item-tit">Segundo reel del proyecto</p>
+          <p class="dash-reel-item-sub">Planificado · ángulo nuevo (no repetir el antes-después)</p>
+        </div>
+      </div>
+
+      <div class="dash-reels-col">
+        <h3 class="dash-reels-col-tit"><span class="dash-dot is-definir"></span>A definir — Saga IV</h3>
+        <p class="dash-reels-col-nota">«La casa antes de la casa». Los cuatro guiones están esperando tu revisión.</p>
+
+        <a class="dash-reel-item dash-reel-mini" href="proximos.html#plan">
+          <span class="dash-reel-tag">18</span>
+          <span class="dash-reel-mini-tit">El plano que aprobás define quién vas a poder ser ahí adentro</span>
+        </a>
+        <a class="dash-reel-item dash-reel-mini" href="proximos.html#plan">
+          <span class="dash-reel-tag">19</span>
+          <span class="dash-reel-mini-tit">Hay decisiones que se toman antes de levantar una pared</span>
+        </a>
+        <a class="dash-reel-item dash-reel-mini" href="proximos.html#plan">
+          <span class="dash-reel-tag">20</span>
+          <span class="dash-reel-mini-tit">Tu arquitecto te resuelve la estructura. ¿Quién pone la voz del cuerpo?</span>
+        </a>
+        <a class="dash-reel-item dash-reel-mini" href="proximos.html#plan">
+          <span class="dash-reel-tag">21</span>
+          <span class="dash-reel-mini-tit">Una casa no resuelve la vida que llevás. Diseña la que vas a llevar</span>
+        </a>
+      </div>
+
+    </div>
+
+    <a class="dash-link-grande" href="proximos.html">El plan completo — 16 reels en 4 sagas →</a>
+  </section>
+
+  <!-- ============ FRENTES DE TRABAJO ============ -->
+  <section id="frentes" class="dash-section">
+    <p class="dash-eyebrow">Detalle</p>
+    <h2 class="dash-h2">Frentes de trabajo</h2>
+    <p class="dash-intro">Los cuatro frentes abiertos del proyecto. Tocá cada uno para ver el detalle.</p>
+
+    <details class="dash-track" open>
+      <summary class="dash-track-summary">
+        <span class="dash-track-icon">01</span>
+        <span class="dash-track-title">Producción de Reels</span>
+        <span class="dash-track-meta"><span class="dash-status is-curso">En curso</span><span class="dash-track-chevron">▾</span></span>
+      </summary>
+      <div class="dash-track-body">
+        <div class="dash-track-row"><span class="dash-dot is-curso"></span><div><strong>Reels de ventas (para Meta Ads).</strong> Nuevos reels exclusivos para vender — cómo trabaja Mercedes Ponte Estudio: entrar al espacio, escuchar al cliente, traducir. No van al feed; son dark posts para la campaña.</div></div>
+        <div class="dash-track-row"><span class="dash-dot is-vos"></span><div><strong>Bebés 02 y 03.</strong> El 01 ya está grabado. Faltan el 02 y el 03 — guiones listos en tu voz.</div></div>
+        <div class="dash-track-row"><span class="dash-dot is-curso"></span><div><strong>Reel 24 — Cachafaz.</strong> Editado; frase final cerrada, afinando música.</div></div>
+        <div class="dash-track-row"><span class="dash-dot is-definir"></span><div><strong>2º Cachafaz.</strong> Planificado a tu pedido. Ángulo nuevo, sin repetir el antes-después.</div></div>
+        <div class="dash-track-row"><span class="dash-dot is-definir"></span><div><strong>Plan de 16 reels / 4 sagas.</strong> En idea, listos para planificar uno a uno. Orden por rentabilidad: IV › II › I › III.</div></div>
+        <div class="dash-track-row"><span class="dash-dot is-done"></span><div><strong>Banco de Historias para IG.</strong> 16 ideas en 4 categorías, listo para usar.</div></div>
+      </div>
+    </details>
+
+    <details class="dash-track">
+      <summary class="dash-track-summary">
+        <span class="dash-track-icon">02</span>
+        <span class="dash-track-title">Sitio Portfolio (público)</span>
+        <span class="dash-track-meta"><span class="dash-status is-curso">En desarrollo</span><span class="dash-track-chevron">▾</span></span>
+      </summary>
+      <div class="dash-track-body">
+        <div class="dash-track-row"><span class="dash-dot is-curso"></span><div><strong>Página del Método REFUGIO®.</strong> Ya está creada y online, pero todavía sin linkear desde el resto del sitio y con el botón final pendiente (espera la oferta del Diagnóstico Refugio).</div></div>
+        <div class="dash-track-row"><span class="dash-dot is-curso"></span><div><strong>Proyectos.</strong> Faltan sumar a la grilla las fotos nuevas que pasaste por WhatsApp.</div></div>
+        <div class="dash-track-row"><span class="dash-dot is-vos"></span><div><strong>Tus validaciones.</strong> 6 títulos de proyectos + curaduría de marca + foto tuya para «Quién soy».</div></div>
+        <div class="dash-track-row"><span class="dash-dot is-done"></span><div><strong>Grilla de proyectos.</strong> Online, reemplaza la vieja de Carrd. 9 proyectos, galería con lightbox.</div></div>
+      </div>
+    </details>
+
+    <details class="dash-track">
+      <summary class="dash-track-summary">
+        <span class="dash-track-icon">03</span>
+        <span class="dash-track-title">Visor de guiones (este sitio)</span>
+        <span class="dash-track-meta"><span class="dash-status is-done">Online</span><span class="dash-track-chevron">▾</span></span>
+      </summary>
+      <div class="dash-track-body">
+        <div class="dash-track-row"><span class="dash-dot is-done"></span><div><strong>Guiones de reels.</strong> La trilogía de bebés, lista para abrir desde el celu mientras grabás. <a href="guiones.html">Abrir →</a></div></div>
+        <div class="dash-track-row"><span class="dash-dot is-done"></span><div><strong>Próximos contenidos.</strong> El plan de 16 reels + lo que está haciendo la competencia. <a href="proximos.html">Abrir →</a></div></div>
+        <div class="dash-track-row"><span class="dash-dot is-done"></span><div><strong>Historias para Instagram.</strong> El banco de 16 ideas del día a día. <a href="historias.html">Abrir →</a></div></div>
+        <div class="dash-track-row"><span class="dash-dot is-curso"></span><div><strong>Este panel.</strong> Nuevo. Se actualiza a medida que avanzamos.</div></div>
+      </div>
+    </details>
+
+    <details class="dash-track">
+      <summary class="dash-track-summary">
+        <span class="dash-track-icon">04</span>
+        <span class="dash-track-title">Campaña de Ads</span>
+        <span class="dash-track-meta"><span class="dash-status is-curso">Activa</span><span class="dash-track-chevron">▾</span></span>
+      </summary>
+      <div class="dash-track-body">
+        <div class="dash-track-row"><span class="dash-dot is-curso"></span><div><strong>Campaña de presentación.</strong> Tres de tus reels llevando tráfico a tu perfil de Instagram. Mujeres 35-55, CABA + 30 km, US$5 por día.</div></div>
+        <div class="dash-track-row"><span class="dash-dot is-done"></span><div><strong>Costo por visita sano.</strong> La campaña previa (Lead Magnet Luna) venía a ~US$3,4 por contacto — buen punto de partida.</div></div>
+        <div class="dash-track-row"><span class="dash-dot is-trabado"></span><div><strong>Lo que falta para que convierta.</strong> Una oferta concreta, la auto-respuesta para quien escribe HOGAR y definir quién atiende los DM. Sin eso, el tráfico llega pero no cierra.</div></div>
+        <p class="dash-track-foot">Última revisión · 7 de mayo 2026</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ LOS DOS SITIOS ============ -->
+  <section id="sitios" class="dash-section">
+    <p class="dash-eyebrow">En vivo</p>
+    <h2 class="dash-h2">Los dos sitios</h2>
+    <p class="dash-intro">El proyecto vive en dos lugares. Uno es tu cara hacia afuera; el otro es donde trabajamos juntos.</p>
+
+    <div class="dash-sitios">
+      <a class="dash-sitio" href="https://mercedes-portfolio-ok.vercel.app" target="_blank" rel="noopener">
+        <div class="dash-sitio-head">
+          <span class="dash-sitio-tag">Hacia afuera</span>
+          <span class="dash-status is-curso">En desarrollo</span>
+        </div>
+        <h3 class="dash-sitio-tit">Portfolio público</h3>
+        <p class="dash-sitio-desc">Tu carta de presentación: proyectos + el Método REFUGIO®. Reemplaza la vieja landing de Carrd.</p>
+        <span class="dash-sitio-url">mercedes-portfolio-ok.vercel.app ↗</span>
+      </a>
+
+      <a class="dash-sitio" href="https://mercedes-guiones.vercel.app" target="_blank" rel="noopener">
+        <div class="dash-sitio-head">
+          <span class="dash-sitio-tag">Entre nosotros</span>
+          <span class="dash-status is-done">Online</span>
+        </div>
+        <h3 class="dash-sitio-tit">Visor y panel</h3>
+        <p class="dash-sitio-desc">El detrás de escena: este panel, los guiones, el plan de contenidos y las historias. Lo abrís desde el celu.</p>
+        <span class="dash-sitio-url">mercedes-guiones.vercel.app ↗</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ LÍNEA DE TIEMPO ============ -->
+  <section id="linea" class="dash-section">
+    <p class="dash-eyebrow">El recorrido</p>
+    <h2 class="dash-h2">Línea de tiempo</h2>
+    <p class="dash-intro">De dónde venimos. Los hitos del proyecto hasta hoy.</p>
+
+    <ol class="dash-timeline">
+      <li class="dash-hito">
+        <span class="dash-hito-fecha">Ene – Mar</span>
+        <div class="dash-hito-cuerpo"><h3>Plan de contenidos de 3 meses</h3><p>Primer trimestre de reels y carruseles, ejecutado.</p></div>
+      </li>
+      <li class="dash-hito">
+        <span class="dash-hito-fecha">29 abr</span>
+        <div class="dash-hito-cuerpo"><h3>Gestión de Ads en marcha</h3><p>Arranca el manejo de campañas de Meta para la cuenta.</p></div>
+      </li>
+      <li class="dash-hito">
+        <span class="dash-hito-fecha">19 may</span>
+        <div class="dash-hito-cuerpo"><h3>Tu voz a cámara + giro de cliente</h3><p>Definimos cómo hablás en los reels y que tu cliente prioritario es el que diseña desde cero.</p></div>
+      </li>
+      <li class="dash-hito">
+        <span class="dash-hito-fecha">22 may</span>
+        <div class="dash-hito-cuerpo"><h3>Primera campaña al aire</h3><p>Tres reels de presentación llevando gente a tu perfil.</p></div>
+      </li>
+      <li class="dash-hito">
+        <span class="dash-hito-fecha">28 may</span>
+        <div class="dash-hito-cuerpo"><h3>Plan de 16 reels + Historias</h3><p>Cuatro sagas de contenido, el banco de historias y la trilogía de bebés reescrita en tu voz.</p></div>
+      </li>
+      <li class="dash-hito">
+        <span class="dash-hito-fecha">8 jun</span>
+        <div class="dash-hito-cuerpo"><h3>Tu sitio propio</h3><p>Portfolio nuevo + la página del Método REFUGIO®.</p></div>
+      </li>
+      <li class="dash-hito dash-hito-hoy">
+        <span class="dash-hito-fecha">9 jun</span>
+        <div class="dash-hito-cuerpo"><h3>Este panel</h3><p>Un solo lugar para ver todo el proyecto y saber por dónde vamos. Estás acá.</p></div>
+      </li>
+    </ol>
+  </section>
+
+  <footer class="dash-footer">
+    <p>Cualquier cosa, hablamos.</p>
+    <p class="dash-footer-detalle">Este panel no es una lista de tareas tuya — es el mapa de todo el proyecto, para que sepas siempre por dónde vamos. Se actualiza a medida que avanzamos.</p>
+  </footer>
 
 </body>
 </html>
