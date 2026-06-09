@@ -1639,32 +1639,64 @@ a.dash-pulse-item:hover { transform: translateY(-1px); border-color: var(--broll
 }
 .dash-section-vos .dash-eyebrow { color: var(--broll); }
 
+/* Tareas como timeline vertical — una por línea, marcador + riel */
 .dash-tareas {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.7rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 .dash-tarea {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: 0.85rem;
+  padding-bottom: 0.7rem;
+}
+.dash-tarea:last-child { padding-bottom: 0; }
+.dash-tarea:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: 2.15rem;
+  bottom: -0.1rem;
+  width: 1px;
+  margin-left: -0.5px;
+  background: var(--border);
+}
+.dash-tarea-marca {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: start;
+  background: var(--bg-card);
+  border: 1px solid var(--broll);
+  color: var(--broll);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+.dash-tarea-cuerpo {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.05rem 1.15rem;
+  padding: 0.9rem 1.1rem;
 }
-.dash-tarea-clave { border-color: var(--overlay); background: var(--overlay-bg); }
-.dash-tarea-standby { opacity: 0.66; }
-.dash-tarea-top {
+.dash-tarea-head {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 0.5rem;
+  gap: 0.6rem;
+  margin-bottom: 0.4rem;
 }
-.dash-tarea-num {
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  color: var(--text-dim);
-  font-weight: 600;
-}
+.dash-tarea-head .dash-tarea-titulo { margin-bottom: 0; }
+.dash-tarea-clave .dash-tarea-cuerpo { border-color: var(--overlay); background: var(--overlay-bg); }
+.dash-tarea-clave .dash-tarea-marca { border-color: var(--overlay); color: var(--overlay); }
+.dash-tarea-standby { opacity: 0.62; }
 .dash-tarea-titulo {
   font-family: var(--font-serif);
   font-weight: 400;
@@ -1937,7 +1969,6 @@ a.dash-reel-item:hover { border-color: var(--camera); transform: translateY(-1px
   .dash-h2 { font-size: 1.9rem; }
   .dash-pulse { grid-template-columns: repeat(4, 1fr); gap: 0.8rem; }
   .dash-pulse-num { font-size: 2.2rem; }
-  .dash-tareas { grid-template-columns: 1fr 1fr; gap: 0.8rem; }
   .dash-reels-cols { grid-template-columns: 1fr 1fr; gap: 1.4rem; }
   .dash-sitios { grid-template-columns: 1fr 1fr; gap: 1rem; }
   .dash-section-vos { padding: 2rem 1.75rem; }
