@@ -13,10 +13,15 @@
 <body class="dashboard-page">
 
   <header class="dash-hero">
-    <p class="dash-brand">Mercedes Ponte × Vertra</p>
-    <h1 class="dash-title">Panel del proyecto</h1>
-    <p class="dash-subtitle">Todo el proyecto en un solo lugar. Por dónde vamos, qué está en marcha y qué te toca decidir a vos — sin tener que abrir diez chats para entenderlo.</p>
-    <p class="dash-fecha">Actualizado · 9 de junio 2026</p>
+    <div class="dash-hero-glow" aria-hidden="true"></div>
+    <div class="dash-hero-inner">
+      <div class="dash-hero-emblema" aria-hidden="true"><span>MP</span></div>
+      <p class="dash-brand">Mercedes Ponte × Vertra</p>
+      <h1 class="dash-title">Panel del proyecto</h1>
+      <p class="dash-subtitle">Todo el proyecto en un solo lugar. Por dónde vamos, qué está en marcha y qué te toca decidir a vos — sin tener que abrir diez chats para entenderlo.</p>
+      <p class="dash-tagline">El hogar como dispositivo de salud mental — y este panel, el pulso del proyecto que lo sostiene.</p>
+      <p class="dash-fecha">Actualizado · 9 de junio 2026</p>
+    </div>
   </header>
 
   <section class="dash-pulse" aria-label="Resumen rápido">
@@ -325,6 +330,52 @@
     <p>Cualquier cosa, hablamos.</p>
     <p class="dash-footer-detalle">Este panel no es una lista de tareas tuya — es el mapa de todo el proyecto, para que sepas siempre por dónde vamos. Se actualiza a medida que avanzamos.</p>
   </footer>
+
+  <script>
+  (function () {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var hasIO = 'IntersectionObserver' in window;
+    var revealables = document.querySelectorAll('.dash-section, .dash-pulse');
+
+    // Aparición progresiva al scrollear
+    if (reduce || !hasIO) {
+      revealables.forEach(function (el) { el.classList.add('is-visible'); });
+    } else {
+      document.documentElement.classList.add('has-reveal');
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+      revealables.forEach(function (el) { io.observe(el); });
+    }
+
+    // Conteo de los números del resumen
+    var nums = document.querySelectorAll('.dash-pulse-num');
+    function countUp(el) {
+      var target = parseInt(el.textContent, 10);
+      if (!target) return;
+      var dur = 1000, t0 = null;
+      function step(ts) {
+        if (!t0) t0 = ts;
+        var p = Math.min((ts - t0) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(eased * target);
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+    if (!reduce && hasIO) {
+      nums.forEach(function (el) { el.textContent = '0'; });
+      var pio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { countUp(e.target); pio.unobserve(e.target); }
+        });
+      }, { threshold: 0.6 });
+      nums.forEach(function (el) { pio.observe(el); });
+    }
+  })();
+  </script>
 
 </body>
 </html>

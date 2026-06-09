@@ -1460,10 +1460,63 @@ body {
 
 /* === Hero === */
 .dash-hero {
-  padding: 1.5rem 0 2rem;
+  position: relative;
+  overflow: hidden;
+  padding: 2.6rem 1.25rem 2.9rem;
+  margin: -1.25rem -1.25rem 1.9rem;
   text-align: center;
+  background: linear-gradient(165deg, #f6f1e9 0%, #fafaf7 52%, #f3ede3 100%);
   border-bottom: 1px solid var(--border);
-  margin-bottom: 1.75rem;
+}
+.dash-hero-glow {
+  position: absolute;
+  top: -45%;
+  left: 50%;
+  width: 130%;
+  max-width: 760px;
+  aspect-ratio: 1 / 1;
+  background: radial-gradient(circle, rgba(166, 133, 72, 0.16) 0%, rgba(166, 133, 72, 0) 62%);
+  pointer-events: none;
+  z-index: 0;
+  animation: dashGlow 9s ease-in-out infinite alternate;
+}
+@keyframes dashGlow {
+  from { transform: translate(-54%, -4%) scale(1); opacity: 0.8; }
+  to   { transform: translate(-46%, 5%) scale(1.1); opacity: 1; }
+}
+.dash-hero-inner { position: relative; z-index: 1; }
+.dash-hero-emblema {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 1.05rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  border: 1px solid var(--camera);
+  box-shadow: 0 6px 20px rgba(166, 133, 72, 0.16);
+}
+.dash-hero-emblema span {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  letter-spacing: 0.03em;
+  color: var(--camera);
+}
+.dash-tagline {
+  display: inline-block;
+  margin: 1.05rem auto 0;
+  padding: 0.55rem 1.05rem;
+  max-width: 520px;
+  text-align: left;
+  border-left: 2px solid var(--camera);
+  background: rgba(166, 133, 72, 0.05);
+  border-radius: 0 6px 6px 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--text-muted);
 }
 .dash-brand {
   font-family: var(--font-sans);
@@ -1747,7 +1800,13 @@ a.dash-pulse-item:hover { transform: translateY(-1px); border-color: var(--broll
 .dash-reels-cols {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.1rem;
+  gap: 1rem;
+}
+.dash-reels-col {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 1.15rem 1.2rem 0.75rem;
 }
 .dash-reels-col-tit {
   display: flex;
@@ -1969,8 +2028,43 @@ a.dash-reel-item:hover { border-color: var(--camera); transform: translateY(-1px
   .dash-h2 { font-size: 1.9rem; }
   .dash-pulse { grid-template-columns: repeat(4, 1fr); gap: 0.8rem; }
   .dash-pulse-num { font-size: 2.2rem; }
-  .dash-reels-cols { grid-template-columns: 1fr 1fr; gap: 1.4rem; }
   .dash-sitios { grid-template-columns: 1fr 1fr; gap: 1rem; }
   .dash-section-vos { padding: 2rem 1.75rem; }
   .dash-hito { grid-template-columns: 4rem 1fr; }
+  .dash-hero { padding: 3.2rem 2rem 3.4rem; }
+  .dash-hero-emblema { width: 64px; height: 64px; }
 }
+
+/* === Movimiento / artefactos === */
+@media (prefers-reduced-motion: no-preference) {
+  .has-reveal .dash-section,
+  .has-reveal .dash-pulse {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .has-reveal .dash-section.is-visible,
+  .has-reveal .dash-pulse.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+  .dash-hero-inner > * { animation: dashRise 0.7s ease both; }
+  .dash-hero-emblema { animation-delay: 0.04s; }
+  .dash-hero .dash-brand { animation-delay: 0.10s; }
+  .dash-hero .dash-title { animation-delay: 0.16s; }
+  .dash-hero .dash-subtitle { animation-delay: 0.24s; }
+  .dash-hero .dash-tagline { animation-delay: 0.32s; }
+  .dash-hero .dash-fecha { animation-delay: 0.40s; }
+}
+@keyframes dashRise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dash-hero-glow { animation: none; }
+}
+
+/* Micro-interacción en marcadores y pills */
+.dash-tarea-marca { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.dash-tarea:hover .dash-tarea-marca { transform: scale(1.06); box-shadow: 0 4px 12px rgba(74, 104, 120, 0.18); }
+.dash-tarea-clave:hover .dash-tarea-marca { box-shadow: 0 4px 12px rgba(168, 97, 94, 0.2); }
