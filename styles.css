@@ -2128,9 +2128,10 @@ a.dash-reel-item:hover { border-color: var(--camera); transform: translateY(-1px
 }
 .pago-monto-ars {
   display: block;
-  font-size: 0.76rem;
-  color: var(--text-dim);
-  margin-top: 0.1rem;
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
 }
 
 /* Qué incluye el servicio */
