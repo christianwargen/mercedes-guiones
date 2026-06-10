@@ -35,7 +35,7 @@
           <p class="pago-card-servicio">Contenido + Ads</p>
           <p class="pago-card-detalle">4 reels + campaña gestionada · U$S 400 / mes</p>
         </div>
-        <span class="dash-status is-pendiente" id="pago-estado">Pendiente</span>
+        <span class="dash-status is-done" id="pago-estado">Pagado</span>
       </div>
 
       <div class="pago-resumen">
@@ -48,12 +48,17 @@
           <span class="pago-resumen-value">10 de junio 2026 <em class="pago-vence" id="pago-vence"></em></span>
         </div>
         <div class="pago-resumen-row pago-resumen-total">
-          <span class="pago-resumen-label">Total a abonar</span>
+          <span class="pago-resumen-label">Total del mes</span>
           <span class="pago-resumen-value">
             <strong class="pago-monto-usd">U$S 400</strong>
             <span class="pago-monto-ars">o $584.000 en pesos</span>
           </span>
         </div>
+      </div>
+
+      <div class="pago-pagado" id="pago-pagado">
+        <span class="pago-pagado-check" aria-hidden="true"></span>
+        <span>Pago recibido y registrado. ¡Gracias, Mer!</span>
       </div>
     </div>
 
@@ -177,23 +182,32 @@
 
   <script>
   (function () {
-    // === Días hasta el vencimiento (10 junio 2026) ===
+    // === Estado del pago ===
+    // pagado = true  → mes saldado (pill verde "Pagado" + banner de gracias).
+    // pagado = false → vuelve a "Pendiente" con la cuenta regresiva al vencimiento.
+    var pagado = true;
     var vence = new Date(2026, 5, 10); // mes 5 = junio
     var hoy = new Date();
     hoy.setHours(0, 0, 0, 0);
     var dias = Math.round((vence - hoy) / 86400000);
     var venceEl = document.getElementById('pago-vence');
     var estadoEl = document.getElementById('pago-estado');
-    if (venceEl) {
-      if (dias > 1) venceEl.textContent = '· faltan ' + dias + ' días';
-      else if (dias === 1) venceEl.textContent = '· vence mañana';
-      else if (dias === 0) venceEl.textContent = '· vence hoy';
-      else venceEl.textContent = '· vencido hace ' + Math.abs(dias) + ' día' + (Math.abs(dias) === 1 ? '' : 's');
-    }
-    if (estadoEl && dias < 0) {
-      estadoEl.textContent = 'Vencido';
-      estadoEl.classList.remove('is-pendiente');
-      estadoEl.classList.add('is-trabado');
+    var pagadoEl = document.getElementById('pago-pagado');
+
+    if (pagado) {
+      if (estadoEl) { estadoEl.textContent = 'Pagado'; estadoEl.className = 'dash-status is-done'; }
+      if (venceEl) venceEl.textContent = '';
+      if (pagadoEl) pagadoEl.classList.remove('is-hidden');
+    } else {
+      if (pagadoEl) pagadoEl.classList.add('is-hidden');
+      if (estadoEl) { estadoEl.textContent = 'Pendiente'; estadoEl.className = 'dash-status is-pendiente'; }
+      if (venceEl) {
+        if (dias > 1) venceEl.textContent = '· faltan ' + dias + ' días';
+        else if (dias === 1) venceEl.textContent = '· vence mañana';
+        else if (dias === 0) venceEl.textContent = '· vence hoy';
+        else venceEl.textContent = '· vencido hace ' + Math.abs(dias) + ' día' + (Math.abs(dias) === 1 ? '' : 's');
+      }
+      if (estadoEl && dias < 0) { estadoEl.textContent = 'Vencido'; estadoEl.className = 'dash-status is-trabado'; }
     }
 
     // === Copiar CBU / alias ===

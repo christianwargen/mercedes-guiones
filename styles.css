@@ -2196,6 +2196,41 @@ a.dash-reel-item:hover { border-color: var(--camera); transform: translateY(-1px
   font-style: italic;
 }
 
+/* Banner "pago recibido" */
+.pago-pagado {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 1.05rem;
+  padding: 0.7rem 0.9rem;
+  background: rgba(111, 143, 106, 0.1);
+  border: 1px solid rgba(111, 143, 106, 0.35);
+  border-radius: 6px;
+  font-size: 0.86rem;
+  color: #4c6644;
+  font-weight: 500;
+}
+.pago-pagado.is-hidden { display: none; }
+.pago-pagado-check {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #6f8f6a;
+  position: relative;
+}
+.pago-pagado-check::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 3.5px;
+  width: 4px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
 /* Medios de pago */
 .pago-medios { display: grid; grid-template-columns: 1fr; gap: 0.9rem; }
 .pago-cuenta {
@@ -2330,6 +2365,8 @@ a.dash-reel-item:hover { border-color: var(--camera); transform: translateY(-1px
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
 .dash-pago-card:hover { transform: translateY(-1px); border-left-color: var(--camera); border-color: var(--camera); }
+.dash-pago-card.is-pagado { border-left-color: #6f8f6a; }
+.dash-pago-card.is-pagado:hover { border-left-color: #6f8f6a; border-color: #6f8f6a; }
 .dash-pago-monto {
   flex-shrink: 0;
   font-family: var(--font-serif);
