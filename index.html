@@ -230,7 +230,53 @@
   <section id="frentes" class="dash-section">
     <p class="dash-eyebrow">Detalle</p>
     <h2 class="dash-h2">Frentes de trabajo</h2>
-    <p class="dash-intro">Los cuatro frentes abiertos del proyecto. Tocá cada uno para ver el detalle.</p>
+    <p class="dash-intro">Los cuatro frentes abiertos del proyecto, con su avance de un vistazo. Tocá cada uno para ver el detalle.</p>
+
+    <div class="dash-avance" aria-label="Avance por frente">
+      <div class="dash-ring">
+        <div class="dash-ring-graf">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="dash-ring-track" cx="60" cy="60" r="52"></circle>
+            <circle class="dash-ring-val" cx="60" cy="60" r="52" style="stroke: var(--camera)" stroke-dasharray="130.7 326.7" data-dash="130.7 326.7" transform="rotate(-90 60 60)"></circle>
+          </svg>
+          <span class="dash-ring-num">40<small>%</small></span>
+        </div>
+        <span class="dash-ring-lbl">Producción de Reels</span>
+      </div>
+
+      <div class="dash-ring">
+        <div class="dash-ring-graf">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="dash-ring-track" cx="60" cy="60" r="52"></circle>
+            <circle class="dash-ring-val" cx="60" cy="60" r="52" style="stroke: var(--broll)" stroke-dasharray="228.7 326.7" data-dash="228.7 326.7" transform="rotate(-90 60 60)"></circle>
+          </svg>
+          <span class="dash-ring-num">70<small>%</small></span>
+        </div>
+        <span class="dash-ring-lbl">Sitio Portfolio</span>
+      </div>
+
+      <div class="dash-ring">
+        <div class="dash-ring-graf">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="dash-ring-track" cx="60" cy="60" r="52"></circle>
+            <circle class="dash-ring-val" cx="60" cy="60" r="52" style="stroke: #6f8f6a" stroke-dasharray="294.1 326.7" data-dash="294.1 326.7" transform="rotate(-90 60 60)"></circle>
+          </svg>
+          <span class="dash-ring-num">90<small>%</small></span>
+        </div>
+        <span class="dash-ring-lbl">Visor / Panel</span>
+      </div>
+
+      <div class="dash-ring">
+        <div class="dash-ring-graf">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="dash-ring-track" cx="60" cy="60" r="52"></circle>
+            <circle class="dash-ring-val" cx="60" cy="60" r="52" style="stroke: var(--overlay)" stroke-dasharray="163.4 326.7" data-dash="163.4 326.7" transform="rotate(-90 60 60)"></circle>
+          </svg>
+          <span class="dash-ring-num">50<small>%</small></span>
+        </div>
+        <span class="dash-ring-lbl">Campaña de Ads</span>
+      </div>
+    </div>
 
     <details class="dash-track" open>
       <summary class="dash-track-summary">
@@ -409,6 +455,26 @@
         });
       }, { threshold: 0.6 });
       nums.forEach(function (el) { pio.observe(el); });
+    }
+
+    // Anillos de avance: se llenan al entrar en pantalla
+    var rings = document.querySelectorAll('.dash-ring-val');
+    if (!reduce && hasIO && rings.length) {
+      rings.forEach(function (c) { c.setAttribute('stroke-dasharray', '0 326.7'); });
+      var avance = document.querySelector('.dash-avance');
+      if (avance) {
+        var aio = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.querySelectorAll('.dash-ring-val').forEach(function (c) {
+                c.setAttribute('stroke-dasharray', c.dataset.dash);
+              });
+              aio.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.4 });
+        aio.observe(avance);
+      }
     }
   })();
   </script>
