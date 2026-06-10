@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagos del proyecto — Mercedes Ponte × Vertra</title>
+  <meta name="description" content="Resumen de servicios y pagos pendientes — Mercedes Ponte × Vertra. CBU y alias listos para copiar.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard-page">
+
+  <a href="index.html" class="back-link back-link-top">← Panel del proyecto</a>
+
+  <header class="dash-hero">
+    <div class="dash-hero-glow" aria-hidden="true"></div>
+    <div class="dash-hero-inner">
+      <div class="dash-hero-emblema" aria-hidden="true"><span>MP</span></div>
+      <p class="dash-brand">Mercedes Ponte × Vertra</p>
+      <h1 class="dash-title">Pagos del proyecto</h1>
+      <p class="dash-subtitle">El resumen del servicio del mes y los datos para transferir. El CBU y el alias se copian con un toque — no hace falta tipearlos.</p>
+    </div>
+  </header>
+
+  <!-- ============ RESUMEN DEL MES ============ -->
+  <section class="dash-section pago-section">
+    <p class="dash-eyebrow">Servicio mensual</p>
+    <h2 class="dash-h2">Mayo 2026</h2>
+
+    <div class="pago-card">
+      <div class="pago-card-top">
+        <div>
+          <p class="pago-card-servicio">Contenido + Ads</p>
+          <p class="pago-card-detalle">4 reels + campaña gestionada · U$S 400 / mes</p>
+        </div>
+        <span class="dash-status is-pendiente" id="pago-estado">Pendiente</span>
+      </div>
+
+      <div class="pago-resumen">
+        <div class="pago-resumen-row">
+          <span class="pago-resumen-label">Período facturado</span>
+          <span class="pago-resumen-value">Mayo 2026</span>
+        </div>
+        <div class="pago-resumen-row">
+          <span class="pago-resumen-label">Vencimiento</span>
+          <span class="pago-resumen-value">10 de junio 2026 <em class="pago-vence" id="pago-vence"></em></span>
+        </div>
+        <div class="pago-resumen-row pago-resumen-total">
+          <span class="pago-resumen-label">Total a abonar</span>
+          <span class="pago-resumen-value">
+            <strong class="pago-monto-usd">U$S 400</strong>
+            <span class="pago-monto-ars">o $584.000 en pesos</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MEDIOS DE PAGO ============ -->
+  <section class="dash-section pago-section">
+    <p class="dash-eyebrow">Medios de pago</p>
+    <h2 class="dash-h2">A dónde transferir</h2>
+    <p class="dash-intro">Elegí la cuenta según la moneda con la que vayas a pagar. Tocá <strong>Copiar</strong> en el CBU o el alias y pegalo directo en el homebanking.</p>
+
+    <div class="pago-medios">
+
+      <article class="pago-cuenta">
+        <div class="pago-cuenta-head">
+          <span class="pago-cuenta-moneda">Para abonar en U$S</span>
+          <span class="pago-cuenta-banco">Banco Galicia</span>
+        </div>
+
+        <div class="pago-field">
+          <span class="pago-field-label">CBU</span>
+          <div class="pago-field-row">
+            <span class="pago-field-value">0070051131004005434862</span>
+            <button class="pago-copy" type="button" data-copy="0070051131004005434862" aria-label="Copiar CBU en dólares">
+              <span class="pago-copy-txt">Copiar</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="pago-field">
+          <span class="pago-field-label">Alias</span>
+          <div class="pago-field-row">
+            <span class="pago-field-value">CHRIS.WARGEN.US</span>
+            <button class="pago-copy" type="button" data-copy="CHRIS.WARGEN.US" aria-label="Copiar alias en dólares">
+              <span class="pago-copy-txt">Copiar</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="pago-field-mini">
+          <span><span class="pago-field-label">Cuenta</span> 4005434-8 051-6</span>
+          <span><span class="pago-field-label">DNI</span> 28986934</span>
+        </div>
+      </article>
+
+      <article class="pago-cuenta">
+        <div class="pago-cuenta-head">
+          <span class="pago-cuenta-moneda">Para abonar en $</span>
+          <span class="pago-cuenta-banco">Banco Galicia</span>
+        </div>
+
+        <div class="pago-field">
+          <span class="pago-field-label">CBU</span>
+          <div class="pago-field-row">
+            <span class="pago-field-value">0070051130004034019743</span>
+            <button class="pago-copy" type="button" data-copy="0070051130004034019743" aria-label="Copiar CBU en pesos">
+              <span class="pago-copy-txt">Copiar</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="pago-field">
+          <span class="pago-field-label">Alias</span>
+          <div class="pago-field-row">
+            <span class="pago-field-value">VERTRA.STUDIO</span>
+            <button class="pago-copy" type="button" data-copy="VERTRA.STUDIO" aria-label="Copiar alias en pesos">
+              <span class="pago-copy-txt">Copiar</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="pago-field-mini">
+          <span><span class="pago-field-label">Cuenta</span> 4034019-7 051-4</span>
+          <span><span class="pago-field-label">DNI</span> 28986934</span>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="pago-nota">Una vez hecho el pago, mandame el comprobante por WhatsApp al número de siempre y registro la operación. ¡Gracias, Mer!</p>
+  </section>
+
+  <footer class="dash-footer">
+    <p>Cualquier duda con la transferencia, hablamos.</p>
+    <p class="dash-footer-detalle">Vertra Studio · Resumen de servicios y pagos pendientes.</p>
+  </footer>
+
+  <script>
+  (function () {
+    // === Días hasta el vencimiento (10 junio 2026) ===
+    var vence = new Date(2026, 5, 10); // mes 5 = junio
+    var hoy = new Date();
+    hoy.setHours(0, 0, 0, 0);
+    var dias = Math.round((vence - hoy) / 86400000);
+    var venceEl = document.getElementById('pago-vence');
+    var estadoEl = document.getElementById('pago-estado');
+    if (venceEl) {
+      if (dias > 1) venceEl.textContent = '· faltan ' + dias + ' días';
+      else if (dias === 1) venceEl.textContent = '· vence mañana';
+      else if (dias === 0) venceEl.textContent = '· vence hoy';
+      else venceEl.textContent = '· vencido hace ' + Math.abs(dias) + ' día' + (Math.abs(dias) === 1 ? '' : 's');
+    }
+    if (estadoEl && dias < 0) {
+      estadoEl.textContent = 'Vencido';
+      estadoEl.classList.remove('is-pendiente');
+      estadoEl.classList.add('is-trabado');
+    }
+
+    // === Copiar CBU / alias ===
+    function feedback(btn) {
+      var txt = btn.querySelector('.pago-copy-txt');
+      var prev = txt.textContent;
+      btn.classList.add('is-copied');
+      txt.textContent = '¡Copiado!';
+      setTimeout(function () {
+        btn.classList.remove('is-copied');
+        txt.textContent = prev;
+      }, 1700);
+    }
+    function legacyCopy(text) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'absolute';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+    document.querySelectorAll('.pago-copy').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var text = btn.getAttribute('data-copy');
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () { feedback(btn); }, function () { legacyCopy(text); feedback(btn); });
+        } else {
+          legacyCopy(text);
+          feedback(btn);
+        }
+      });
+    });
+  })();
+  </script>
+
+</body>
+</html>
