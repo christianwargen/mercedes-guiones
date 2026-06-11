@@ -1485,23 +1485,11 @@ body {
   to   { transform: translate(-46%, 5%) scale(1.1); opacity: 1; }
 }
 .dash-hero-inner { position: relative; z-index: 1; }
-.dash-hero-emblema {
-  width: 58px;
-  height: 58px;
-  margin: 0 auto 1.05rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--bg-card);
-  border: 1px solid var(--camera);
-  box-shadow: 0 6px 20px rgba(166, 133, 72, 0.16);
-}
-.dash-hero-emblema span {
-  font-family: var(--font-serif);
-  font-size: 1.4rem;
-  letter-spacing: 0.03em;
-  color: var(--camera);
+.dash-hero-logo {
+  display: block;
+  width: auto;
+  height: 38px;
+  margin: 0 auto 1.15rem;
 }
 .dash-tagline {
   display: inline-block;
@@ -1552,8 +1540,8 @@ body {
 
 /* === Pulse (resumen rápido) === */
 .dash-pulse {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 0.6rem;
   margin-bottom: 1.75rem;
 }
@@ -1561,30 +1549,51 @@ body {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1rem 0.9rem;
-  text-align: center;
+  padding: 0.95rem 1.4rem;
   text-decoration: none;
   color: inherit;
   display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.1rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
-a.dash-pulse-item:hover { transform: translateY(-1px); border-color: var(--broll); }
+a.dash-pulse-item:hover { transform: translateY(-1px); border-color: var(--broll); box-shadow: 0 4px 14px rgba(74, 104, 120, 0.08); }
 .dash-pulse-vos { background: var(--broll-bg); border-color: var(--broll); }
 .dash-pulse-num {
   font-family: var(--font-serif);
-  font-size: 1.95rem;
+  font-size: 2.05rem;
   line-height: 1;
   color: var(--text);
+  min-width: 2.2rem;
+  text-align: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
 }
 .dash-pulse-vos .dash-pulse-num { color: var(--broll); }
 .dash-pulse-label {
-  font-size: 0.68rem;
-  letter-spacing: 0.04em;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
   color: var(--text-muted);
   text-transform: uppercase;
+  flex: 1;
+  position: relative;
+  z-index: 1;
 }
+.dash-pulse-item::after {
+  content: "→";
+  margin-left: auto;
+  color: var(--text-dim);
+  font-size: 1rem;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+a.dash-pulse-item:hover::after { transform: translateX(3px); color: var(--broll); }
 
 /* === Nav sticky === */
 .dash-nav {
@@ -2431,14 +2440,13 @@ a.dash-reel-item:hover { border-color: var(--camera); transform: translateY(-1px
 @media (min-width: 768px) {
   .dash-title { font-size: 2.7rem; }
   .dash-h2 { font-size: 1.9rem; }
-  .dash-pulse { grid-template-columns: repeat(4, 1fr); gap: 0.8rem; }
-  .dash-pulse-num { font-size: 2.2rem; }
+  .dash-pulse-num { font-size: 2.15rem; }
   .dash-sitios { grid-template-columns: 1fr 1fr; gap: 1rem; }
   .dash-avance { grid-template-columns: repeat(4, 1fr); gap: 1rem 0.5rem; }
   .dash-section-vos { padding: 2rem 1.75rem; }
   .dash-hito { grid-template-columns: 4rem 1fr; }
   .dash-hero { padding: 3.2rem 2rem 3.4rem; }
-  .dash-hero-emblema { width: 64px; height: 64px; }
+  .dash-hero-logo { height: 46px; }
   .pago-medios { grid-template-columns: 1fr 1fr; gap: 1rem; }
 }
 
@@ -2456,12 +2464,10 @@ a.dash-reel-item:hover { border-color: var(--camera); transform: translateY(-1px
     transform: none;
   }
   .dash-hero-inner > * { animation: dashRise 0.7s ease both; }
-  .dash-hero-emblema { animation-delay: 0.04s; }
-  .dash-hero .dash-brand { animation-delay: 0.10s; }
-  .dash-hero .dash-title { animation-delay: 0.16s; }
-  .dash-hero .dash-subtitle { animation-delay: 0.24s; }
-  .dash-hero .dash-tagline { animation-delay: 0.32s; }
-  .dash-hero .dash-fecha { animation-delay: 0.40s; }
+  .dash-hero-logo { animation-delay: 0.04s; }
+  .dash-hero .dash-brand { animation-delay: 0.12s; }
+  .dash-hero .dash-title { animation-delay: 0.20s; }
+  .dash-hero .dash-fecha { animation-delay: 0.28s; }
 }
 @keyframes dashRise {
   from { opacity: 0; transform: translateY(14px); }
@@ -2475,3 +2481,57 @@ a.dash-reel-item:hover { border-color: var(--camera); transform: translateY(-1px
 .dash-tarea-marca { transition: transform 0.2s ease, box-shadow 0.2s ease; }
 .dash-tarea:hover .dash-tarea-marca { transform: scale(1.06); box-shadow: 0 4px 12px rgba(74, 104, 120, 0.18); }
 .dash-tarea-clave:hover .dash-tarea-marca { box-shadow: 0 4px 12px rgba(168, 97, 94, 0.2); }
+
+/* === Efectos de fondo: degradés + glow al cursor (espíritu del timeline de MacASA) === */
+
+/* Degradés sutiles en los paneles ("fonditos") — se ven también en mobile */
+.dash-section-vos {
+  background: linear-gradient(158deg, rgba(74, 104, 120, 0.09) 0%, rgba(74, 104, 120, 0.02) 58%, var(--bg-card) 100%);
+}
+.dash-reels-col,
+.dash-avance {
+  background: linear-gradient(158deg, var(--bg-elevated) 0%, #ffffff 96%);
+}
+.dash-pulse-item,
+.dash-sitio,
+.dash-pago-card,
+.dash-tarea-cuerpo {
+  background: linear-gradient(155deg, #ffffff 0%, var(--bg-elevated) 150%);
+}
+.dash-pulse-vos {
+  background: linear-gradient(155deg, rgba(74, 104, 120, 0.11) 0%, rgba(74, 104, 120, 0.02) 90%);
+}
+
+/* Glow radial que sigue al cursor — solo desktop con mouse */
+.dash-pulse-item,
+.dash-tarea-cuerpo,
+.dash-sitio,
+.dash-pago-card,
+.dash-reel-item {
+  position: relative;
+  overflow: hidden;
+}
+.dash-pulse-item::before,
+.dash-tarea-cuerpo::before,
+.dash-sitio::before,
+.dash-pago-card::before,
+.dash-reel-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(220px circle at var(--mx, -300px) var(--my, -300px), rgba(166, 133, 72, 0.13), transparent 58%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+@media (hover: hover) {
+  .dash-pulse-item:hover::before,
+  .dash-tarea-cuerpo:hover::before,
+  .dash-sitio:hover::before,
+  .dash-pago-card:hover::before,
+  .dash-reel-item:hover::before {
+    opacity: 1;
+  }
+}

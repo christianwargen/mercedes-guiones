@@ -15,12 +15,10 @@
   <header class="dash-hero">
     <div class="dash-hero-glow" aria-hidden="true"></div>
     <div class="dash-hero-inner">
-      <div class="dash-hero-emblema" aria-hidden="true"><span>MP</span></div>
-      <p class="dash-brand">Mercedes Ponte × Vertra</p>
+      <img class="dash-hero-logo" src="assets/vertra-logo.png" alt="Vertra Estudio" width="560" height="146">
+      <p class="dash-brand">Mercedes Ponte · por Vertra Estudio</p>
       <h1 class="dash-title">Panel del proyecto</h1>
-      <p class="dash-subtitle">Todo el proyecto en un solo lugar. Por dónde vamos, qué está en marcha y qué te toca decidir a vos — sin tener que abrir diez chats para entenderlo.</p>
-      <p class="dash-tagline">El hogar como dispositivo de salud mental — y este panel, el pulso del proyecto que lo sostiene.</p>
-      <p class="dash-fecha">Actualizado · 10 de junio 2026</p>
+      <p class="dash-fecha">Versión 1.1 · Actualizado 10 de junio 2026</p>
     </div>
   </header>
 
@@ -475,6 +473,18 @@
         }, { threshold: 0.4 });
         aio.observe(avance);
       }
+    }
+
+    // Glow que sigue al cursor en las tarjetas (solo desktop con mouse)
+    if (window.matchMedia && window.matchMedia('(hover: hover)').matches) {
+      var glowSel = '.dash-pulse-item, .dash-tarea-cuerpo, .dash-sitio, .dash-pago-card, .dash-reel-item';
+      document.addEventListener('mousemove', function (e) {
+        var t = e.target.closest ? e.target.closest(glowSel) : null;
+        if (!t) return;
+        var r = t.getBoundingClientRect();
+        t.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        t.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      }, { passive: true });
     }
   })();
   </script>
