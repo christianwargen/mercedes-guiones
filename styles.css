@@ -2535,3 +2535,31 @@ a.dash-reel-item:hover { border-color: var(--camera); transform: translateY(-1px
     opacity: 1;
   }
 }
+
+/* === Guion borrador enganchado a un reel del plan (Saga IV) === */
+.reel-tag-guion {
+  background: var(--overlay-bg);
+  color: var(--overlay);
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  letter-spacing: 0.05em;
+}
+.reel-propuesta-guion {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1.1rem;
+  padding: 0.6rem 1rem;
+  background: var(--overlay-bg);
+  border: 1px solid var(--overlay);
+  border-radius: var(--radius);
+  color: var(--overlay);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+.reel-propuesta-guion:hover { background: rgba(168, 97, 94, 0.12); }
