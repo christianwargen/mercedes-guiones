@@ -2668,13 +2668,13 @@ a.dash-reel-item:hover { border-color: var(--camera); transform: translateY(-1px
 }
 .dash-reels-col,
 .dash-avance {
-  background: linear-gradient(158deg, var(--bg-elevated) 0%, #ffffff 96%);
+  background: linear-gradient(158deg, var(--bg-elevated) 0%, var(--bg-card) 96%);
 }
 .dash-pulse-item,
 .dash-sitio,
 .dash-pago-card,
 .dash-tarea-cuerpo {
-  background: linear-gradient(155deg, #ffffff 0%, var(--bg-elevated) 150%);
+  background: linear-gradient(155deg, var(--bg-card) 0%, var(--bg-elevated) 150%);
 }
 .dash-pulse-vos {
   background: linear-gradient(155deg, rgba(74, 104, 120, 0.11) 0%, rgba(74, 104, 120, 0.02) 90%);
@@ -2713,6 +2713,60 @@ a.dash-reel-item:hover { border-color: var(--camera); transform: translateY(-1px
     opacity: 1;
   }
 }
+
+/* ============================================
+   TEMA OSCURO — solo el dashboard (.dashboard-page)
+   Dark luxe (impacto tipo MacASA) con la paleta cálida de Mercedes.
+   Las demás páginas (guiones, próximos, historias, pagos) quedan en crema.
+   ============================================ */
+.dashboard-page {
+  --bg: #15120e;
+  --bg-elevated: #1e1810;
+  --bg-card: #221b13;
+  --border: rgba(245, 239, 229, 0.12);
+  --border-soft: rgba(245, 239, 229, 0.06);
+  --text: #f3ede1;
+  --text-muted: #b6ab95;
+  --text-dim: #8a7d66;
+  --camera: #cba24f;
+  --camera-bg: rgba(203, 162, 79, 0.13);
+  --broll: #88abc0;
+  --broll-bg: rgba(136, 171, 192, 0.13);
+  --overlay: #d59590;
+  --overlay-bg: rgba(213, 149, 144, 0.13);
+}
+.dashboard-page .dash-hero {
+  background: linear-gradient(165deg, #261d12 0%, #15120e 56%, #1e1610 100%);
+}
+.dashboard-page .dash-nav {
+  background: rgba(20, 17, 13, 0.9);
+}
+.dashboard-page .dash-section-vos {
+  background: linear-gradient(158deg, rgba(136, 171, 192, 0.10) 0%, rgba(136, 171, 192, 0.03) 56%, var(--bg-card) 100%);
+}
+.dashboard-page .dash-pulse-vos {
+  background: linear-gradient(155deg, rgba(136, 171, 192, 0.14) 0%, rgba(136, 171, 192, 0.03) 90%);
+}
+.dashboard-page .dash-hero-glow {
+  background: radial-gradient(circle, rgba(203, 162, 79, 0.20) 0%, rgba(203, 162, 79, 0) 62%);
+}
+.dashboard-page .dash-pulse-item::before,
+.dashboard-page .dash-tarea-cuerpo::before,
+.dashboard-page .dash-sitio::before,
+.dashboard-page .dash-pago-card::before,
+.dashboard-page .dash-reel-item::before {
+  background: radial-gradient(220px circle at var(--mx, -300px) var(--my, -300px), rgba(203, 162, 79, 0.16), transparent 58%);
+}
+/* verdes "listo / cortesía / pagado" → tono claro visible en oscuro */
+.dashboard-page .is-done { color: #9fc093; background: rgba(147, 179, 137, 0.16); }
+.dashboard-page .is-done::before,
+.dashboard-page .dash-dot.is-done { background: #93b389; }
+.dashboard-page .dash-pago-card.is-pagado { border-left-color: #93b389; }
+.dashboard-page .dash-pago-card.is-pagado:hover { border-left-color: #93b389; border-color: #93b389; }
+.dashboard-page .alcance-cortesia { color: #9fc093; background: rgba(147, 179, 137, 0.1); border-color: rgba(147, 179, 137, 0.3); }
+.dashboard-page .alcance-cortesia-check { border-color: #93b389; }
+.dashboard-page .alcance-cortesia-check::before { border-color: #93b389; }
+.dashboard-page ::selection { background: rgba(203, 162, 79, 0.3); color: #fff; }
 
 /* === Guion borrador enganchado a un reel del plan (Saga IV) === */
 .reel-tag-guion {
