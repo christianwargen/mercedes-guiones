@@ -1910,7 +1910,7 @@ a.dash-reel-item:hover { border-color: var(--camera); transform: translateY(-1px
 }
 .dash-track-title { font-family: var(--font-serif); font-size: 1.12rem; flex: 1; }
 .dash-track-meta { display: flex; align-items: center; gap: 0.6rem; }
-.dash-track-chevron { color: var(--text-dim); font-size: 0.8rem; transition: transform 0.2s ease; }
+.dash-track-chevron { color: var(--camera); font-size: 1.2rem; line-height: 1; transition: transform 0.2s ease; }
 .dash-track[open] .dash-track-chevron { transform: rotate(180deg); }
 .dash-track-body {
   padding: 0 1.15rem 1.1rem;
@@ -2721,35 +2721,35 @@ a.dash-reel-item:hover { border-color: var(--camera); transform: translateY(-1px
    Las demás páginas (guiones, próximos, historias, pagos) quedan en crema.
    ============================================ */
 .dashboard-page {
-  --bg: #15120e;
-  --bg-elevated: #1e1810;
-  --bg-card: #221b13;
-  --border: rgba(245, 239, 229, 0.12);
-  --border-soft: rgba(245, 239, 229, 0.06);
-  --text: #f3ede1;
-  --text-muted: #b6ab95;
-  --text-dim: #8a7d66;
-  --camera: #cba24f;
-  --camera-bg: rgba(203, 162, 79, 0.13);
-  --broll: #88abc0;
-  --broll-bg: rgba(136, 171, 192, 0.13);
-  --overlay: #d59590;
-  --overlay-bg: rgba(213, 149, 144, 0.13);
+  --bg: #13161c;
+  --bg-elevated: #1b1f27;
+  --bg-card: #212732;
+  --border: rgba(255, 255, 255, 0.11);
+  --border-soft: rgba(255, 255, 255, 0.055);
+  --text: #eef1f5;
+  --text-muted: #a6aeba;
+  --text-dim: #6f7886;
+  --camera: #d8ad5a;
+  --camera-bg: rgba(216, 173, 90, 0.14);
+  --broll: #80b2d6;
+  --broll-bg: rgba(128, 178, 214, 0.15);
+  --overlay: #dd938b;
+  --overlay-bg: rgba(221, 147, 139, 0.14);
 }
 .dashboard-page .dash-hero {
-  background: linear-gradient(165deg, #261d12 0%, #15120e 56%, #1e1610 100%);
+  background: linear-gradient(165deg, #1d2433 0%, #13161c 56%, #181c25 100%);
 }
 .dashboard-page .dash-nav {
-  background: rgba(20, 17, 13, 0.9);
+  background: rgba(17, 20, 26, 0.9);
 }
 .dashboard-page .dash-section-vos {
-  background: linear-gradient(158deg, rgba(136, 171, 192, 0.10) 0%, rgba(136, 171, 192, 0.03) 56%, var(--bg-card) 100%);
+  background: linear-gradient(158deg, rgba(128, 178, 214, 0.10) 0%, rgba(128, 178, 214, 0.03) 56%, var(--bg-card) 100%);
 }
 .dashboard-page .dash-pulse-vos {
-  background: linear-gradient(155deg, rgba(136, 171, 192, 0.14) 0%, rgba(136, 171, 192, 0.03) 90%);
+  background: linear-gradient(155deg, rgba(128, 178, 214, 0.14) 0%, rgba(128, 178, 214, 0.03) 90%);
 }
 .dashboard-page .dash-hero-glow {
-  background: radial-gradient(circle, rgba(203, 162, 79, 0.20) 0%, rgba(203, 162, 79, 0) 62%);
+  background: radial-gradient(circle, rgba(216, 173, 90, 0.18) 0%, rgba(216, 173, 90, 0) 62%);
 }
 .dashboard-page .dash-pulse-item::before,
 .dashboard-page .dash-tarea-cuerpo::before,
