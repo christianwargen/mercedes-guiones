@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tu día de B-roll — los 4 reels del mes | Mercedes Ponte</title>
+  <meta name="description" content="Todo el B-roll de los cuatro reels del mes, agrupado para grabar en una sola jornada.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .broll-wrap { max-width: 760px; margin: 0 auto; padding: 0 1.2rem 5rem; }
+
+    .broll-idea {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.5rem 1.4rem; margin: 1.5rem 0 2rem;
+    }
+    .broll-idea h2 { font-family: var(--font-serif); font-weight: 500; font-size: 1.25rem; margin: 0 0 0.6rem; }
+    .broll-idea p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0.4rem 0; }
+    .broll-idea strong { color: var(--text); font-weight: 600; }
+
+    .broll-reparto { display: grid; gap: 0.7rem; margin-top: 1rem; }
+    .broll-reparto-item {
+      display: flex; gap: 0.7rem; align-items: flex-start;
+      padding: 0.8rem 0.9rem; border-radius: 10px; background: var(--bg-elevated);
+      border: 1px solid var(--border-soft);
+    }
+    .broll-reparto-num {
+      flex: 0 0 auto; width: 1.7rem; height: 1.7rem; border-radius: 50%;
+      display: grid; place-items: center; font-size: 0.8rem; font-weight: 600;
+      color: #fff;
+    }
+    .is-camera { background: var(--camera); }
+    .is-audio { background: var(--broll); }
+    .broll-reparto-item p { margin: 0; font-size: 0.9rem; line-height: 1.5; color: var(--text-muted); }
+    .broll-reparto-item strong { color: var(--text); }
+
+    .broll-reglas { margin: 0 0 2.4rem; }
+    .broll-reglas ol { margin: 0.8rem 0 0; padding: 0; list-style: none; counter-reset: r; display: grid; gap: 0.55rem; }
+    .broll-reglas li {
+      counter-increment: r; position: relative; padding: 0.2rem 0 0.2rem 2.2rem;
+      font-size: 0.92rem; color: var(--text-muted); line-height: 1.5;
+    }
+    .broll-reglas li::before {
+      content: counter(r); position: absolute; left: 0; top: 0;
+      width: 1.5rem; height: 1.5rem; border-radius: 50%;
+      background: var(--camera-bg); color: var(--camera);
+      display: grid; place-items: center; font-size: 0.78rem; font-weight: 600;
+    }
+    .broll-reglas li strong { color: var(--text); font-weight: 600; }
+
+    .broll-section-tit {
+      font-family: var(--font-serif); font-weight: 500; font-size: 1.4rem;
+      margin: 2.6rem 0 0.4rem; display: flex; align-items: baseline; gap: 0.6rem;
+    }
+    .broll-section-sub { color: var(--text-muted); font-size: 0.92rem; margin: 0 0 1.2rem; line-height: 1.55; }
+
+    .kit-group {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.1rem 1.2rem; margin-bottom: 0.9rem;
+    }
+    .kit-group-head { display: flex; align-items: center; justify-content: space-between; gap: 0.8rem; margin-bottom: 0.7rem; }
+    .kit-group-name { font-weight: 600; font-size: 1rem; color: var(--text); }
+    .kit-chips { display: flex; gap: 0.3rem; flex-wrap: wrap; }
+    .kit-chip {
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.02em;
+      padding: 0.15rem 0.5rem; border-radius: 20px;
+      background: var(--broll-bg); color: var(--broll); border: 1px solid var(--border-soft);
+      white-space: nowrap;
+    }
+    .kit-chip.c25 { background: var(--camera-bg); color: var(--camera); }
+
+    .kit-items { display: grid; gap: 0.1rem; }
+    .kit-item { display: flex; gap: 0.6rem; align-items: flex-start; padding: 0.45rem 0; cursor: pointer; }
+    .kit-item input { appearance: none; -webkit-appearance: none; flex: 0 0 auto; margin: 0.15rem 0 0;
+      width: 1.15rem; height: 1.15rem; border: 1.5px solid var(--text-dim); border-radius: 5px;
+      cursor: pointer; position: relative; transition: all .15s; }
+    .kit-item input:checked { background: var(--broll); border-color: var(--broll); }
+    .kit-item input:checked::after {
+      content: '✓'; position: absolute; inset: 0; color: #fff; font-size: 0.8rem;
+      display: grid; place-items: center;
+    }
+    .kit-item span { font-size: 0.92rem; line-height: 1.5; color: var(--text-muted); }
+    .kit-item input:checked + span { color: var(--text-dim); text-decoration: line-through; }
+    .kit-opcional { color: var(--text-dim); font-size: 0.85rem; font-style: italic; margin-top: 0.5rem; }
+
+    .broll-progress {
+      position: sticky; top: 0; z-index: 5; background: var(--bg);
+      padding: 0.7rem 0; margin-bottom: 0.6rem; font-size: 0.85rem; color: var(--text-muted);
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .broll-progress b { color: var(--broll); font-weight: 600; }
+    .broll-reset { background: none; border: none; color: var(--text-dim); font-size: 0.8rem; cursor: pointer; text-decoration: underline; padding: 0; margin-left: 0.5rem; }
+
+    .broll-cierre { background: var(--bg-elevated); border-radius: 12px; padding: 1.3rem 1.3rem; margin-top: 2.4rem; }
+    .broll-cierre h3 { margin: 0 0 0.5rem; font-size: 1rem; }
+    .broll-cierre p { margin: 0.3rem 0; color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; }
+  </style>
+</head>
+<body class="reel-page">
+
+  <header class="reel-header">
+    <a href="index.html#reels" class="back-link">← Volver al panel</a>
+    <div class="reel-meta">
+      <span class="reel-number">Junio 2026</span>
+      <span class="reel-meta-sep">·</span>
+      <span>Los 4 reels del mes</span>
+    </div>
+    <h1 class="reel-title">Tu día de B-roll</h1>
+    <p class="reel-tagline">
+      <span><span class="tagline-label">Una jornada</span> en tu casa</span>
+      <span><span class="tagline-label">Cubre</span> 4 reels</span>
+      <span><span class="tagline-label">Vos a cámara</span> solo en 1</span>
+    </p>
+  </header>
+
+  <div class="broll-wrap">
+
+    <div class="broll-idea">
+      <h2>La idea, en una línea</h2>
+      <p>Grabás <strong>todo este B-roll una sola vez</strong> —en tu casa o en una casa linda, más fotos de tus proyectos— y con eso armamos los <strong>cuatro reels del mes</strong>. No tenés que volver a grabar para cada uno.</p>
+      <p style="margin-top:0.9rem;">De los cuatro, en uno solo te filmás vos. En los otros tres no salís: me mandás un audio y yo los monto sobre este mismo B-roll.</p>
+
+      <div class="broll-reparto">
+        <div class="broll-reparto-item">
+          <span class="broll-reparto-num is-camera">🎥</span>
+          <p><strong>1 reel a cámara — «El interiorismo, desde el primer plano».</strong> Acá sí te filmás: solo el principio y el final, mirando al lente. El medio va con B-roll. <a href="reels/interiorismo-desde-el-primer-plano.html">Ver guion →</a></p>
+        </div>
+        <div class="broll-reparto-item">
+          <span class="broll-reparto-num is-audio">🎙️</span>
+          <p><strong>3 reels en voz en off — no salís vos.</strong> Me grabás <strong>un audio por reel</strong> (memo de voz, texto de corrido) y los armo con el B-roll de abajo. Son los reels 18, 20 y 21.</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="broll-reglas">
+      <h2 class="broll-section-tit">6 reglas, y listo</h2>
+      <p class="broll-section-sub">Valen para todo lo que grabes ese día. Con esto me alcanza para armar los cuatro.</p>
+      <ol>
+        <li>Todo <strong>vertical</strong> (el celu parado) y con la <strong>cámara de atrás</strong>.</li>
+        <li><strong>Luz de día, de costado</strong> — nunca una ventana fuerte de fondo.</li>
+        <li><strong>Movimientos lentos:</strong> la cámara entra y recorre. Nada brusco.</li>
+        <li>Grabá cada toma <strong>dos o tres veces</strong>. Que sobre material; yo elijo.</li>
+        <li>Tomas <strong>cortas</strong> (5–8 segundos cada una) — no hace falta más.</li>
+        <li>Mandame todo <strong>sin editar</strong>. Orden, textos y música los pongo yo.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2 class="broll-section-tit">El kit — grabás esto una vez</h2>
+      <p class="broll-section-sub">Cada bloque dice a qué reels alimenta. Tildá a medida que vas grabando — se guarda en tu teléfono.</p>
+
+      <div class="broll-progress">Grabado: <b><span id="done">0</span> de <span id="total">0</span></b> tomas<button class="broll-reset" id="reset">reiniciar</button></div>
+
+      <!-- 1 -->
+      <div class="kit-group">
+        <div class="kit-group-head">
+          <span class="kit-group-name">1 · Planos sobre la mesa</span>
+          <span class="kit-chips"><span class="kit-chip c25">Reel 25</span><span class="kit-chip">18</span><span class="kit-chip">21</span></span>
+        </div>
+        <div class="kit-items">
+          <label class="kit-item"><input type="checkbox" data-k="b1"><span>Un plano lindo y prolijo sobre la mesa, con tu mano recorriéndolo despacio (como aprobándolo).</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="b2"><span>El mismo plano con <strong>anotaciones a mano</strong> — flechas, notas al margen sobre cómo se usa.</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="b3"><span>Bocetos y un plano en borrador, con lápiz, en pleno proceso de decisión.</span></label>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="kit-group">
+        <div class="kit-group-head">
+          <span class="kit-group-name">2 · Detalles de una casa terminada</span>
+          <span class="kit-chips"><span class="kit-chip c25">Reel 25</span></span>
+        </div>
+        <div class="kit-items">
+          <label class="kit-item"><input type="checkbox" data-k="b4"><span>Un cielorraso con luz indirecta.</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="b5"><span>Un enchufe o punto de luz bien ubicado.</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="b6"><span>Un mueble a medida y el respaldo de una cama.</span></label>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="kit-group">
+        <div class="kit-group-head">
+          <span class="kit-group-name">3 · Detalles de uso (la casa vivida)</span>
+          <span class="kit-chips"><span class="kit-chip">18</span><span class="kit-chip">20</span></span>
+        </div>
+        <div class="kit-items">
+          <label class="kit-item"><input type="checkbox" data-k="b7"><span>Una manta sobre el sillón, una luz baja encendida, una taza sobre la mesa.</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="b8"><span>Un sillón con una lámpara de lectura al lado.</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="b9"><span>Una mesa puesta para varios (el lugar donde se junta la gente).</span></label>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="kit-group">
+        <div class="kit-group-head">
+          <span class="kit-group-name">4 · Luz natural</span>
+          <span class="kit-chips"><span class="kit-chip">20</span><span class="kit-chip">21</span></span>
+        </div>
+        <div class="kit-items">
+          <label class="kit-item"><input type="checkbox" data-k="b10"><span>El sol entrando por una ventana a la mañana.</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="b11"><span>Cómo cae la luz, despacio, sobre un rincón.</span></label>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="kit-group">
+        <div class="kit-group-head">
+          <span class="kit-group-name">5 · Rincones de habitar</span>
+          <span class="kit-chips"><span class="kit-chip">18</span><span class="kit-chip">20</span><span class="kit-chip">21</span></span>
+        </div>
+        <div class="kit-items">
+          <label class="kit-item"><input type="checkbox" data-k="b12"><span>Un rincón de descanso «donde no hacés nada», junto a una ventana.</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="b13"><span>Alguien (vos u otra persona) tomando algo, tranquila — el cuerpo aflojado. <em>No se ve la cara.</em></span></label>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="kit-group">
+        <div class="kit-group-head">
+          <span class="kit-group-name">6 · El contraste: vacío vs. habitado</span>
+          <span class="kit-chips"><span class="kit-chip">18</span></span>
+        </div>
+        <div class="kit-items">
+          <label class="kit-item"><input type="checkbox" data-k="b14"><span>Un ambiente nuevo, vacío, impecable pero impersonal — paredes blancas, luz un poco fría.</span></label>
+        </div>
+        <p class="kit-opcional">Sirve para el contraste con los ambientes cálidos. Si no tenés uno a mano, lo resolvemos con una foto de obra o IA.</p>
+      </div>
+
+      <!-- 7 -->
+      <div class="kit-group">
+        <div class="kit-group-head">
+          <span class="kit-group-name">7 · Paneos de ambiente cálido (los cierres)</span>
+          <span class="kit-chips"><span class="kit-chip c25">Reel 25</span><span class="kit-chip">18</span><span class="kit-chip">20</span><span class="kit-chip">21</span></span>
+        </div>
+        <div class="kit-items">
+          <label class="kit-item"><input type="checkbox" data-k="b15"><span>Paneo lento por un living terminado, cálido y habitado.</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="b16"><span>Paneo lento por un dormitorio o ambiente íntimo, muy personal.</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="b17"><span>Un tercer paneo de otro ambiente lindo — para que tenga de dónde elegir en cada cierre.</span></label>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="kit-group">
+        <div class="kit-group-head">
+          <span class="kit-group-name">8 · Terreno / pozo / obra</span>
+          <span class="kit-chips"><span class="kit-chip">20</span><span class="kit-chip">21</span></span>
+        </div>
+        <div class="kit-items">
+          <label class="kit-item"><input type="checkbox" data-k="b18"><span>Un terreno vacío, un departamento en pozo, o una estructura/obra gris.</span></label>
+        </div>
+        <p class="kit-opcional">Opcional: solo si tenés acceso o una foto. Si no, va una foto de proyecto o IA.</p>
+      </div>
+
+      <!-- 9 -->
+      <div class="kit-group">
+        <div class="kit-group-head">
+          <span class="kit-group-name">9 · Fotos y renders de tus proyectos</span>
+          <span class="kit-chips"><span class="kit-chip c25">Reel 25</span><span class="kit-chip">18</span><span class="kit-chip">20</span><span class="kit-chip">21</span></span>
+        </div>
+        <div class="kit-items">
+          <label class="kit-item"><input type="checkbox" data-k="b19"><span>Elegí del celu o la compu 8–10 fotos/renders lindos de tus proyectos, para intercalar en todos los reels.</span></label>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="broll-section-tit">🎥 Lo único que te filmás a vos</h2>
+      <p class="broll-section-sub">Solo para el reel de arquitectos (el 25). Cámara de atrás, a la altura de los ojos, mirando al lente.</p>
+      <div class="kit-group">
+        <div class="kit-items">
+          <label class="kit-item"><input type="checkbox" data-k="v1"><span><strong>Hook (principio):</strong> «Muchas personas creen que el interiorismo empieza cuando la obra termina. Pero la realidad es que puede aportar muchísimo desde el primer plano.»</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="v2"><span><strong>Cierre (final, con el CTA):</strong> el párrafo de cierre + «¿Estás por empezar una obra? Escribime HOGAR…». El CTA, como invitación cálida, no como venta.</span></label>
+        </div>
+        <p class="kit-opcional">El texto completo y las direcciones están en el <a href="reels/interiorismo-desde-el-primer-plano.html">guion del reel 25</a>.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="broll-section-tit">🎙️ Los 3 audios</h2>
+      <p class="broll-section-sub">Un memo de voz por reel, leyendo el texto de corrido, tranquila. Abrí cada guion y leé lo que dice 🎙️.</p>
+      <div class="kit-group">
+        <div class="kit-items">
+          <label class="kit-item"><input type="checkbox" data-k="a1"><span><strong>Audio 1 — Reel 18:</strong> «El plano que aprobás define quién vas a poder ser». <a href="reels/el-plano-que-aprobas.html">Abrir →</a></span></label>
+          <label class="kit-item"><input type="checkbox" data-k="a2"><span><strong>Audio 2 — Reel 20:</strong> «Lo que más se siente no está en el plano». <a href="reels/lo-que-no-esta-en-el-plano.html">Abrir →</a></span></label>
+          <label class="kit-item"><input type="checkbox" data-k="a3"><span><strong>Audio 3 — Reel 21:</strong> «Diseñá la vida que vas a llevar» (este lleva LUNA). <a href="reels/disena-la-vida-que-vas-a-llevar.html">Abrir →</a></span></label>
+        </div>
+      </div>
+    </section>
+
+    <div class="broll-cierre">
+      <h3>Y eso es todo</h3>
+      <p>Cuando tengas el B-roll + tus 2 tomas a cámara (reel 25) + los 3 audios, <strong>mandame todo sin editar</strong>. Yo armo los cuatro reels: orden, subtítulos, placas y música.</p>
+      <p style="margin-top:0.7rem;">Con una sola jornada de grabación quedan resueltos los cuatro reels del mes.</p>
+    </div>
+
+  </div>
+
+  <script>
+  (function () {
+    var boxes = Array.prototype.slice.call(document.querySelectorAll('.kit-item input[type=checkbox]'));
+    var KEY = 'mp-broll-junio';
+    var store = {};
+    try { store = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { store = {}; }
+
+    var doneEl = document.getElementById('done');
+    var totalEl = document.getElementById('total');
+    totalEl.textContent = boxes.length;
+
+    function refresh() {
+      var n = boxes.filter(function (b) { return b.checked; }).length;
+      doneEl.textContent = n;
+    }
+    boxes.forEach(function (b) {
+      var k = b.getAttribute('data-k');
+      if (store[k]) b.checked = true;
+      b.addEventListener('change', function () {
+        store[k] = b.checked;
+        try { localStorage.setItem(KEY, JSON.stringify(store)); } catch (e) {}
+        refresh();
+      });
+    });
+    refresh();
+
+    document.getElementById('reset').addEventListener('click', function () {
+      boxes.forEach(function (b) { b.checked = false; });
+      store = {};
+      try { localStorage.removeItem(KEY); } catch (e) {}
+      refresh();
+    });
+  })();
+  </script>
+
+</body>
+</html>
