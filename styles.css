@@ -368,6 +368,23 @@ body {
 .block-broll .block-label { color: var(--broll); }
 .block-overlay .block-label { color: var(--overlay); }
 
+.broll-sketch {
+  margin: 0.1rem 0 0.95rem;
+  padding: 0.7rem 0.7rem 0.55rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  justify-content: center;
+}
+.broll-sketch svg {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  color: var(--broll);
+  display: block;
+}
+
 .block-content {
   font-size: 1.05rem;
   line-height: 1.6;
