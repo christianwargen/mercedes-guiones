@@ -35,6 +35,17 @@
     .is-audio { background: var(--broll); }
     .broll-reparto-item p { margin: 0; font-size: 0.9rem; line-height: 1.5; color: var(--text-muted); }
     .broll-reparto-item strong { color: var(--text); }
+    .broll-reparto-body { flex: 1; }
+    .broll-reparto-link {
+      display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 0.85rem;
+      padding: 0.65rem 1.25rem; border-radius: 9px; font-size: 0.98rem; font-weight: 600;
+      text-decoration: none; color: #fff; background: var(--camera);
+      transition: opacity .15s, transform .05s;
+    }
+    .broll-reparto-link.link-audio { background: var(--broll); }
+    .broll-reparto-link:hover { opacity: .9; }
+    .broll-reparto-link:active { transform: translateY(1px); }
+    #audios { scroll-margin-top: 1rem; }
 
     .broll-reglas { margin: 0 0 2.4rem; }
     .broll-reglas ol { margin: 0.8rem 0 0; padding: 0; list-style: none; counter-reset: r; display: grid; gap: 0.55rem; }
@@ -125,11 +136,17 @@
       <div class="broll-reparto">
         <div class="broll-reparto-item">
           <span class="broll-reparto-num is-camera">🎥</span>
-          <p><strong>1 reel a cámara — «El interiorismo, desde el primer plano».</strong> Acá sí te filmás: solo el principio y el final, mirando al lente. El medio va con B-roll. <a href="reels/interiorismo-desde-el-primer-plano.html">Ver guion →</a></p>
+          <div class="broll-reparto-body">
+            <p><strong>1 reel a cámara — «El interiorismo, desde el primer plano».</strong> Acá sí te filmás: solo el principio y el final, mirando al lente. El medio va con B-roll.</p>
+            <a class="broll-reparto-link" href="reels/interiorismo-desde-el-primer-plano.html">Ver guion →</a>
+          </div>
         </div>
         <div class="broll-reparto-item">
           <span class="broll-reparto-num is-audio">🎙️</span>
-          <p><strong>3 reels en voz en off — no salís vos.</strong> Me grabás <strong>un audio por reel</strong> (memo de voz, texto de corrido) y los armo con el B-roll de abajo. Son los reels 18, 20 y 21.</p>
+          <div class="broll-reparto-body">
+            <p><strong>3 reels en voz en off — no salís vos.</strong> Me grabás <strong>un audio por reel</strong> (memo de voz, texto de corrido) y los armo con el B-roll de abajo. Son los reels 18, 20 y 21.</p>
+            <a class="broll-reparto-link link-audio" href="#audios">Ver los 3 guiones →</a>
+          </div>
         </div>
       </div>
     </div>
@@ -277,7 +294,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="audios">
       <h2 class="broll-section-tit">🎙️ Los 3 audios</h2>
       <p class="broll-section-sub">Un memo de voz por reel, leyendo el texto de corrido, tranquila. Abrí cada guion y leé lo que dice 🎙️.</p>
       <div class="kit-group">
