@@ -27,7 +27,7 @@
   <!-- ============ RESUMEN DEL MES ============ -->
   <section class="dash-section pago-section">
     <p class="dash-eyebrow">Servicio mensual</p>
-    <h2 class="dash-h2">Mayo 2026</h2>
+    <h2 class="dash-h2">Junio 2026</h2>
 
     <div class="pago-card">
       <div class="pago-card-top">
@@ -35,23 +35,23 @@
           <p class="pago-card-servicio">Contenido + Ads</p>
           <p class="pago-card-detalle">4 reels + campaña gestionada · U$S 400 / mes</p>
         </div>
-        <span class="dash-status is-done" id="pago-estado">Pagado</span>
+        <span class="dash-status is-pendiente" id="pago-estado">Pendiente</span>
       </div>
 
       <div class="pago-resumen">
         <div class="pago-resumen-row">
           <span class="pago-resumen-label">Período facturado</span>
-          <span class="pago-resumen-value">Mayo 2026</span>
+          <span class="pago-resumen-value">Junio 2026</span>
         </div>
         <div class="pago-resumen-row">
           <span class="pago-resumen-label">Vencimiento</span>
-          <span class="pago-resumen-value">10 de junio 2026 <em class="pago-vence" id="pago-vence"></em></span>
+          <span class="pago-resumen-value">10 de julio 2026 <em class="pago-vence" id="pago-vence"></em></span>
         </div>
         <div class="pago-resumen-row pago-resumen-total">
           <span class="pago-resumen-label">Total del mes</span>
           <span class="pago-resumen-value">
             <strong class="pago-monto-usd">U$S 400</strong>
-            <span class="pago-monto-ars">o $584.000 en pesos</span>
+            <span class="pago-monto-ars">o $604.000 en pesos</span>
           </span>
         </div>
       </div>
@@ -185,8 +185,8 @@
     // === Estado del pago ===
     // pagado = true  → mes saldado (pill verde "Pagado" + banner de gracias).
     // pagado = false → vuelve a "Pendiente" con la cuenta regresiva al vencimiento.
-    var pagado = true;
-    var vence = new Date(2026, 5, 10); // mes 5 = junio
+    var pagado = false;
+    var vence = new Date(2026, 6, 10); // mes 6 = julio
     var hoy = new Date();
     hoy.setHours(0, 0, 0, 0);
     var dias = Math.round((vence - hoy) / 86400000);
