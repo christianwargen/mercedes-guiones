@@ -65,6 +65,8 @@ body{margin:0;background:var(--ground);color:var(--ink);
   font-family:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',sans-serif;
   line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
 .wrap{max-width:760px;margin:0 auto;padding:clamp(28px,6vw,72px) clamp(20px,5vw,40px) 96px;position:relative;}
+.wrap--bare{padding-top:clamp(72px,11vw,104px);}
+.set--first{margin-top:0;}
 
 em{font-style:italic;}
 .section-eyebrow{display:block;font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;
@@ -203,38 +205,14 @@ em{font-style:italic;}
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="wrap wrap--bare">
   <button type="button" id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">
     <span class="theme-toggle__dot"></span><span class="theme-toggle__txt">tema</span>
   </button>
 
-  <header class="masthead">
-    <p class="eyebrow">Mercedes Ponte · Guiones para aprobar</p>
-    <h1 class="hero">Cinco guiones nuevos,<br><em>listos para tu ok</em></h1>
-    <p class="lede">Cuatro reels para el feed y el primer reel de venta. Salieron de una corrida de escucha del nicho del 13 de julio, cruzada con tu plan y tu voz. Están completos: leelos, marcá tu hook preferido de cada uno y decime cuáles van y qué querés que revise.</p>
-    <div class="meta-row">
-      <span>4 reels de feed · 1 reel de pauta</span>
-      <span class="dot">·</span>
-      <span>Un solo mundo visual — “la casa habitada de una mujer”</span>
-      <span class="dot">·</span>
-      <span>1 a cámara + 3 en voz en off</span>
-    </div>
-  </header>
-
-  <section class="brief" aria-label="Qué dijo la escucha del nicho">
-    <span class="section-eyebrow">Lo que encontró la escucha</span>
-    <ul class="brief__list">
-      <li><strong>La venta con palabra clave por DM es el techo del nicho, no un peaje.</strong> El reel más visto del trimestre de la referente (111.900 reproducciones, diez veces su segundo) es exactamente eso: “comentá tal palabra y te mando el link”. Valida de lleno tu reel de ventas.</li>
-      <li><strong>Lo micro y concreto sigue ganando</strong> — un espacio, un objeto, una cosa que la persona mira hoy en su propia casa. De ahí salen los cuatro reels de feed.</li>
-      <li><strong>El territorio se está poblando.</strong> Ya hay una colega que vende “diagnóstico emocional del hogar” con paquetes. El lugar de “lujo silencioso, sin jerga, con obra real” sigue vacante — pero conviene ocuparlo ya.</li>
-      <li><strong>En la pauta argentina nadie narra:</strong> muebles, cursos y descuentos. Una mujer real explicando con calma qué hace ya es diferente.</li>
-    </ul>
-  </section>
-
-  <section class="set" aria-label="Reels de feed">
+  <section class="set set--first" aria-label="Reels de feed">
     <div class="set__head">
       <h2 class="set__title">La tanda de feed</h2>
-      <p class="set__sub">Cuatro reels que no repiten ningún ángulo ya usado. Rotan las palabras clave: HOGAR dos veces, LUNA dos veces.</p>
     </div>
     
     <article class="guion" id="g01">
