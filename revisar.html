@@ -145,25 +145,41 @@ em{font-style:italic;}
 .why__label,.prod__label{display:block;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;
   color:var(--ink-faint);font-weight:600;margin-bottom:.4em;}
 
-/* Hooks */
+/* Hooks — los dos, se graban ambos */
 .hooks{margin-bottom:1.7rem;}
-.hook{display:grid;grid-template-columns:auto 1fr auto;gap:.9em;align-items:center;width:100%;text-align:left;
-  background:var(--raised-2);border:1px solid var(--line);border-radius:13px;padding:1em 1.1em;margin-bottom:.6em;
-  cursor:pointer;font-family:inherit;color:inherit;transition:border-color .18s,background .18s,transform .1s;}
-.hook:hover{border-color:var(--kwc,var(--accent));}
-.hook:active{transform:scale(.995);}
-.hook:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
-.hook__letter{font-family:'Bodoni Moda',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--ink-faint);
-  width:1.3em;text-align:center;flex-shrink:0;transition:color .18s;}
-.hook__quote{font-family:'Bodoni Moda',Georgia,serif;font-size:1.12rem;line-height:1.4;color:var(--ink);}
+.hooks__note{font-size:.9rem;color:var(--ink-soft);margin:0 0 1em;max-width:var(--measure);
+  padding:.7em .9em;background:var(--kwbg2,var(--raised-2));border-left:2px solid var(--kwc,var(--accent));border-radius:0 8px 8px 0;}
+.guion:has(.kw--luna) .hooks__note{border-left-color:var(--luna);}
+.hook{display:grid;grid-template-columns:auto 1fr;gap:.9em;align-items:baseline;
+  background:var(--raised-2);border:1px solid var(--line);border-radius:13px;padding:1em 1.1em;margin-bottom:.6em;}
+.hook__letter{font-family:'Bodoni Moda',Georgia,serif;font-style:italic;font-size:1.25rem;color:var(--kwc,var(--accent-ink));
+  width:1.3em;text-align:center;flex-shrink:0;}
+.hook__quote{font-family:'Bodoni Moda',Georgia,serif;font-size:1.12rem;line-height:1.4;color:var(--ink);display:block;}
 .hook__tag{display:inline-block;margin-top:.5em;font-family:'Segoe UI',system-ui,sans-serif;
   font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--refugio);font-weight:600;}
-.hook__pick{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);
-  font-weight:600;opacity:0;transition:opacity .18s;flex-shrink:0;align-self:flex-start;}
-.hook.is-picked{border-color:var(--kwc,var(--accent));background:var(--raised);
-  box-shadow:inset 0 0 0 1px var(--kwc,var(--accent));}
-.hook.is-picked .hook__letter{color:var(--kwc,var(--accent-ink));}
-.hook.is-picked .hook__pick{opacity:1;color:var(--kwc,var(--accent-ink));}
+
+/* Bloque de guion hablado */
+.scriptblock{margin-bottom:1.8rem;}
+.scriptblock .beats{margin-bottom:1.3rem;}
+
+/* Cómo se graba — escenas */
+.scenes-wrap{border-top:1px solid var(--line-soft);padding-top:1.5rem;}
+.scenes__modo{font-size:.96rem;color:var(--ink);margin:0 0 1.3rem;max-width:var(--measure);
+  font-weight:500;}
+.scenes{display:flex;flex-direction:column;gap:1em;}
+.scene{display:grid;grid-template-columns:96px 1fr;gap:1em;align-items:start;
+  background:var(--raised-2);border:1px solid var(--line);border-radius:14px;padding:.9em;}
+.scene--cam{background:transparent;}
+.scene__img{width:96px;height:auto;aspect-ratio:9/16;object-fit:cover;border-radius:9px;display:block;
+  background:var(--line-soft);}
+.scene__body{min-width:0;}
+.scene:not(:has(.scene__img)){grid-template-columns:1fr;}
+.scene__tag{display:inline-block;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;
+  margin-bottom:.4em;}
+.scene__tag--cam{color:var(--accent-ink);}
+.scene__tag--broll{color:var(--ink-soft);}
+.scene__desc{margin:0;font-size:.94rem;color:var(--ink-soft);}
+.scenes__foot{font-size:.76rem;color:var(--ink-faint);margin:1em 0 0;font-style:italic;}
 
 /* Beats — guion como libreto */
 .beats{border-left:2px solid var(--line);padding-left:1.3em;margin:0 0 1.6rem;display:flex;flex-direction:column;gap:1.2em;}
@@ -231,23 +247,25 @@ em{font-style:italic;}
       </header>
       <p class="guion__why"><span class="why__label">Por qué este</span>El reel más íntimo de la saga de mayor prioridad abierta: la cara de Mer sostiene la confesión. El hook A es, textual, un ejemplo ya validado en el soul (Caso 9).</p>
 
+      
       <div class="hooks">
-        <span class="section-eyebrow">Hook — elegís uno</span>
+        <span class="section-eyebrow">Los dos hooks — grabá los dos</span>
+        <p class="hooks__note">Grabá el hook A y el hook B. Los subimos a los dos como reel de prueba y vemos cuál engancha mejor — no hace falta que elijas ahora.</p>
         
-      <button type="button" class="hook" data-guion="g01" data-hook="A" aria-pressed="false">
+      <div class="hook">
         <span class="hook__letter">A</span>
         <span class="hook__body"><span class="hook__quote">Cuando se llena la casa de vida — hijos, trabajo, cosas de todos — lo primero que se va no es el silencio. Es el living de la mujer que fuiste.</span><span class="hook__tag">Validado en el soul</span></span>
-        <span class="hook__pick" aria-hidden="true">tu preferido</span>
-      </button>
-      <button type="button" class="hook" data-guion="g01" data-hook="B" aria-pressed="false">
+      </div>
+      <div class="hook">
         <span class="hook__letter">B</span>
         <span class="hook__body"><span class="hook__quote">Hay un momento en que el living deja de ser tuyo. No pasa de golpe. Y nadie lo decide.</span></span>
-        <span class="hook__pick" aria-hidden="true">tu preferido</span>
-      </button>
+      </div>
       </div>
 
-      <div class="beats">
-        
+      <div class="scriptblock">
+        <span class="section-eyebrow">El guion — lo que decís</span>
+        <div class="beats">
+          
       <div class="beat">
         <span class="beat__label">Cuerpo</span>
         <p class="beat__text">Nadie te lo sacó. Lo fuiste prestando. Un rincón para los juguetes, otro para las cosas del colegio, el sillón que quedó mirando al televisor porque era más práctico. Las mujeres vamos cediendo lugares sin darnos cuenta, porque la casa tiene que funcionar para todos.</p>
@@ -260,14 +278,53 @@ em{font-style:italic;}
         <span class="beat__label">Cierre</span>
         <p class="beat__text">No hace falta recuperar toda la casa. A veces alcanza un rincón que vuelva a ser tuyo — una butaca, una luz, algo que esté ahí porque vos lo elegiste. Muchas veces, eso alcanza.</p>
       </div>
+        </div>
+        <div class="cta">
+          <span class="cta__label">CTA · placa</span>
+          <span class="cta__text">Escribí HOGAR y vemos dónde está ese rincón en tu casa.</span>
+        </div>
       </div>
 
-      <div class="cta">
-        <span class="cta__label">CTA · placa</span>
-        <span class="cta__text">Escribí HOGAR y vemos dónde está ese rincón en tu casa.</span>
+      
+      <div class="scenes-wrap">
+        <span class="section-eyebrow">Cómo se graba</span>
+        <p class="scenes__modo">Te filmás vos en el hook y en el cierre (mirando a cámara). El medio va con tu voz en off sobre B-roll. Grabá los dos hooks.</p>
+        <div class="scenes">
+          
+      <div class="scene scene--cam">
+        
+        <div class="scene__body">
+          <span class="scene__tag scene__tag--cam">🎥 Hook · a cámara</span>
+          <p class="scene__desc">Mirando a cámara, plano de pecho, luz suave. Grabá el hook A y el hook B, uno después del otro.</p>
+        </div>
       </div>
 
-      <p class="guion__prod"><span class="prod__label">Producción</span>Hook y cierre a cámara; el cuerpo se tapa con B-roll del living al atardecer.</p>
+      <div class="scene scene--broll">
+        <img class="scene__img" src="assets/revisar/g01-cuerpo.jpg" alt="Referencia de la toma" loading="lazy" width="360" height="640">
+        <div class="scene__body">
+          <span class="scene__tag scene__tag--broll">🎬 B-roll · voz en off</span>
+          <p class="scene__desc">Tu living con las señales de la vida de todos: juguetes en un rincón, cuadernos del cole sobre una mesa, el sillón que quedó mirando al televisor.</p>
+        </div>
+      </div>
+
+      <div class="scene scene--broll">
+        <img class="scene__img" src="assets/revisar/g01-revelacion.jpg" alt="Referencia de la toma" loading="lazy" width="360" height="640">
+        <div class="scene__body">
+          <span class="scene__tag scene__tag--broll">🎬 B-roll · voz en off</span>
+          <p class="scene__desc">Un plano tuyo parada en medio del living, mirando alrededor, sin buscar nada. De espaldas o de perfil está bien.</p>
+        </div>
+      </div>
+
+      <div class="scene scene--cam">
+        <img class="scene__img" src="assets/revisar/g01-cierre.jpg" alt="Referencia de la toma" loading="lazy" width="360" height="640">
+        <div class="scene__body">
+          <span class="scene__tag scene__tag--cam">🎥 Cierre · a cámara</span>
+          <p class="scene__desc">Volvés a cámara para el cierre. De apoyo, un B-roll de un rincón que sea tuyo: una butaca, una luz, un objeto que elegiste vos. En pantalla aparece “Escribí HOGAR”.</p>
+        </div>
+      </div>
+        </div>
+        <p class="scenes__foot">Las imágenes son solo de referencia para orientar la toma — no son el reel. Generadas de ejemplo.</p>
+      </div>
     </article>
 
     <article class="guion" id="g02">
@@ -286,23 +343,25 @@ em{font-style:italic;}
       </header>
       <p class="guion__why"><span class="why__label">Por qué este</span>El campo acaba de validar este ángulo (otra cuenta lo narró esta semana), así que lo adelantamos. El hook es de curiosidad altísima: un dato no obvio sobre tu propia casa que no podés ver.</p>
 
+      
       <div class="hooks">
-        <span class="section-eyebrow">Hook — elegís uno</span>
+        <span class="section-eyebrow">Los dos hooks — grabá los dos</span>
+        <p class="hooks__note">Grabá el hook A y el hook B. Los subimos a los dos como reel de prueba y vemos cuál engancha mejor — no hace falta que elijas ahora.</p>
         
-      <button type="button" class="hook" data-guion="g02" data-hook="A" aria-pressed="false">
+      <div class="hook">
         <span class="hook__letter">A</span>
         <span class="hook__body"><span class="hook__quote">Tu casa tiene un olor. Y vos sos la única persona que no lo conoce.</span></span>
-        <span class="hook__pick" aria-hidden="true">tu preferido</span>
-      </button>
-      <button type="button" class="hook" data-guion="g02" data-hook="B" aria-pressed="false">
+      </div>
+      <div class="hook">
         <span class="hook__letter">B</span>
         <span class="hook__body"><span class="hook__quote">Hay algo de tu casa que tus amigas conocen mejor que vos. El olor.</span></span>
-        <span class="hook__pick" aria-hidden="true">tu preferido</span>
-      </button>
+      </div>
       </div>
 
-      <div class="beats">
-        
+      <div class="scriptblock">
+        <span class="section-eyebrow">El guion — lo que decís</span>
+        <div class="beats">
+          
       <div class="beat">
         <span class="beat__label">Cuerpo</span>
         <p class="beat__text">Lo sienten todos los que entran. Tus hijos lo van a reconocer toda la vida, en cualquier parte del mundo. Vos dejaste de sentirlo hace años, porque el olfato se acostumbra a lo propio. Pero es la primera información que tu casa le da a un cuerpo: antes que los muebles, antes que la luz.</p>
@@ -315,14 +374,45 @@ em{font-style:italic;}
         <span class="beat__label">Cierre</span>
         <p class="beat__text">La casa también se diseña para la nariz — lo que se cocina, lo que se airea, lo que se guarda demasiado tiempo. Aunque casi nadie lo nombre, es el fondo emocional de tu casa. Y se puede elegir.</p>
       </div>
+        </div>
+        <div class="cta">
+          <span class="cta__label">CTA · placa</span>
+          <span class="cta__text">Escribí LUNA y vemos qué está contando tu casa sin que la veas.</span>
+        </div>
       </div>
 
-      <div class="cta">
-        <span class="cta__label">CTA · placa</span>
-        <span class="cta__text">Escribí LUNA y vemos qué está contando tu casa sin que la veas.</span>
+      
+      <div class="scenes-wrap">
+        <span class="section-eyebrow">Cómo se graba</span>
+        <p class="scenes__modo">Todo el reel va con tu voz en off sobre B-roll — no te filmás. Grabá igual el audio de los dos hooks.</p>
+        <div class="scenes">
+          
+      <div class="scene scene--broll">
+        <img class="scene__img" src="assets/revisar/g02-hook.jpg" alt="Referencia de la toma" loading="lazy" width="360" height="640">
+        <div class="scene__body">
+          <span class="scene__tag scene__tag--broll">🎬 B-roll · voz en off</span>
+          <p class="scene__desc">Alguien entrando a la casa: la mano en el picaporte, el umbral, la luz que entra. Puede ser desde adentro.</p>
+        </div>
       </div>
 
-      <p class="guion__prod"><span class="prod__label">Producción</span>Voz en off sobre B-roll de detalles sensoriales: una cocina, ropa aireándose, una vela, luz de tarde.</p>
+      <div class="scene scene--broll">
+        <img class="scene__img" src="assets/revisar/g02-cuerpo.jpg" alt="Referencia de la toma" loading="lazy" width="360" height="640">
+        <div class="scene__body">
+          <span class="scene__tag scene__tag--broll">🎬 B-roll · voz en off</span>
+          <p class="scene__desc">Los detalles que hacen el olor de una casa: algo en la cocina, ropa aireándose junto a una ventana, la vida cotidiana. Planos cortos y cálidos.</p>
+        </div>
+      </div>
+
+      <div class="scene scene--broll">
+        <img class="scene__img" src="assets/revisar/g02-cierre.jpg" alt="Referencia de la toma" loading="lazy" width="360" height="640">
+        <div class="scene__body">
+          <span class="scene__tag scene__tag--broll">🎬 B-roll · voz en off</span>
+          <p class="scene__desc">Cierre sensorial: una vela, una ventana abierta, una cortina de lino con la brisa, luz de tarde. En pantalla “Escribí LUNA”.</p>
+        </div>
+      </div>
+        </div>
+        <p class="scenes__foot">Las imágenes son solo de referencia para orientar la toma — no son el reel. Generadas de ejemplo.</p>
+      </div>
     </article>
 
     <article class="guion" id="g03">
@@ -341,26 +431,28 @@ em{font-style:italic;}
       </header>
       <p class="guion__why"><span class="why__label">Por qué este</span>El de mayor afinidad con la clienta que paga: mujer de 45 a 60, casa ya hecha que quedó en otra etapa de la vida. Balancea la tanda hacia el cliente “ya hecho”.</p>
 
+      
       <div class="hooks">
-        <span class="section-eyebrow">Hook — elegís uno</span>
+        <span class="section-eyebrow">Los dos hooks — grabá los dos</span>
+        <p class="hooks__note">Grabá el hook A y el hook B. Los subimos a los dos como reel de prueba y vemos cuál engancha mejor — no hace falta que elijas ahora.</p>
         
-      <button type="button" class="hook" data-guion="g03" data-hook="A" aria-pressed="false">
+      <div class="hook">
         <span class="hook__letter">A</span>
         <span class="hook__body"><span class="hook__quote">La casa que armaste a los treinta y cinco no es la que tu cuerpo pide a los cincuenta.</span></span>
-        <span class="hook__pick" aria-hidden="true">tu preferido</span>
-      </button>
-      <button type="button" class="hook" data-guion="g03" data-hook="B" aria-pressed="false">
+      </div>
+      <div class="hook">
         <span class="hook__letter">B</span>
         <span class="hook__body"><span class="hook__quote">En algún momento, tu casa quedó armada para una vida que ya cambió. Y nadie lo avisó.</span></span>
-        <span class="hook__pick" aria-hidden="true">tu preferido</span>
-      </button>
+      </div>
       </div>
 
-      <div class="beats">
-        
+      <div class="scriptblock">
+        <span class="section-eyebrow">El guion — lo que decís</span>
+        <div class="beats">
+          
       <div class="beat">
         <span class="beat__label">Cuerpo</span>
-        <p class="beat__text">La luz que antes alcanzaba, ahora te cansa la vista. El cuarto de los chicos que quedó como un museo. La mesa gigante que se usa dos veces al año. Vamos cambiando nosotras, y la casa se queda donde estaba.</p>
+        <p class="beat__text">La iluminación que antes era suficiente, ahora te cansa la vista. El cuarto de los chicos que quedó como un museo. La mesa gigante que se usa dos veces al año. Vamos cambiando nosotras, y la casa se queda donde estaba.</p>
       </div>
       <div class="beat">
         <span class="beat__label">Revelación</span>
@@ -370,14 +462,45 @@ em{font-style:italic;}
         <span class="beat__label">Cierre</span>
         <p class="beat__text">No se trata de mudarse. Se trata de que la casa te alcance. Que la luz, los lugares y el silencio estén a la altura de la mujer que sos ahora. Muchas veces, con eso alcanza.</p>
       </div>
+        </div>
+        <div class="cta">
+          <span class="cta__label">CTA · placa</span>
+          <span class="cta__text">Escribí LUNA y pensamos qué pide esta etapa.</span>
+        </div>
       </div>
 
-      <div class="cta">
-        <span class="cta__label">CTA · placa</span>
-        <span class="cta__text">Escribí LUNA y pensamos qué pide esta etapa.</span>
+      
+      <div class="scenes-wrap">
+        <span class="section-eyebrow">Cómo se graba</span>
+        <p class="scenes__modo">Todo voz en off sobre B-roll — no te filmás. Grabá el audio de los dos hooks.</p>
+        <div class="scenes">
+          
+      <div class="scene scene--broll">
+        <img class="scene__img" src="assets/revisar/g03-hook.jpg" alt="Referencia de la toma" loading="lazy" width="360" height="640">
+        <div class="scene__body">
+          <span class="scene__tag scene__tag--broll">🎬 B-roll · voz en off</span>
+          <p class="scene__desc">Una casa de vida larga: el living amplio con los muebles de años, la luz de tarde entrando por los ventanales.</p>
+        </div>
       </div>
 
-      <p class="guion__prod"><span class="prod__label">Producción</span>Voz en off sobre B-roll de una casa de vida larga: luz de tarde, un cuarto en pausa, una mesa grande vacía.</p>
+      <div class="scene scene--broll">
+        <img class="scene__img" src="assets/revisar/g03-cuerpo.jpg" alt="Referencia de la toma" loading="lazy" width="360" height="640">
+        <div class="scene__body">
+          <span class="scene__tag scene__tag--broll">🎬 B-roll · voz en off</span>
+          <p class="scene__desc">Lo que quedó de otra época: la mesa grande que casi no se usa, un cuarto que quedó igual, la iluminación de siempre. Planos que muestren el espacio “detenido”.</p>
+        </div>
+      </div>
+
+      <div class="scene scene--broll">
+        <img class="scene__img" src="assets/revisar/g03-revelacion.jpg" alt="Referencia de la toma" loading="lazy" width="360" height="640">
+        <div class="scene__body">
+          <span class="scene__tag scene__tag--broll">🎬 B-roll · voz en off</span>
+          <p class="scene__desc">Una mujer sola en su living amplio, como de visita en su propia casa. De espaldas o parcial. En pantalla “Escribí LUNA”.</p>
+        </div>
+      </div>
+        </div>
+        <p class="scenes__foot">Las imágenes son solo de referencia para orientar la toma — no son el reel. Generadas de ejemplo.</p>
+      </div>
     </article>
   </section>
 
@@ -401,23 +524,25 @@ em{font-style:italic;}
       </header>
       <p class="guion__why"><span class="why__label">Por qué así</span>Es venta, pero sin urgencia: nada de “últimas plazas”, nada de descuento. La autoridad la ponen tu calma y los proyectos reales de fondo — Cachafaz, Parque Leloir, el Diario de Obra.</p>
 
+      
       <div class="hooks">
-        <span class="section-eyebrow">Hook — elegís uno</span>
+        <span class="section-eyebrow">Los dos hooks — grabá los dos</span>
+        <p class="hooks__note">Grabá el hook A y el hook B. Los subimos a los dos como reel de prueba y vemos cuál engancha mejor — no hace falta que elijas ahora.</p>
         
-      <button type="button" class="hook" data-guion="rv" data-hook="A" aria-pressed="false">
+      <div class="hook">
         <span class="hook__letter">A</span>
         <span class="hook__body"><span class="hook__quote">Si estás por empezar una obra — o tu casa ya no se parece a vos — esto te va a servir.</span></span>
-        <span class="hook__pick" aria-hidden="true">tu preferido</span>
-      </button>
-      <button type="button" class="hook" data-guion="rv" data-hook="B" aria-pressed="false">
+      </div>
+      <div class="hook">
         <span class="hook__letter">B</span>
         <span class="hook__body"><span class="hook__quote">Antes de comprar un mueble más, o de tirar una pared, mirá esto.</span></span>
-        <span class="hook__pick" aria-hidden="true">tu preferido</span>
-      </button>
+      </div>
       </div>
 
-      <div class="beats">
-        
+      <div class="scriptblock">
+        <span class="section-eyebrow">El guion — lo que decís</span>
+        <div class="beats">
+          
       <div class="beat">
         <span class="beat__label">Presentación</span>
         <p class="beat__text">Soy Mercedes Ponte. Hago consultoría de diseño de interiores: te acompaño a decidir tu casa. Desde un plano de un departamento en pozo hasta el living que ya no funciona.</p>
@@ -430,14 +555,54 @@ em{font-style:italic;}
         <span class="beat__label">Diferencial</span>
         <p class="beat__text">No decoro por catálogo. Diseño cómo se va a vivir tu casa.</p>
       </div>
+        </div>
+        <div class="cta cta--spoken">
+          <span class="cta__label">CTA · hablado a cámara</span>
+          <span class="cta__text">Si querés empezar por algún lugar, escribime HOGAR y te cuento cómo trabajo.</span>
+        </div>
       </div>
 
-      <div class="cta cta--spoken">
-        <span class="cta__label">CTA · hablado a cámara</span>
-        <span class="cta__text">Si querés empezar por algún lugar, escribime HOGAR y te cuento cómo trabajo.</span>
+      
+      <div class="scenes-wrap">
+        <span class="section-eyebrow">Cómo se graba</span>
+        <p class="scenes__modo">Te filmás vos (hook, presentación, diferencial y cierre). El medio va con material real de tus proyectos mientras seguís hablando en off. Grabá los dos hooks.</p>
+        <div class="scenes">
+          
+      <div class="scene scene--cam">
+        
+        <div class="scene__body">
+          <span class="scene__tag scene__tag--cam">🎥 Hook · a cámara</span>
+          <p class="scene__desc">Mirando a cámara. Grabá el hook A y el hook B.</p>
+        </div>
       </div>
 
-      <p class="guion__prod"><span class="prod__label">Producción</span>Vos a cámara en el hook, la presentación y el cierre; en el medio, B-roll de proyectos reales. Subtítulos con tu estilo (se mira sin audio). Corre como anuncio: audiencia amplia, presupuesto de 5 a 10 dólares por día. La campaña se arma a mano en el Administrador de Anuncios cuando esté grabado.</p>
+      <div class="scene scene--cam">
+        
+        <div class="scene__body">
+          <span class="scene__tag scene__tag--cam">🎥 A cámara</span>
+          <p class="scene__desc">Seguís a cámara: la presentación (quién sos, qué hacés) y el diferencial.</p>
+        </div>
+      </div>
+
+      <div class="scene scene--broll">
+        
+        <div class="scene__body">
+          <span class="scene__tag scene__tag--broll">🎬 B-roll · voz en off</span>
+          <p class="scene__desc">Material real de tus proyectos mientras hablás en off: Cachafaz, Casa Parque Leloir, el Diario de Obra. Fotos o clips que ya tenés — acá no va imagen de ejemplo, va tu obra.</p>
+        </div>
+      </div>
+
+      <div class="scene scene--cam">
+        
+        <div class="scene__body">
+          <span class="scene__tag scene__tag--cam">🎥 Cierre · a cámara</span>
+          <p class="scene__desc">Volvés a cámara para el cierre y el CTA hablado. En pantalla “Escribime HOGAR” + el link.</p>
+        </div>
+      </div>
+        </div>
+        
+      </div>
+      <p class="guion__prod"><span class="prod__label">Para la pauta</span>Subtítulos con tu estilo (se mira sin audio). Corre como anuncio, no va al feed: audiencia amplia, 5 a 10 dólares por día. La campaña se arma a mano en el Administrador de Anuncios cuando esté grabado.</p>
     </article>
   </section>
 
@@ -460,28 +625,6 @@ em{font-style:italic;}
     try{ localStorage.setItem('mp-theme', next); }catch(e){}
   });
   try{ var t = localStorage.getItem('mp-theme'); if(t) root.setAttribute('data-theme', t); }catch(e){}
-
-  // Hook preferido (ayuda de lectura, persistente)
-  var KEY='mp-hooks-agosto';
-  var store={};
-  try{ store = JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ store={}; }
-  function paint(){
-    document.querySelectorAll('.hook').forEach(function(h){
-      var g=h.getAttribute('data-guion'), l=h.getAttribute('data-hook');
-      var on = store[g]===l;
-      h.setAttribute('aria-pressed', on?'true':'false');
-      h.classList.toggle('is-picked', on);
-    });
-  }
-  document.querySelectorAll('.hook').forEach(function(h){
-    h.addEventListener('click', function(){
-      var g=h.getAttribute('data-guion'), l=h.getAttribute('data-hook');
-      store[g] = (store[g]===l) ? null : l;
-      try{ localStorage.setItem(KEY, JSON.stringify(store)); }catch(e){}
-      paint();
-    });
-  });
-  paint();
 })();
 </script>
 </body>
