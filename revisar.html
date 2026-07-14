@@ -166,11 +166,11 @@ em{font-style:italic;}
 .part{display:grid;grid-template-columns:120px 1fr;gap:1em;align-items:stretch;
   background:var(--raised);border:1px solid var(--line);border-radius:14px;padding:.85em;}
 .part--hook{background:var(--raised-2);}
-.part__img{width:100%;height:100%;min-height:128px;object-fit:cover;border-radius:9px;display:block;
-  background:var(--line-soft);}
-.part__img--none{display:flex;align-items:center;justify-content:center;text-align:center;
-  color:var(--ink-faint);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;line-height:1.3;
-  border:1px dashed var(--line);min-height:128px;}
+.part__imgwrap{position:relative;min-height:128px;border-radius:9px;overflow:hidden;background:var(--line-soft);}
+.part__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+.part__imgwrap--none{display:flex;align-items:center;justify-content:center;text-align:center;
+  color:var(--ink-faint);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+  border:1px dashed var(--line);background:transparent;}
 .part__body{min-width:0;}
 .part__head{display:flex;flex-wrap:wrap;gap:.5em;align-items:center;margin-bottom:.5em;}
 .part__label{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--kwc,var(--accent-ink));}
@@ -302,7 +302,7 @@ em{font-style:italic;}
       <div class="parts">
         
       <div class="part part--hook">
-        <img class="part__img" src="assets/revisar/g01-hook.jpg" alt="Referencia de la toma" loading="lazy" width="300" height="533">
+        <div class="part__imgwrap"><img class="part__img" src="assets/revisar/g01-hook.jpg" alt="Referencia de la toma" loading="lazy"></div>
         <div class="part__body">
           <div class="part__head"><span class="part__label">Arranque · el hook</span><span class="part__tag part__tag--cam">🎥 A cámara</span></div>
           <p class="part__note">Grabá los dos. Los probamos y vemos cuál engancha — no hace falta elegir ahora.</p>
@@ -320,7 +320,7 @@ em{font-style:italic;}
       </div>
         
       <div class="part">
-        <img class="part__img" src="assets/revisar/g01-cuerpo.jpg" alt="Referencia de la toma" loading="lazy" width="300" height="533">
+        <div class="part__imgwrap"><img class="part__img" src="assets/revisar/g01-cuerpo.jpg" alt="Referencia de la toma" loading="lazy"></div>
         <div class="part__body">
           <div class="part__head"><span class="part__label">Cuerpo</span><span class="part__tag part__tag--voz">🎬 Voz en off</span></div>
           <p class="part__say">Nadie te lo sacó. Lo fuiste prestando. Un rincón para los juguetes, otro para las cosas del colegio, el sillón que quedó mirando al televisor porque era más práctico. Las mujeres vamos cediendo lugares sin darnos cuenta, porque la casa tiene que funcionar para todos.</p>
@@ -329,7 +329,7 @@ em{font-style:italic;}
         </div>
       </div>
       <div class="part">
-        <img class="part__img" src="assets/revisar/g01-revelacion.jpg" alt="Referencia de la toma" loading="lazy" width="300" height="533">
+        <div class="part__imgwrap"><img class="part__img" src="assets/revisar/g01-revelacion.jpg" alt="Referencia de la toma" loading="lazy"></div>
         <div class="part__body">
           <div class="part__head"><span class="part__label">Revelación</span><span class="part__tag part__tag--voz">🎬 Voz en off</span></div>
           <p class="part__say">Y un día estás parada en el medio de tu living y no hay un solo rincón que te devuelva a vos. La casa está llena de gente que la ama. Y aun así.</p>
@@ -338,7 +338,7 @@ em{font-style:italic;}
         </div>
       </div>
       <div class="part">
-        <img class="part__img" src="assets/revisar/g01-cierre.jpg" alt="Referencia de la toma" loading="lazy" width="300" height="533">
+        <div class="part__imgwrap"><img class="part__img" src="assets/revisar/g01-cierre.jpg" alt="Referencia de la toma" loading="lazy"></div>
         <div class="part__body">
           <div class="part__head"><span class="part__label">Cierre + CTA</span><span class="part__tag part__tag--cam">🎥 A cámara</span></div>
           <p class="part__say">No hace falta recuperar toda la casa. A veces alcanza un rincón que vuelva a ser tuyo — una butaca, una luz, algo que esté ahí porque vos lo elegiste. Muchas veces, eso alcanza.</p>
@@ -373,7 +373,7 @@ em{font-style:italic;}
       <div class="parts">
         
       <div class="part part--hook">
-        <img class="part__img" src="assets/revisar/cero-hook.jpg" alt="Referencia de la toma" loading="lazy" width="300" height="533">
+        <div class="part__imgwrap"><img class="part__img" src="assets/revisar/cero-hook.jpg" alt="Referencia de la toma" loading="lazy"></div>
         <div class="part__body">
           <div class="part__head"><span class="part__label">Arranque · el hook</span><span class="part__tag part__tag--voz">🎬 Voz en off</span></div>
           <p class="part__note">Grabá los dos. Los probamos y vemos cuál engancha — no hace falta elegir ahora.</p>
@@ -391,7 +391,7 @@ em{font-style:italic;}
       </div>
         
       <div class="part">
-        <img class="part__img" src="assets/revisar/cero-cuerpo.jpg" alt="Referencia de la toma" loading="lazy" width="300" height="533">
+        <div class="part__imgwrap"><img class="part__img" src="assets/revisar/cero-cuerpo.jpg" alt="Referencia de la toma" loading="lazy"></div>
         <div class="part__body">
           <div class="part__head"><span class="part__label">Cuerpo</span><span class="part__tag part__tag--voz">🎬 Voz en off</span></div>
           <p class="part__say">Empezar de cero es la única oportunidad de pensar la casa al revés. No desde el plano, sino desde tu vida. Por dónde entra el sol a la mañana. En qué rincón te vas a sentar cuando no quede nadie despierto. Dónde vas a necesitar silencio. Cómo querés que te reciba cuando llegás cansada.</p>
@@ -400,7 +400,7 @@ em{font-style:italic;}
         </div>
       </div>
       <div class="part">
-        <img class="part__img" src="assets/revisar/cero-revelacion.jpg" alt="Referencia de la toma" loading="lazy" width="300" height="533">
+        <div class="part__imgwrap"><img class="part__img" src="assets/revisar/cero-revelacion.jpg" alt="Referencia de la toma" loading="lazy"></div>
         <div class="part__body">
           <div class="part__head"><span class="part__label">Revelación</span><span class="part__tag part__tag--voz">🎬 Voz en off</span></div>
           <p class="part__say">Todo eso se decide antes, cuando la casa todavía es una idea. Después ya está construida — y lo que no se pensó a tiempo, se siente cada día.</p>
@@ -409,7 +409,7 @@ em{font-style:italic;}
         </div>
       </div>
       <div class="part">
-        <img class="part__img" src="assets/revisar/cero-cierre.jpg" alt="Referencia de la toma" loading="lazy" width="300" height="533">
+        <div class="part__imgwrap"><img class="part__img" src="assets/revisar/cero-cierre.jpg" alt="Referencia de la toma" loading="lazy"></div>
         <div class="part__body">
           <div class="part__head"><span class="part__label">Cierre + CTA</span><span class="part__tag part__tag--voz">🎬 Voz en off</span></div>
           <p class="part__say">Construir no es levantar paredes. Es decidir, antes que nada, la vida que va a pasar adentro. Si estás por empezar, escribime HOGAR y la pensamos desde tu vida, antes de la primera pared.</p>
@@ -444,7 +444,7 @@ em{font-style:italic;}
       <div class="parts">
         
       <div class="part part--hook">
-        <img class="part__img" src="assets/revisar/g02-hook.jpg" alt="Referencia de la toma" loading="lazy" width="300" height="533">
+        <div class="part__imgwrap"><img class="part__img" src="assets/revisar/g02-hook.jpg" alt="Referencia de la toma" loading="lazy"></div>
         <div class="part__body">
           <div class="part__head"><span class="part__label">Arranque · el hook</span><span class="part__tag part__tag--voz">🎬 Voz en off</span></div>
           <p class="part__note">Grabá los dos. Los probamos y vemos cuál engancha — no hace falta elegir ahora.</p>
@@ -462,7 +462,7 @@ em{font-style:italic;}
       </div>
         
       <div class="part">
-        <img class="part__img" src="assets/revisar/g02-cuerpo.jpg" alt="Referencia de la toma" loading="lazy" width="300" height="533">
+        <div class="part__imgwrap"><img class="part__img" src="assets/revisar/g02-cuerpo.jpg" alt="Referencia de la toma" loading="lazy"></div>
         <div class="part__body">
           <div class="part__head"><span class="part__label">Cuerpo</span><span class="part__tag part__tag--voz">🎬 Voz en off</span></div>
           <p class="part__say">Lo sienten todos los que entran. Tus hijos lo van a reconocer toda la vida, en cualquier parte del mundo. Vos dejaste de sentirlo hace años, porque el olfato se acostumbra a lo propio. Pero es la primera información que tu casa le da a un cuerpo: antes que los muebles, antes que la luz.</p>
@@ -471,7 +471,7 @@ em{font-style:italic;}
         </div>
       </div>
       <div class="part">
-        <img class="part__img" src="assets/revisar/g02-rev.jpg" alt="Referencia de la toma" loading="lazy" width="300" height="533">
+        <div class="part__imgwrap"><img class="part__img" src="assets/revisar/g02-rev.jpg" alt="Referencia de la toma" loading="lazy"></div>
         <div class="part__body">
           <div class="part__head"><span class="part__label">Revelación</span><span class="part__tag part__tag--voz">🎬 Voz en off</span></div>
           <p class="part__say">Cuando alguien entra y dice “qué rico huele tu casa”, no está hablando del ambiente. Te está diciendo que su cuerpo se aflojó.</p>
@@ -480,7 +480,7 @@ em{font-style:italic;}
         </div>
       </div>
       <div class="part">
-        <img class="part__img" src="assets/revisar/g02-cierre.jpg" alt="Referencia de la toma" loading="lazy" width="300" height="533">
+        <div class="part__imgwrap"><img class="part__img" src="assets/revisar/g02-cierre.jpg" alt="Referencia de la toma" loading="lazy"></div>
         <div class="part__body">
           <div class="part__head"><span class="part__label">Cierre + CTA</span><span class="part__tag part__tag--voz">🎬 Voz en off</span></div>
           <p class="part__say">La casa también se diseña para la nariz — lo que se cocina, lo que se airea, lo que se guarda demasiado tiempo. Aunque casi nadie lo nombre, es el fondo emocional de tu casa. Y se puede elegir.</p>
@@ -515,7 +515,7 @@ em{font-style:italic;}
       <div class="parts">
         
       <div class="part part--hook">
-        <img class="part__img" src="assets/revisar/g03-hook.jpg" alt="Referencia de la toma" loading="lazy" width="300" height="533">
+        <div class="part__imgwrap"><img class="part__img" src="assets/revisar/g03-hook.jpg" alt="Referencia de la toma" loading="lazy"></div>
         <div class="part__body">
           <div class="part__head"><span class="part__label">Arranque · el hook</span><span class="part__tag part__tag--voz">🎬 Voz en off</span></div>
           <p class="part__note">Grabá los dos. Los probamos y vemos cuál engancha — no hace falta elegir ahora.</p>
@@ -533,7 +533,7 @@ em{font-style:italic;}
       </div>
         
       <div class="part">
-        <img class="part__img" src="assets/revisar/g03-cuerpo.jpg" alt="Referencia de la toma" loading="lazy" width="300" height="533">
+        <div class="part__imgwrap"><img class="part__img" src="assets/revisar/g03-cuerpo.jpg" alt="Referencia de la toma" loading="lazy"></div>
         <div class="part__body">
           <div class="part__head"><span class="part__label">Cuerpo</span><span class="part__tag part__tag--voz">🎬 Voz en off</span></div>
           <p class="part__say">La iluminación que antes era suficiente, ahora te cansa la vista. El cuarto de los chicos que quedó como un museo. La mesa gigante que se usa dos veces al año. Vamos cambiando nosotras, y la casa se queda donde estaba.</p>
@@ -542,7 +542,7 @@ em{font-style:italic;}
         </div>
       </div>
       <div class="part">
-        <img class="part__img" src="assets/revisar/g03-revelacion.jpg" alt="Referencia de la toma" loading="lazy" width="300" height="533">
+        <div class="part__imgwrap"><img class="part__img" src="assets/revisar/g03-revelacion.jpg" alt="Referencia de la toma" loading="lazy"></div>
         <div class="part__body">
           <div class="part__head"><span class="part__label">Revelación</span><span class="part__tag part__tag--voz">🎬 Voz en off</span></div>
           <p class="part__say">Esa sensación de estar en tu propia casa como de visita no es tuya. Es de una casa que quedó armada para otra etapa.</p>
@@ -551,7 +551,7 @@ em{font-style:italic;}
         </div>
       </div>
       <div class="part">
-        <img class="part__img" src="assets/revisar/g03-cierre.jpg" alt="Referencia de la toma" loading="lazy" width="300" height="533">
+        <div class="part__imgwrap"><img class="part__img" src="assets/revisar/g03-cierre.jpg" alt="Referencia de la toma" loading="lazy"></div>
         <div class="part__body">
           <div class="part__head"><span class="part__label">Cierre + CTA</span><span class="part__tag part__tag--voz">🎬 Voz en off</span></div>
           <p class="part__say">No se trata de mudarse. Se trata de que la casa te alcance. Que la luz, los lugares y el silencio estén a la altura de la mujer que sos ahora. Muchas veces, con eso alcanza.</p>
@@ -586,7 +586,7 @@ em{font-style:italic;}
       <div class="parts">
         
       <div class="part part--hook">
-        <img class="part__img" src="assets/revisar/coach-hook.jpg" alt="Referencia de la toma" loading="lazy" width="300" height="533">
+        <div class="part__imgwrap"><img class="part__img" src="assets/revisar/coach-hook.jpg" alt="Referencia de la toma" loading="lazy"></div>
         <div class="part__body">
           <div class="part__head"><span class="part__label">Arranque · el hook</span><span class="part__tag part__tag--voz">🎬 Voz en off</span></div>
           <p class="part__note">Grabá los dos. Los probamos y vemos cuál engancha — no hace falta elegir ahora.</p>
@@ -604,7 +604,7 @@ em{font-style:italic;}
       </div>
         
       <div class="part">
-        <img class="part__img" src="assets/revisar/coach-cuerpo.jpg" alt="Referencia de la toma" loading="lazy" width="300" height="533">
+        <div class="part__imgwrap"><img class="part__img" src="assets/revisar/coach-cuerpo.jpg" alt="Referencia de la toma" loading="lazy"></div>
         <div class="part__body">
           <div class="part__head"><span class="part__label">Cuerpo</span><span class="part__tag part__tag--voz">🎬 Voz en off</span></div>
           <p class="part__say">No todas estamos para empezar una obra. A veces lo que necesitás es alguien que entre, mire lo que ya tenés, y te diga por dónde. Qué mover, qué sacar, qué suma y qué está de más — con lo que ya está en tu casa.</p>
@@ -613,7 +613,7 @@ em{font-style:italic;}
         </div>
       </div>
       <div class="part">
-        <img class="part__img" src="assets/revisar/coach-rev.jpg" alt="Referencia de la toma" loading="lazy" width="300" height="533">
+        <div class="part__imgwrap"><img class="part__img" src="assets/revisar/coach-rev.jpg" alt="Referencia de la toma" loading="lazy"></div>
         <div class="part__body">
           <div class="part__head"><span class="part__label">Revelación</span><span class="part__tag part__tag--voz">🎬 Voz en off</span></div>
           <p class="part__say">Muchas veces el cambio no es comprar más. Es entender por qué eso que tenés no te termina de funcionar.</p>
@@ -622,7 +622,7 @@ em{font-style:italic;}
         </div>
       </div>
       <div class="part">
-        <img class="part__img" src="assets/revisar/coach-cierre.jpg" alt="Referencia de la toma" loading="lazy" width="300" height="533">
+        <div class="part__imgwrap"><img class="part__img" src="assets/revisar/coach-cierre.jpg" alt="Referencia de la toma" loading="lazy"></div>
         <div class="part__body">
           <div class="part__head"><span class="part__label">Cierre + CTA</span><span class="part__tag part__tag--voz">🎬 Voz en off</span></div>
           <p class="part__say">Una hora y media, tu casa, y una mirada nueva. A veces con eso ya la ves distinta.</p>
@@ -664,7 +664,7 @@ em{font-style:italic;}
       <div class="parts">
         
       <div class="part part--hook">
-        <img class="part__img" src="assets/revisar/rv-hook.jpg" alt="Referencia de la toma" loading="lazy" width="300" height="533">
+        <div class="part__imgwrap"><img class="part__img" src="assets/revisar/rv-hook.jpg" alt="Referencia de la toma" loading="lazy"></div>
         <div class="part__body">
           <div class="part__head"><span class="part__label">Arranque · el hook</span><span class="part__tag part__tag--cam">🎥 A cámara</span></div>
           <p class="part__note">Grabá los dos. Los probamos y vemos cuál engancha — no hace falta elegir ahora.</p>
@@ -682,7 +682,7 @@ em{font-style:italic;}
       </div>
         
       <div class="part">
-        <img class="part__img" src="assets/revisar/rv-presenta.jpg" alt="Referencia de la toma" loading="lazy" width="300" height="533">
+        <div class="part__imgwrap"><img class="part__img" src="assets/revisar/rv-presenta.jpg" alt="Referencia de la toma" loading="lazy"></div>
         <div class="part__body">
           <div class="part__head"><span class="part__label">Presentación</span><span class="part__tag part__tag--cam">🎥 A cámara</span></div>
           <p class="part__say">Soy Mercedes Ponte. Hago consultoría de diseño de interiores: te acompaño a darle forma a tu casa desde cómo la querés vivir. Desde un plano de un departamento de pozo hasta el living que ya no funciona.</p>
@@ -691,7 +691,7 @@ em{font-style:italic;}
         </div>
       </div>
       <div class="part">
-        <img class="part__img" src="assets/revisar/rv-broll.jpg" alt="Referencia de la toma" loading="lazy" width="300" height="533">
+        <div class="part__imgwrap"><img class="part__img" src="assets/revisar/rv-broll.jpg" alt="Referencia de la toma" loading="lazy"></div>
         <div class="part__body">
           <div class="part__head"><span class="part__label">Qué recibís</span><span class="part__tag part__tag--voz">🎬 Voz en off</span></div>
           <p class="part__say">Trabajamos en encuentros — online o en tu casa. Vamos a revisar la luz, la distribución, los materiales, lo que ya tenés. Y salís con decisiones tomadas: qué cambiar, qué no tocar, y en qué vale la pena invertir.</p>
@@ -700,7 +700,7 @@ em{font-style:italic;}
         </div>
       </div>
       <div class="part">
-        <img class="part__img" src="assets/revisar/rv-cierre.jpg" alt="Referencia de la toma" loading="lazy" width="300" height="533">
+        <div class="part__imgwrap"><img class="part__img" src="assets/revisar/rv-cierre.jpg" alt="Referencia de la toma" loading="lazy"></div>
         <div class="part__body">
           <div class="part__head"><span class="part__label">Diferencial + CTA</span><span class="part__tag part__tag--cam">🎥 A cámara</span></div>
           <p class="part__say">No se trata de que tu casa quede linda para la foto. Se trata de cómo te va a hacer sentir cada día que estés adentro. Si querés empezar por algún lugar, escribime HOGAR y te cuento cómo trabajo.</p>
