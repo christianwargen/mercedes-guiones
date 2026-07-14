@@ -145,6 +145,19 @@ em{font-style:italic;}
 .why__label,.prod__label{display:block;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;
   color:var(--ink-faint);font-weight:600;margin-bottom:.4em;}
 
+/* A quién le habla / a qué invita */
+.aim{display:flex;flex-wrap:wrap;gap:.6em;margin:0 0 1.3rem;}
+.aim__item{flex:1 1 240px;display:flex;flex-direction:column;gap:.15em;
+  background:var(--raised-2);border:1px solid var(--line);border-radius:11px;padding:.7em .9em;}
+.aim__item--off{border-color:var(--kwc,var(--accent));background:var(--kwbg3,var(--raised-2));}
+.guion:has(.kw--luna) .aim__item--off{border-color:var(--luna);}
+.guion--venta .aim__item--off{border-color:var(--venta);}
+.aim__k{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--ink-faint);}
+.aim__v{font-size:.92rem;color:var(--ink);font-weight:500;}
+.aim__item--off .aim__v{color:var(--kwc,var(--accent-ink));}
+.guion:has(.kw--luna) .aim__item--off .aim__v{color:var(--luna);}
+.guion--venta .aim__item--off .aim__v{color:var(--venta);}
+
 /* Hooks — los dos, se graban ambos */
 .hooks{margin-bottom:1.7rem;}
 .hooks__note{font-size:.9rem;color:var(--ink-soft);margin:0 0 1em;max-width:var(--measure);
@@ -230,6 +243,7 @@ em{font-style:italic;}
   <section class="set set--first" aria-label="Reels de feed">
     <div class="set__head">
       <h2 class="set__title">La tanda de feed</h2>
+      <p class="set__sub">Cinco reels mechados a propósito: algunos le hablan a la mujer que <strong>ya tiene su casa</strong> y quiere un cambio, y otros a la que está por <strong>construir de cero</strong> — para no dejar afuera a ningún sector. Y ahora que están todas las ofertas en tu web, cada uno ya invita a una asesoría concreta. En cada reel te marco <em>a quién le habla</em> y <em>a qué oferta invita</em>.</p>
     </div>
     
     <article class="guion" id="g01">
@@ -246,6 +260,11 @@ em{font-style:italic;}
           </div>
         </div>
       </header>
+      
+      <div class="aim">
+        <span class="aim__item"><span class="aim__k">A quién le habla</span><span class="aim__v">La que ya tiene su casa y se fue perdiendo a sí misma en ella.</span></span>
+        <span class="aim__item aim__item--off"><span class="aim__k">La invita a</span><span class="aim__v">Una consulta para volver a habitar tu casa.</span></span>
+      </div>
       <p class="guion__why"><span class="why__label">Por qué este</span>El reel más íntimo de la tanda, y el que más gana con tu cara a cámara: ahí la confesión se sostiene sola. El hook A ya está afinado en tu tono — es tu manera de decirlo.</p>
 
       
@@ -332,6 +351,107 @@ em{font-style:italic;}
       <header class="guion__head">
         <span class="guion__num">02</span>
         <div class="guion__headmain">
+          <h3 class="guion__title">La casa antes de la obra</h3>
+          <div class="chips">
+            <span class="chip chip--voz">Voz en off</span>
+            <span class="chip chip--kw kw--hogar">HOGAR</span>
+            <span class="chip chip--ghost">Saga IV — la casa antes de la casa</span>
+            <span class="chip chip--ghost">Diseño de cero</span>
+            <span class="chip chip--ghost">Nuevo — para la clienta de cero</span>
+          </div>
+        </div>
+      </header>
+      
+      <div class="aim">
+        <span class="aim__item"><span class="aim__k">A quién le habla</span><span class="aim__v">La que está por construir de cero — terreno, pozo, obra.</span></span>
+        <span class="aim__item aim__item--off"><span class="aim__k">La invita a</span><span class="aim__v">La consultoría integral (el proyecto completo).</span></span>
+      </div>
+      <p class="guion__why"><span class="why__label">Por qué este</span>Los demás le hablan a la mujer que ya tiene su casa; este entra por el otro lado: la que está por construir de cero, tu clienta de mayor valor. Emocional, no técnico — y la invita a la consultoría integral. Va mechado entre los otros para no dejar afuera a ese sector.</p>
+
+      
+      <div class="hooks">
+        <span class="section-eyebrow">Los dos hooks — grabá los dos</span>
+        <p class="hooks__note">Grabá el hook A y el hook B. Los subimos a los dos como reel de prueba y vemos cuál engancha mejor — no hace falta que elijas ahora.</p>
+        
+      <div class="hook">
+        <span class="hook__letter">A</span>
+        <span class="hook__body"><span class="hook__quote">Cuando empezás una casa de cero, todo es metros, materiales, presupuesto. Y en medio de tantas decisiones, es fácil perder de vista la única que vas a sentir todos los días.</span></span>
+      </div>
+      <div class="hook">
+        <span class="hook__letter">B</span>
+        <span class="hook__body"><span class="hook__quote">Antes de que exista una sola pared, tu casa ya está decidiendo algo: cómo te vas a sentir viviendo adentro.</span></span>
+      </div>
+      </div>
+
+      <div class="scriptblock">
+        <span class="section-eyebrow">El guion — lo que decís</span>
+        <div class="beats">
+          
+      <div class="beat">
+        <span class="beat__label">Cuerpo</span>
+        <p class="beat__text">Empezar de cero es la única oportunidad de pensar la casa al revés. No desde el plano, sino desde tu vida. Por dónde entra el sol a la mañana. En qué rincón te vas a sentar cuando no quede nadie despierto. Dónde vas a necesitar silencio. Cómo querés que te reciba cuando llegás cansada.</p>
+      </div>
+      <div class="beat">
+        <span class="beat__label">Revelación</span>
+        <p class="beat__text">Todo eso se decide antes, cuando la casa todavía es una idea. Después ya está construida — y lo que no se pensó a tiempo, se siente cada día.</p>
+      </div>
+      <div class="beat">
+        <span class="beat__label">Cierre</span>
+        <p class="beat__text">Construir no es levantar paredes. Es decidir, antes que nada, la vida que va a pasar adentro.</p>
+      </div>
+        </div>
+        <div class="cta">
+          <span class="cta__label">CTA · hablado (en tu voz)</span>
+          <span class="cta__text">Si estás por empezar, escribime HOGAR y la pensamos desde tu vida, antes de la primera pared.</span>
+        </div>
+      </div>
+
+      
+      <div class="scenes-wrap">
+        <span class="section-eyebrow">Cómo se graba</span>
+        <p class="scenes__modo">Todo voz en off sobre B-roll — no te filmás. Grabá el audio de los dos hooks. Como es un reel de obra, el CTA va hablado en tu voz (no en placa).</p>
+        <div class="scenes">
+          
+      <div class="scene scene--broll">
+        <img class="scene__img" src="assets/revisar/cero-hook.jpg" alt="Referencia de la toma" loading="lazy" width="360" height="640">
+        <div class="scene__body">
+          <span class="scene__tag scene__tag--broll">🎬 B-roll · voz en off</span>
+          <p class="scene__desc">El punto de partida de una obra: un terreno, o planos sobre una mesa con la luz de la mañana. La casa que todavía no existe.</p>
+        </div>
+      </div>
+
+      <div class="scene scene--broll">
+        <img class="scene__img" src="assets/revisar/cero-cuerpo.jpg" alt="Referencia de la toma" loading="lazy" width="360" height="640">
+        <div class="scene__body">
+          <span class="scene__tag scene__tag--broll">🎬 B-roll · voz en off</span>
+          <p class="scene__desc">La vida que va a pasar adentro: el sol entrando a la mañana, un rincón para el café, un lugar de silencio. Tomas cálidas y evocativas.</p>
+        </div>
+      </div>
+
+      <div class="scene scene--broll">
+        <img class="scene__img" src="assets/revisar/cero-revelacion.jpg" alt="Referencia de la toma" loading="lazy" width="360" height="640">
+        <div class="scene__body">
+          <span class="scene__tag scene__tag--broll">🎬 B-roll · voz en off</span>
+          <p class="scene__desc">Un plano o un render al lado de un espacio ya terminado — la idea y el resultado, juntos.</p>
+        </div>
+      </div>
+
+      <div class="scene scene--broll">
+        <img class="scene__img" src="assets/revisar/cero-cierre.jpg" alt="Referencia de la toma" loading="lazy" width="360" height="640">
+        <div class="scene__body">
+          <span class="scene__tag scene__tag--broll">🎬 Cierre · voz en off</span>
+          <p class="scene__desc">Una casa terminada, cálida, al atardecer. Sobre esa toma va el CTA hablado. En pantalla “Escribime HOGAR”.</p>
+        </div>
+      </div>
+        </div>
+        <p class="scenes__foot">Las imágenes son solo de referencia para orientar la toma — no son el reel. Generadas de ejemplo.</p>
+      </div>
+    </article>
+
+    <article class="guion" id="g03">
+      <header class="guion__head">
+        <span class="guion__num">03</span>
+        <div class="guion__headmain">
           <h3 class="guion__title">Tu casa tiene un olor — y vos no lo conocés</h3>
           <div class="chips">
             <span class="chip chip--voz">Voz en off</span>
@@ -342,6 +462,11 @@ em{font-style:italic;}
           </div>
         </div>
       </header>
+      
+      <div class="aim">
+        <span class="aim__item"><span class="aim__k">A quién le habla</span><span class="aim__v">La que ya vive su casa y dejó de verla desde afuera.</span></span>
+        <span class="aim__item aim__item--off"><span class="aim__k">La invita a</span><span class="aim__v">Una consulta / diagnóstico de tu casa.</span></span>
+      </div>
       <p class="guion__why"><span class="why__label">Por qué este</span>La investigación de esta semana validó este ángulo (una cuenta del rubro lo está usando), así que lo adelantamos. El hook es de curiosidad altísima: un dato no obvio sobre tu propia casa que no podés ver.</p>
 
       
@@ -416,9 +541,9 @@ em{font-style:italic;}
       </div>
     </article>
 
-    <article class="guion" id="g03">
+    <article class="guion" id="g04">
       <header class="guion__head">
-        <span class="guion__num">03</span>
+        <span class="guion__num">04</span>
         <div class="guion__headmain">
           <h3 class="guion__title">La casa de los 50</h3>
           <div class="chips">
@@ -430,6 +555,11 @@ em{font-style:italic;}
           </div>
         </div>
       </header>
+      
+      <div class="aim">
+        <span class="aim__item"><span class="aim__k">A quién le habla</span><span class="aim__v">La que ya tiene su casa, en otra etapa de la vida (45 a 60).</span></span>
+        <span class="aim__item aim__item--off"><span class="aim__k">La invita a</span><span class="aim__v">Una consulta para acompañar esta etapa.</span></span>
+      </div>
       <p class="guion__why"><span class="why__label">Por qué este</span>El que más conecta con la mujer que ya tiene su casa hecha y siente que quedó en otra etapa de la vida — de 45 a 60, tu clienta más lista para una consulta.</p>
 
       
@@ -503,6 +633,99 @@ em{font-style:italic;}
         <p class="scenes__foot">Las imágenes son solo de referencia para orientar la toma — no son el reel. Generadas de ejemplo.</p>
       </div>
     </article>
+
+    <article class="guion" id="g05">
+      <header class="guion__head">
+        <span class="guion__num">05</span>
+        <div class="guion__headmain">
+          <h3 class="guion__title">No siempre hace falta una reforma</h3>
+          <div class="chips">
+            <span class="chip chip--voz">Voz en off</span>
+            <span class="chip chip--kw kw--hogar">HOGAR</span>
+            <span class="chip chip--ghost">Saga II — la mujer en su casa</span>
+            <span class="chip chip--ghost">Orden / diagnóstico</span>
+            <span class="chip chip--ghost">Nuevo — invita a la sesión corta</span>
+          </div>
+        </div>
+      </header>
+      
+      <div class="aim">
+        <span class="aim__item"><span class="aim__k">A quién le habla</span><span class="aim__v">La que quiere un cambio, sin meterse en una obra.</span></span>
+        <span class="aim__item aim__item--off"><span class="aim__k">La invita a</span><span class="aim__v">Una sesión corta de acompañamiento (hora y media).</span></span>
+      </div>
+      <p class="guion__why"><span class="why__label">Por qué este</span>El primero que invita directo a una oferta concreta y accesible: la sesión de hora y media. Para la clienta que quiere cambiar algo pero no está para empezar una obra. Sigue siendo tu tono, no una publicidad dura.</p>
+
+      
+      <div class="hooks">
+        <span class="section-eyebrow">Los dos hooks — grabá los dos</span>
+        <p class="hooks__note">Grabá el hook A y el hook B. Los subimos a los dos como reel de prueba y vemos cuál engancha mejor — no hace falta que elijas ahora.</p>
+        
+      <div class="hook">
+        <span class="hook__letter">A</span>
+        <span class="hook__body"><span class="hook__quote">No hace falta una reforma para que tu casa se sienta distinta. A veces alcanza con una hora y media y una mirada de afuera.</span></span>
+      </div>
+      <div class="hook">
+        <span class="hook__letter">B</span>
+        <span class="hook__body"><span class="hook__quote">Hay cosas en tu casa que te incomodan sin que sepas bien por qué. Y no siempre se resuelven gastando.</span></span>
+      </div>
+      </div>
+
+      <div class="scriptblock">
+        <span class="section-eyebrow">El guion — lo que decís</span>
+        <div class="beats">
+          
+      <div class="beat">
+        <span class="beat__label">Cuerpo</span>
+        <p class="beat__text">No todas estamos para empezar una obra. A veces lo que necesitás es alguien que entre, mire lo que ya tenés, y te diga por dónde. Qué mover, qué sacar, qué suma y qué está de más — con lo que ya está en tu casa.</p>
+      </div>
+      <div class="beat">
+        <span class="beat__label">Revelación</span>
+        <p class="beat__text">Muchas veces el cambio no es comprar más. Es entender por qué eso que tenés no te termina de funcionar.</p>
+      </div>
+      <div class="beat">
+        <span class="beat__label">Cierre</span>
+        <p class="beat__text">Una hora y media, tu casa, y una mirada nueva. A veces con eso ya la ves distinta.</p>
+      </div>
+        </div>
+        <div class="cta">
+          <span class="cta__label">CTA · placa</span>
+          <span class="cta__text">Escribí HOGAR y armamos tu sesión.</span>
+        </div>
+      </div>
+
+      
+      <div class="scenes-wrap">
+        <span class="section-eyebrow">Cómo se graba</span>
+        <p class="scenes__modo">Voz en off sobre B-roll — no te filmás. Grabá el audio de los dos hooks. El CTA va en placa.</p>
+        <div class="scenes">
+          
+      <div class="scene scene--broll">
+        <img class="scene__img" src="assets/revisar/coach-hook.jpg" alt="Referencia de la toma" loading="lazy" width="360" height="640">
+        <div class="scene__body">
+          <span class="scene__tag scene__tag--broll">🎬 B-roll · voz en off</span>
+          <p class="scene__desc">Una mujer mirando su living con una taza en la mano, algo no la termina de convencer. Pensativa, sin drama.</p>
+        </div>
+      </div>
+
+      <div class="scene scene--broll">
+        <img class="scene__img" src="assets/revisar/coach-cuerpo.jpg" alt="Referencia de la toma" loading="lazy" width="360" height="640">
+        <div class="scene__body">
+          <span class="scene__tag scene__tag--broll">🎬 B-roll · voz en off</span>
+          <p class="scene__desc">Reacomodar lo que ya está: mover un objeto, acomodar una repisa, con lo que hay en la casa. Manos, detalles.</p>
+        </div>
+      </div>
+
+      <div class="scene scene--broll">
+        <img class="scene__img" src="assets/revisar/coach-cierre.jpg" alt="Referencia de la toma" loading="lazy" width="360" height="640">
+        <div class="scene__body">
+          <span class="scene__tag scene__tag--broll">🎬 Cierre · voz en off</span>
+          <p class="scene__desc">El mismo rincón, ahora sintiéndose distinto, con luz cálida. En pantalla “Escribí HOGAR”.</p>
+        </div>
+      </div>
+        </div>
+        <p class="scenes__foot">Las imágenes son solo de referencia para orientar la toma — no son el reel. Generadas de ejemplo.</p>
+      </div>
+    </article>
   </section>
 
   <section class="set set--venta" aria-label="Reel de ventas">
@@ -523,6 +746,10 @@ em{font-style:italic;}
           </div>
         </div>
       </header>
+      <div class="aim">
+        <span class="aim__item"><span class="aim__k">A quién le habla</span><span class="aim__v">Las dos clientas — la de cero y la que ya tiene su casa.</span></span>
+        <span class="aim__item aim__item--off"><span class="aim__k">La invita a</span><span class="aim__v">Toda la consultoría (es el paraguas de las ofertas).</span></span>
+      </div>
       <p class="guion__why"><span class="why__label">Por qué así</span>Es venta, pero sin urgencia: nada de “últimas plazas”, nada de descuento. La autoridad la ponen tu calma y los proyectos reales de fondo — Cachafaz, Parque Leloir, el Diario de Obra.</p>
 
       
