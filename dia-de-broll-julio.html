@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tu día de B-roll — la tanda de julio | Mercedes Ponte</title>
+  <meta name="description" content="Las tomas que faltan para los 6 reels de julio, agrupadas por lugar de la casa para grabar todo en una sola jornada.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .broll-wrap { max-width: 760px; margin: 0 auto; padding: 0 1.2rem 5rem; }
+
+    .broll-idea {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.5rem 1.4rem; margin: 1.5rem 0 2rem;
+    }
+    .broll-idea h2 { font-family: var(--font-serif); font-weight: 500; font-size: 1.25rem; margin: 0 0 0.6rem; }
+    .broll-idea p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0.4rem 0; }
+    .broll-idea strong { color: var(--text); font-weight: 600; }
+
+    .listo {
+      display: grid; gap: 0.55rem; margin-top: 1.1rem;
+      padding: 1rem 1.05rem; border-radius: 11px;
+      background: var(--broll-bg); border: 1px solid var(--border-soft);
+    }
+    .listo-tit { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--broll); margin: 0 0 0.15rem; }
+    .listo-item { display: flex; gap: 0.55rem; align-items: flex-start; font-size: 0.9rem;
+      line-height: 1.5; color: var(--text-muted); }
+    .listo-item b { color: var(--text); font-weight: 600; }
+    .listo-tick { flex: 0 0 auto; color: var(--broll); font-weight: 700; }
+
+    .broll-reglas { margin: 0 0 2.4rem; }
+    .broll-reglas ol { margin: 0.8rem 0 0; padding: 0; list-style: none; counter-reset: r; display: grid; gap: 0.55rem; }
+    .broll-reglas li {
+      counter-increment: r; position: relative; padding: 0.2rem 0 0.2rem 2.2rem;
+      font-size: 0.92rem; color: var(--text-muted); line-height: 1.5;
+    }
+    .broll-reglas li::before {
+      content: counter(r); position: absolute; left: 0; top: 0;
+      width: 1.5rem; height: 1.5rem; border-radius: 50%;
+      background: var(--camera-bg); color: var(--camera);
+      display: grid; place-items: center; font-size: 0.78rem; font-weight: 600;
+    }
+    .broll-reglas li strong { color: var(--text); font-weight: 600; }
+
+    .broll-section-tit {
+      font-family: var(--font-serif); font-weight: 500; font-size: 1.4rem;
+      margin: 2.6rem 0 0.4rem; display: flex; align-items: baseline; gap: 0.6rem;
+    }
+    .broll-section-sub { color: var(--text-muted); font-size: 0.92rem; margin: 0 0 1.2rem; line-height: 1.55; }
+
+    .kit-group {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.1rem 1.2rem; margin-bottom: 0.9rem;
+    }
+    .kit-group.is-priority { border-color: var(--camera); }
+    .kit-group-head { display: flex; align-items: center; justify-content: space-between; gap: 0.8rem; margin-bottom: 0.25rem; flex-wrap: wrap; }
+    .kit-group-name { font-weight: 600; font-size: 1rem; color: var(--text); }
+    .kit-group-note { font-size: 0.86rem; color: var(--text-muted); line-height: 1.5; margin: 0 0 0.7rem; }
+    .kit-group-note em { color: var(--camera); font-style: normal; font-weight: 600; }
+    .kit-chips { display: flex; gap: 0.3rem; flex-wrap: wrap; }
+    .kit-chip {
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.02em;
+      padding: 0.15rem 0.5rem; border-radius: 20px;
+      background: var(--broll-bg); color: var(--broll); border: 1px solid var(--border-soft);
+      white-space: nowrap;
+    }
+    .kit-chip.c-prio { background: var(--camera-bg); color: var(--camera); }
+
+    .kit-items { display: grid; gap: 0.1rem; }
+    .kit-item { display: flex; gap: 0.6rem; align-items: flex-start; padding: 0.45rem 0; cursor: pointer; }
+    .kit-item input { appearance: none; -webkit-appearance: none; flex: 0 0 auto; margin: 0.15rem 0 0;
+      width: 1.15rem; height: 1.15rem; border: 1.5px solid var(--text-dim); border-radius: 5px;
+      cursor: pointer; position: relative; transition: all .15s; }
+    .kit-item input:checked { background: var(--broll); border-color: var(--broll); }
+    .kit-item input:checked::after {
+      content: '✓'; position: absolute; inset: 0; color: #fff; font-size: 0.8rem;
+      display: grid; place-items: center;
+    }
+    .kit-item span { font-size: 0.92rem; line-height: 1.5; color: var(--text-muted); }
+    .kit-item input:checked + span { color: var(--text-dim); text-decoration: line-through; }
+
+    .broll-progress {
+      position: sticky; top: 0; z-index: 5; background: var(--bg);
+      padding: 0.7rem 0; margin-bottom: 0.6rem; font-size: 0.85rem; color: var(--text-muted);
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .broll-progress b { color: var(--broll); font-weight: 600; }
+    .broll-reset { background: none; border: none; color: var(--text-dim); font-size: 0.8rem; cursor: pointer; text-decoration: underline; padding: 0; margin-left: 0.5rem; }
+
+    .broll-cierre { background: var(--bg-elevated); border-radius: 12px; padding: 1.3rem 1.3rem; margin-top: 2.4rem; }
+    .broll-cierre h3 { margin: 0 0 0.5rem; font-size: 1rem; }
+    .broll-cierre p { margin: 0.3rem 0; color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; }
+  </style>
+</head>
+<body class="reel-page">
+
+  <header class="reel-header">
+    <a href="index.html#reels" class="back-link">← Volver al panel</a>
+    <div class="reel-meta">
+      <span class="reel-number">Julio 2026</span>
+      <span class="reel-meta-sep">·</span>
+      <span>La tanda de 6 reels</span>
+    </div>
+    <h1 class="reel-title">Lo que falta filmar</h1>
+    <p class="reel-tagline">
+      <span><span class="tagline-label">Una jornada</span> en tu casa</span>
+      <span><span class="tagline-label">Cubre</span> 5 reels</span>
+      <span><span class="tagline-label">Hablás</span> en ninguna</span>
+    </p>
+  </header>
+
+  <div class="broll-wrap">
+
+    <div class="broll-idea">
+      <h2>Dónde estamos</h2>
+      <p>Ya me mandaste <strong>todo lo que se dice</strong> en los seis reels: los 21 audios y los planos tuyos a cámara. Está completo, no falta ni una parte.</p>
+      <p>Lo que falta es <strong>lo que se ve</strong> mientras hablás. Cinco de los seis reels van con tu voz por encima de imágenes de la casa, y de eso todavía no hay casi nada.</p>
+
+      <div class="listo">
+        <p class="listo-tit">Esto ya está y no lo volvés a grabar</p>
+        <div class="listo-item"><span class="listo-tick">✓</span><span>Los <b>21 audios</b> de los seis reels — con los dos hooks de cada uno.</span></div>
+        <div class="listo-item"><span class="listo-tick">✓</span><span>Tus <b>planos a cámara</b> del reel del living y del reel de venta.</span></div>
+        <div class="listo-item"><span class="listo-tick">✓</span><span>Los <b>tres videos de la obra</b> — esos ya cubren el reel de venta entero.</span></div>
+      </div>
+
+      <p style="margin-top:1.1rem;">Abajo está todo agrupado <strong>por lugar de la casa</strong>, no por reel. Es a propósito: en un mismo rincón grabás tomas que después van a parar a tres reels distintos. Así recorrés la casa una sola vez.</p>
+    </div>
+
+    <section class="broll-reglas">
+      <h2 class="broll-section-tit">6 reglas, y listo</h2>
+      <p class="broll-section-sub">Valen para todo lo que grabes ese día.</p>
+      <ol>
+        <li>Todo <strong>vertical</strong> (el celu parado) y con la <strong>cámara de atrás</strong>.</li>
+        <li><strong>Luz de día, de costado</strong> — nunca una ventana fuerte de fondo.</li>
+        <li><strong>Movimientos lentos:</strong> la cámara entra y recorre. Nada brusco.</li>
+        <li>Grabá cada toma <strong>dos o tres veces</strong>. Que sobre material; yo elijo.</li>
+        <li>Tomas <strong>cortas</strong>, 6 a 8 segundos cada una. No hace falta más.</li>
+        <li><strong>No hablás en ninguna.</strong> Son todas mudas — la voz ya la tengo.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2 class="broll-section-tit">El recorrido — 9 lugares</h2>
+      <p class="broll-section-sub">Cada bloque dice a qué reels alimenta. Tildá a medida que vas grabando — se guarda en tu teléfono.</p>
+
+      <div class="broll-progress">Grabado: <b><span id="done">0</span> de <span id="total">0</span></b> tomas<button class="broll-reset" id="reset">reiniciar</button></div>
+
+      <!-- 1 -->
+      <div class="kit-group is-priority">
+        <div class="kit-group-head">
+          <span class="kit-group-name">1 · La mesa de las decisiones</span>
+          <div class="kit-chips"><span class="kit-chip c-prio">empezá por acá</span><span class="kit-chip">Hoja en blanco</span></div>
+        </div>
+        <p class="kit-group-note"><em>El más urgente:</em> el reel de la hoja en blanco es el más largo de la tanda y hoy no tiene ni una imagen. Necesita una mesa con muestras de material — telas, azulejos, maderas, pinturas — y planos. Si no tenés todo a mano, con lo que juntes de tus proyectos alcanza.</p>
+        <div class="kit-items">
+          <label class="kit-item"><input type="checkbox" data-k="m1"><span>Las muestras y los planos <strong>desparramados</strong> sobre la mesa, sin orden. Que se vea el montón de cosas a la vez.</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="m2"><span>Bien de cerca, recorriendo despacio: telas, azulejos, maderas, muestrarios apilados.</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="m3"><span>Un plano abierto sobre la mesa, con anotaciones a mano.</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="m4"><span><strong>Tus manos ordenando</strong> esas mismas muestras en una fila prolija. Lento — es el momento en que el caos se acomoda.</span></label>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="kit-group">
+        <div class="kit-group-head">
+          <span class="kit-group-name">2 · Tu living, como está hoy</span>
+          <div class="kit-chips"><span class="kit-chip">El living</span><span class="kit-chip">Casa de los 50</span></div>
+        </div>
+        <p class="kit-group-note">Sin ordenar nada antes. La gracia es que se vean las señales de que ahí vive todo el mundo.</p>
+        <div class="kit-items">
+          <label class="kit-item"><input type="checkbox" data-k="l1"><span>El rincón donde se acumulan las cosas de todos: juguetes, mochilas, cuadernos del colegio.</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="l2"><span>El sillón mirando al televisor.</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="l3"><span>Un recorrido lento por el living entero, de una punta a la otra.</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="l4"><span>El living amplio con la <strong>luz de la tarde</strong> entrando por los ventanales.</span></label>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="kit-group">
+        <div class="kit-group-head">
+          <span class="kit-group-name">3 · Vos en el living, sin hablar</span>
+          <div class="kit-chips"><span class="kit-chip">El living</span><span class="kit-chip">Casa de los 50</span><span class="kit-chip">Sin reforma</span></div>
+        </div>
+        <p class="kit-group-note">Las tres únicas tomas donde salís. Son <strong>mudas</strong> — no decís nada, solo estás. Vas a necesitar que alguien sostenga el celu, o apoyarlo en algo firme.</p>
+        <div class="kit-items">
+          <label class="kit-item"><input type="checkbox" data-k="v1"><span>Parada en el <strong>medio</strong> del living, mirando alrededor despacio. De cuerpo entero.</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="v2"><span>Sentada sola en el living, <strong>de espaldas o de costado</strong> — no se te ve la cara. Quieta.</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="v3"><span>Con una <strong>taza en la mano</strong>, mirando el living, como midiendo qué no te termina de cerrar.</span></label>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="kit-group">
+        <div class="kit-group-head">
+          <span class="kit-group-name">4 · Tu rincón — el que sí es tuyo</span>
+          <div class="kit-chips"><span class="kit-chip">El living</span><span class="kit-chip">Sin reforma</span></div>
+        </div>
+        <p class="kit-group-note">Es la imagen del cierre de dos reels: el lugar chiquito que está ahí porque vos lo elegiste.</p>
+        <div class="kit-items">
+          <label class="kit-item"><input type="checkbox" data-k="r1"><span>Una butaca con una lámpara al lado y un libro.</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="r2"><span>Un detalle de ese mismo rincón: la luz encendida, el libro abierto, una esencia.</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="r3"><span>El rincón otra vez, ahora con <strong>luz cálida de atardecer</strong>.</span></label>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="kit-group">
+        <div class="kit-group-head">
+          <span class="kit-group-name">5 · La entrada</span>
+          <div class="kit-chips"><span class="kit-chip">El olor</span></div>
+        </div>
+        <p class="kit-group-note">El reel del olor arranca acá: el momento exacto en que un cuerpo entra a tu casa.</p>
+        <div class="kit-items">
+          <label class="kit-item"><input type="checkbox" data-k="e1"><span>La mano en el picaporte, abriendo <strong>desde afuera</strong>.</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="e2"><span>El umbral y la luz que entra cuando se abre la puerta.</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="e3"><span>Alguien que entra y <strong>afloja los hombros</strong> — de espaldas, sin que se le vea la cara.</span></label>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="kit-group">
+        <div class="kit-group-head">
+          <span class="kit-group-name">6 · Cocina y vida cotidiana</span>
+          <div class="kit-chips"><span class="kit-chip">El olor</span></div>
+        </div>
+        <p class="kit-group-note">Lo que hace el olor de una casa. Nada montado: lo que esté pasando ese día.</p>
+        <div class="kit-items">
+          <label class="kit-item"><input type="checkbox" data-k="c1"><span>Algo en la cocina: una olla, el vapor subiendo, fruta en un bol.</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="c2"><span>Ropa aireándose.</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="c3"><span>Una vela encendida, de cerca.</span></label>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="kit-group">
+        <div class="kit-group-head">
+          <span class="kit-group-name">7 · La ventana y la luz de la tarde</span>
+          <div class="kit-chips"><span class="kit-chip">El olor</span><span class="kit-chip">Casa de los 50</span><span class="kit-chip">Sin reforma</span></div>
+        </div>
+        <p class="kit-group-note">Estas tres cierran tres reels distintos. Si el día está lindo, grabalas cerca del atardecer.</p>
+        <div class="kit-items">
+          <label class="kit-item"><input type="checkbox" data-k="w1"><span>Una cortina de lino moviéndose con la brisa.</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="w2"><span>La luz de la tarde cayendo despacio sobre un rincón.</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="w3"><span>Una ventana abierta y la casa en calma.</span></label>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="kit-group">
+        <div class="kit-group-head">
+          <span class="kit-group-name">8 · Lo que quedó de otra época</span>
+          <div class="kit-chips"><span class="kit-chip">Casa de los 50</span></div>
+        </div>
+        <p class="kit-group-note">Los lugares de la casa que se armaron para una vida que ya cambió.</p>
+        <div class="kit-items">
+          <label class="kit-item"><input type="checkbox" data-k="o1"><span>La mesa grande que se usa dos veces al año.</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="o2"><span>Un cuarto que quedó igual que hace diez años.</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="o3"><span>La iluminación de siempre — la que ya no alcanza.</span></label>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="kit-group">
+        <div class="kit-group-head">
+          <span class="kit-group-name">9 · Manos que acomodan</span>
+          <div class="kit-chips"><span class="kit-chip">Sin reforma</span></div>
+        </div>
+        <p class="kit-group-note">Solo manos, no salís vos. Es el reel de la sesión de hora y media: cambiar sin comprar nada.</p>
+        <div class="kit-items">
+          <label class="kit-item"><input type="checkbox" data-k="a1"><span>Mover un objeto de lugar, acomodar una repisa.</span></label>
+          <label class="kit-item"><input type="checkbox" data-k="a2"><span>El <strong>mismo estante</strong> antes y después de acomodarlo — dos tomas del mismo lugar, sin mover el celu.</span></label>
+        </div>
+      </div>
+
+      <!-- comodín -->
+      <div class="kit-group">
+        <div class="kit-group-head">
+          <span class="kit-group-name">Y de yapa · Fotos de tus proyectos</span>
+          <div class="kit-chips"><span class="kit-chip">Todos</span></div>
+        </div>
+        <p class="kit-group-note">No hace falta grabar nada — es elegir del celu.</p>
+        <div class="kit-items">
+          <label class="kit-item"><input type="checkbox" data-k="p1"><span>Elegí <strong>8 a 10 fotos</strong> de proyectos terminados, cálidos y serenos. Sirven para los cierres de todos los reels.</span></label>
+        </div>
+      </div>
+    </section>
+
+    <div class="broll-cierre">
+      <h3>Si un día se hace largo</h3>
+      <p>El orden de arriba ya está puesto por prioridad. Si tenés que cortar, <strong>los bloques 1 al 5 son los que no pueden faltar</strong> — sin ellos hay reels que no se pueden montar. Del 6 en adelante, lo que no salga lo cubro con fotos de tus proyectos.</p>
+      <p style="margin-top:0.7rem;">Mandame todo <strong>sin editar</strong>, como te salga. Orden, subtítulos, placas y música los pongo yo.</p>
+    </div>
+
+  </div>
+
+  <script>
+  (function () {
+    var boxes = Array.prototype.slice.call(document.querySelectorAll('.kit-item input[type=checkbox]'));
+    var KEY = 'mp-broll-julio';
+    var store = {};
+    try { store = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { store = {}; }
+
+    var doneEl = document.getElementById('done');
+    var totalEl = document.getElementById('total');
+    totalEl.textContent = boxes.length;
+
+    function refresh() {
+      doneEl.textContent = boxes.filter(function (b) { return b.checked; }).length;
+    }
+    boxes.forEach(function (b) {
+      var k = b.getAttribute('data-k');
+      if (store[k]) b.checked = true;
+      b.addEventListener('change', function () {
+        store[k] = b.checked;
+        try { localStorage.setItem(KEY, JSON.stringify(store)); } catch (e) {}
+        refresh();
+      });
+    });
+    refresh();
+
+    document.getElementById('reset').addEventListener('click', function () {
+      boxes.forEach(function (b) { b.checked = false; });
+      store = {};
+      try { localStorage.removeItem(KEY); } catch (e) {}
+      refresh();
+    });
+  })();
+  </script>
+
+</body>
+</html>
