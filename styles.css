@@ -2813,3 +2813,10 @@ a.dash-reel-item:hover { border-color: var(--camera); transform: translateY(-1px
   transition: background 0.15s ease;
 }
 .reel-propuesta-guion:hover { background: rgba(168, 97, 94, 0.12); }
+
+
+/* === Panel: bloque de metricas (tanda 3) === */
+.dash-pulse--stats .dash-pulse-item::after { content: none; }
+.dash-pulse--stats .dash-pulse-item { cursor: default; }
+.dash-pulse--stats .dash-pulse-num { font-size: 1.65rem; min-width: 0; text-align: left; }
+.dash-pulse--stats .dash-pulse-label { text-transform: none; letter-spacing: .02em; font-size: .86rem; }
