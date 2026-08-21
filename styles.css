@@ -2820,3 +2820,27 @@ a.dash-reel-item:hover { border-color: var(--camera); transform: translateY(-1px
 .dash-pulse--stats .dash-pulse-item { cursor: default; }
 .dash-pulse--stats .dash-pulse-num { font-size: 1.65rem; min-width: 0; text-align: left; }
 .dash-pulse--stats .dash-pulse-label { text-transform: none; letter-spacing: .02em; font-size: .86rem; }
+
+
+/* === WhatsApp: guia de respuestas === */
+.wa-reglas{display:grid;grid-template-columns:1fr;gap:.7rem;}
+.wa-regla{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:.9rem 1rem;}
+.wa-regla-num{font-family:var(--font-serif);font-size:1.35rem;line-height:1;color:var(--camera);display:block;margin-bottom:.3rem;}
+.wa-regla p{margin:0;font-size:.92rem;line-height:1.5;color:var(--text-muted);}
+.wa-regla strong{color:var(--text);font-weight:600;}
+.wa-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.05rem 1.15rem 1.1rem;margin-bottom:.9rem;}
+.wa-card-head{display:flex;align-items:baseline;justify-content:space-between;gap:.8rem;flex-wrap:wrap;margin-bottom:.4rem;}
+.wa-card-tit{margin:0;font-size:.98rem;font-weight:600;color:var(--text);}
+.wa-atajo{font-family:'SFMono-Regular',ui-monospace,Menlo,Consolas,monospace;font-size:.74rem;color:var(--text-dim);background:var(--bg-elevated);border:1px solid var(--border-soft);border-radius:5px;padding:.12rem .45rem;white-space:nowrap;}
+.wa-cuando{margin:0 0 .7rem;font-size:.86rem;line-height:1.5;color:var(--text-muted);}
+.wa-cuando strong{color:var(--text);font-weight:600;}
+.wa-msg{white-space:pre-wrap;word-wrap:break-word;font-family:var(--font-sans);font-size:.95rem;line-height:1.55;color:var(--text);background:var(--bg-elevated);border:1px solid var(--border-soft);border-radius:14px 14px 14px 4px;padding:.85rem 1rem;margin:0 0 .6rem;}
+.wa-actions{display:flex;justify-content:flex-end;}
+.wa-pasos{margin:0;padding-left:1.2rem;color:var(--text-muted);font-size:.94rem;line-height:1.55;}
+.wa-pasos li{margin-bottom:.5rem;}
+.wa-pasos strong{color:var(--text);font-weight:600;}
+.wa-no{list-style:none;margin:0;padding:0;}
+.wa-no li{position:relative;padding-left:1.4em;margin-bottom:.6rem;color:var(--text-muted);font-size:.94rem;line-height:1.5;}
+.wa-no li::before{content:" d7";position:absolute;left:0;top:-.08em;color:var(--camera);font-weight:600;font-size:1.1em;}
+.wa-no strong{color:var(--text);font-weight:600;}
+@media (min-width:720px){.wa-reglas{grid-template-columns:repeat(2,1fr);}}
