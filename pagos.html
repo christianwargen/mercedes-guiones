@@ -27,7 +27,7 @@
   <!-- ============ RESUMEN DEL MES ============ -->
   <section class="dash-section pago-section">
     <p class="dash-eyebrow">Servicio mensual</p>
-    <h2 class="dash-h2">Junio 2026</h2>
+    <h2 class="dash-h2">Agosto 2026</h2>
 
     <div class="pago-card">
       <div class="pago-card-top">
@@ -41,17 +41,17 @@
       <div class="pago-resumen">
         <div class="pago-resumen-row">
           <span class="pago-resumen-label">Período facturado</span>
-          <span class="pago-resumen-value">Junio 2026</span>
+          <span class="pago-resumen-value">Agosto 2026</span>
         </div>
         <div class="pago-resumen-row">
           <span class="pago-resumen-label">Vencimiento</span>
-          <span class="pago-resumen-value">10 de julio 2026 <em class="pago-vence" id="pago-vence"></em></span>
+          <span class="pago-resumen-value">10 de septiembre 2026 <em class="pago-vence" id="pago-vence"></em></span>
         </div>
         <div class="pago-resumen-row pago-resumen-total">
           <span class="pago-resumen-label">Total del mes</span>
           <span class="pago-resumen-value">
             <strong class="pago-monto-usd">U$S 400</strong>
-            <span class="pago-monto-ars">o $604.000 en pesos</span>
+            <span class="pago-monto-ars">o $612.000 en pesos</span>
           </span>
         </div>
       </div>
@@ -186,7 +186,7 @@
     // pagado = true  → mes saldado (pill verde "Pagado" + banner de gracias).
     // pagado = false → vuelve a "Pendiente" con la cuenta regresiva al vencimiento.
     var pagado = false;
-    var vence = new Date(2026, 6, 10); // mes 6 = julio
+    var vence = new Date(2026, 8, 10); // mes 8 = septiembre
     var hoy = new Date();
     hoy.setHours(0, 0, 0, 0);
     var dias = Math.round((vence - hoy) / 86400000);
