@@ -51,8 +51,6 @@
       <a href="#frentes" class="dash-chip">Frentes</a>
       <a href="#sitios" class="dash-chip">Los sitios</a>
       <a href="#linea" class="dash-chip">Línea de tiempo</a>
-      <a href="#alcance" class="dash-chip">Tu plan</a>
-      <a href="#pagos" class="dash-chip">Pagos</a>
     </div>
   </nav>
 
@@ -403,7 +401,6 @@
       <div class="dash-track-body">
         <div class="dash-track-row"><span class="dash-dot is-vos"></span><div><strong>Guiones a revisar.</strong> La tanda de septiembre, parte por parte, con imágenes de tus propias obras. <a href="revisar.html">Abrir →</a></div></div>
         <div class="dash-track-row"><span class="dash-dot is-vos"></span><div><strong>Qué contestar en WhatsApp.</strong> Cada mensaje listo para copiar. <a href="whatsapp.html">Abrir →</a></div></div>
-        <div class="dash-track-row"><span class="dash-dot is-done"></span><div><strong>Pagos.</strong> El resumen del mes y los datos para transferir. <a href="pagos.html">Abrir →</a></div></div>
         <div class="dash-track-row"><span class="dash-dot is-done"></span><div><strong>Historias para Instagram y plan de contenidos.</strong> <a href="historias.html">Historias →</a> · <a href="proximos.html">Plan →</a></div></div>
         <div class="dash-track-row"><span class="dash-dot is-done"></span><div><strong>Este panel.</strong> Se actualiza con cada avance.</div></div>
       </div>
@@ -448,7 +445,7 @@
           <span class="dash-status is-done">Online</span>
         </div>
         <h3 class="dash-sitio-tit">Visor y panel</h3>
-        <p class="dash-sitio-desc">El detrás de escena: este panel, los guiones a revisar, la guía de WhatsApp y los pagos. Lo abrís desde el celu.</p>
+        <p class="dash-sitio-desc">El detrás de escena: este panel, los guiones a revisar y la guía de WhatsApp. Lo abrís desde el celu.</p>
         <span class="dash-sitio-url">mercedes-guiones.vercel.app ↗</span>
       </a>
     </div>
@@ -502,70 +499,6 @@
         <div class="dash-hito-cuerpo"><h3>Tanda de septiembre + el cierre</h3><p>Cinco reels nuevos y el anuncio que sigue, armados con tus números. Y la guía de respuestas de WhatsApp. Estás acá.</p></div>
       </li>
     </ol>
-  </section>
-
-  <!-- ============ ALCANCE DEL MES ============ -->
-  <section id="alcance" class="dash-section pago-section">
-    <p class="dash-eyebrow">Tu plan</p>
-    <h2 class="dash-h2">Alcance del servicio</h2>
-
-    <div class="pago-incluye-card">
-      <p class="pago-incluye-tit">Incluido en tu plan · todos los meses</p>
-      <ul class="pago-incluye-lista">
-        <li class="pago-incluye-item">
-          <span class="pago-incluye-check" aria-hidden="true"></span>
-          <span>
-            <span class="pago-incluye-label">4 reels al mes</span>
-            <span class="pago-incluye-desc">Construcción del guion con tu tono, con ida y vuelta y ajustes — más la producción y el brief visual de cada uno.</span>
-          </span>
-        </li>
-        <li class="pago-incluye-item">
-          <span class="pago-incluye-check" aria-hidden="true"></span>
-          <span>
-            <span class="pago-incluye-label">Campaña de Meta Ads gestionada</span>
-            <span class="pago-incluye-desc">Armado, monitoreo y optimización mes a mes.</span>
-          </span>
-        </li>
-        <li class="pago-incluye-item">
-          <span class="pago-incluye-check" aria-hidden="true"></span>
-          <span>
-            <span class="pago-incluye-label">Actualizaciones de tu web</span>
-            <span class="pago-incluye-desc">Ajustes y puestas al día sobre lo que ya está online.</span>
-          </span>
-        </li>
-        <li class="pago-incluye-item">
-          <span class="pago-incluye-check" aria-hidden="true"></span>
-          <span>
-            <span class="pago-incluye-label">El panel siempre al día</span>
-            <span class="pago-incluye-desc">Este tablero, los guiones, el plan y las historias, actualizados.</span>
-          </span>
-        </li>
-      </ul>
-      <p class="pago-incluye-nota">Todo esto entra en tu fee fijo de U$S 400.</p>
-    </div>
-
-    <div class="alcance-nota">
-      <p>Los proyectos por fuera del fee se cotizan aparte, según cada proyecto.</p>
-    </div>
-  </section>
-
-  <!-- ============ PAGOS DEL MES ============ -->
-  <section id="pagos" class="dash-section pago-section">
-    <p class="dash-eyebrow">Administración</p>
-    <h2 class="dash-h2">Pagos del mes</h2>
-    <p class="dash-intro">El servicio de agosto está pendiente de pago. Acá están los datos para transferir — el CBU y el alias se copian con un toque.</p>
-
-    <a class="dash-pago-card" href="pagos.html">
-      <span class="dash-pago-monto"><small>A pagar</small>U$S 400</span>
-      <span class="dash-pago-cuerpo">
-        <span class="dash-pago-head">
-          <span class="dash-pago-tit">Servicio agosto 2026</span>
-          <span class="dash-status is-pendiente">Pendiente</span>
-        </span>
-        <span class="dash-pago-sub">Contenido + Ads · U$S 400 · vence el 10 de septiembre. Tocá para ver el detalle.</span>
-      </span>
-      <span class="dash-pago-flecha">→</span>
-    </a>
   </section>
 
   <footer class="dash-footer">
@@ -638,7 +571,7 @@
 
     // Glow que sigue al cursor en las tarjetas (solo desktop con mouse)
     if (window.matchMedia && window.matchMedia('(hover: hover)').matches) {
-      var glowSel = '.dash-pulse-item, .dash-tarea-cuerpo, .dash-sitio, .dash-pago-card, .dash-reel-item';
+      var glowSel = '.dash-pulse-item, .dash-tarea-cuerpo, .dash-sitio, .dash-reel-item';
       document.addEventListener('mousemove', function (e) {
         var t = e.target.closest ? e.target.closest(glowSel) : null;
         if (!t) return;
