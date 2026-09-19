@@ -1505,8 +1505,8 @@ body {
 .dash-hero-logo {
   display: block;
   width: auto;
-  height: 38px;
-  margin: 0 auto 1.15rem;
+  height: 124px;
+  margin: 0 auto 1.1rem;
 }
 .dash-tagline {
   display: inline-block;
@@ -1925,8 +1925,8 @@ a.dash-reel-item:hover { border-color: var(--camera); transform: translateY(-1px
   color: var(--text-dim);
   flex-shrink: 0;
 }
-.dash-track-title { font-family: var(--font-serif); font-size: 1.12rem; flex: 1; }
-.dash-track-meta { display: flex; align-items: center; gap: 0.6rem; }
+.dash-track-title { font-family: var(--font-serif); font-size: 1.12rem; flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.dash-track-meta { display: flex; align-items: center; gap: 0.6rem; flex-shrink: 0; }
 .dash-track-chevron { color: var(--camera); font-size: 1.2rem; line-height: 1; transition: transform 0.2s ease; }
 .dash-track[open] .dash-track-chevron { transform: rotate(180deg); }
 .dash-track-body {
@@ -2642,7 +2642,7 @@ a.dash-reel-item:hover { border-color: var(--camera); transform: translateY(-1px
   .dash-section-vos { padding: 2rem 1.75rem; }
   .dash-hito { grid-template-columns: 4rem 1fr; }
   .dash-hero { padding: 3.2rem 2rem 3.4rem; }
-  .dash-hero-logo { height: 46px; }
+  .dash-hero-logo { height: 146px; }
   .pago-medios { grid-template-columns: 1fr 1fr; gap: 1rem; }
 }
 
@@ -2733,58 +2733,54 @@ a.dash-reel-item:hover { border-color: var(--camera); transform: translateY(-1px
 }
 
 /* ============================================
-   TEMA OSCURO — solo el dashboard (.dashboard-page)
-   Dark luxe (impacto tipo MacASA) con la paleta cálida de Mercedes.
-   Las demás páginas (guiones, próximos, historias, pagos) quedan en crema.
+   TEMA MERCEDES PONTE — solo el panel (.dashboard-page)
+   Paleta de su marca (logo 2026 + mercedespontestudio.com.ar): crema,
+   tinta cálida, terracota para lo que espera a Mer, bronce del logo como
+   acento y oliva de las hojas. Las demás páginas siguen en su crema.
    ============================================ */
 .dashboard-page {
-  --bg: #13161c;
-  --bg-elevated: #1b1f27;
-  --bg-card: #212732;
-  --border: rgba(255, 255, 255, 0.11);
-  --border-soft: rgba(255, 255, 255, 0.055);
-  --text: #eef1f5;
-  --text-muted: #a6aeba;
-  --text-dim: #6f7886;
-  --camera: #d8ad5a;
-  --camera-bg: rgba(216, 173, 90, 0.14);
-  --broll: #80b2d6;
-  --broll-bg: rgba(128, 178, 214, 0.15);
-  --overlay: #dd938b;
-  --overlay-bg: rgba(221, 147, 139, 0.14);
+  --bg: #F7F2EB;
+  --bg-elevated: #F1E9DF;
+  --bg-card: #FFFFFF;
+  --border: #E6DCCF;
+  --border-soft: #EFE7DC;
+  --text: #2A221B;
+  --text-muted: #685C51;
+  --text-dim: #8C7E72;
+  --camera: #80634A;                    /* bronce del arco del logo */
+  --camera-bg: rgba(128, 99, 74, 0.08);
+  --broll: #A75239;                     /* terracota de su web: lo que espera a Mer */
+  --broll-bg: rgba(167, 82, 57, 0.07);
+  --overlay: #93462F;                   /* terracota profundo: tareas clave */
+  --overlay-bg: rgba(147, 70, 47, 0.05);
+  --oliva: #6E7650;                     /* hojas del logo */
+  --cafe: #4A3B2C;                      /* wordmark del logo */
 }
 .dashboard-page .dash-hero {
-  background: linear-gradient(165deg, #1d2433 0%, #13161c 56%, #181c25 100%);
-}
-.dashboard-page .dash-nav {
-  background: rgba(17, 20, 26, 0.9);
-}
-.dashboard-page .dash-section-vos {
-  background: linear-gradient(158deg, rgba(128, 178, 214, 0.10) 0%, rgba(128, 178, 214, 0.03) 56%, var(--bg-card) 100%);
-}
-.dashboard-page .dash-pulse-vos {
-  background: linear-gradient(155deg, rgba(128, 178, 214, 0.14) 0%, rgba(128, 178, 214, 0.03) 90%);
+  background: linear-gradient(165deg, #F1E5D9 0%, #F8F2EA 55%, #EEE1D2 100%);
 }
 .dashboard-page .dash-hero-glow {
-  background: radial-gradient(circle, rgba(216, 173, 90, 0.18) 0%, rgba(216, 173, 90, 0) 62%);
+  background: radial-gradient(circle, rgba(167, 82, 57, 0.09) 0%, rgba(167, 82, 57, 0) 62%);
 }
+.dashboard-page .dash-nav {
+  background: rgba(247, 242, 235, 0.92);
+}
+.dashboard-page .dash-section-vos {
+  background: linear-gradient(158deg, rgba(167, 82, 57, 0.08) 0%, rgba(167, 82, 57, 0.02) 58%, var(--bg-card) 100%);
+}
+.dashboard-page .dash-pulse-vos {
+  background: linear-gradient(155deg, rgba(167, 82, 57, 0.10) 0%, rgba(167, 82, 57, 0.02) 90%);
+}
+.dashboard-page a.dash-pulse-item:hover { box-shadow: 0 4px 14px rgba(74, 59, 44, 0.08); }
+.dashboard-page .dash-tarea:hover .dash-tarea-marca { box-shadow: 0 4px 12px rgba(167, 82, 57, 0.18); }
+.dashboard-page .dash-tarea-clave:hover .dash-tarea-marca { box-shadow: 0 4px 12px rgba(147, 70, 47, 0.2); }
 .dashboard-page .dash-pulse-item::before,
 .dashboard-page .dash-tarea-cuerpo::before,
 .dashboard-page .dash-sitio::before,
-.dashboard-page .dash-pago-card::before,
 .dashboard-page .dash-reel-item::before {
-  background: radial-gradient(220px circle at var(--mx, -300px) var(--my, -300px), rgba(203, 162, 79, 0.16), transparent 58%);
+  background: radial-gradient(220px circle at var(--mx, -300px) var(--my, -300px), rgba(167, 82, 57, 0.08), transparent 58%);
 }
-/* verdes "listo / cortesía / pagado" → tono claro visible en oscuro */
-.dashboard-page .is-done { color: #9fc093; background: rgba(147, 179, 137, 0.16); }
-.dashboard-page .is-done::before,
-.dashboard-page .dash-dot.is-done { background: #93b389; }
-.dashboard-page .dash-pago-card.is-pagado { border-left-color: #93b389; }
-.dashboard-page .dash-pago-card.is-pagado:hover { border-left-color: #93b389; border-color: #93b389; }
-.dashboard-page .alcance-cortesia { color: #9fc093; background: rgba(147, 179, 137, 0.1); border-color: rgba(147, 179, 137, 0.3); }
-.dashboard-page .alcance-cortesia-check { border-color: #93b389; }
-.dashboard-page .alcance-cortesia-check::before { border-color: #93b389; }
-.dashboard-page ::selection { background: rgba(203, 162, 79, 0.3); color: #fff; }
+.dashboard-page ::selection { background: rgba(167, 82, 57, 0.18); color: var(--text); }
 
 /* === Guion borrador enganchado a un reel del plan (Saga IV) === */
 .reel-tag-guion {
@@ -2841,6 +2837,6 @@ a.dash-reel-item:hover { border-color: var(--camera); transform: translateY(-1px
 .wa-pasos strong{color:var(--text);font-weight:600;}
 .wa-no{list-style:none;margin:0;padding:0;}
 .wa-no li{position:relative;padding-left:1.4em;margin-bottom:.6rem;color:var(--text-muted);font-size:.94rem;line-height:1.5;}
-.wa-no li::before{content:" d7";position:absolute;left:0;top:-.08em;color:var(--camera);font-weight:600;font-size:1.1em;}
+.wa-no li::before{content:"\00d7";position:absolute;left:0;top:-.08em;color:var(--camera);font-weight:600;font-size:1.1em;}
 .wa-no strong{color:var(--text);font-weight:600;}
 @media (min-width:720px){.wa-reglas{grid-template-columns:repeat(2,1fr);}}

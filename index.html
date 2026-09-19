@@ -9,14 +9,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#F1E5D9">
 </head>
 <body class="dashboard-page">
 
   <header class="dash-hero">
     <div class="dash-hero-glow" aria-hidden="true"></div>
     <div class="dash-hero-inner">
-      <img class="dash-hero-logo" src="assets/vertra-logo-light.png" alt="Vertra Estudio" width="560" height="146">
-      <p class="dash-brand">Mercedes Ponte · por Vertra Estudio</p>
+      <img class="dash-hero-logo" src="assets/marca/logo-mercedes.png" alt="Mercedes Ponte Studio" width="580" height="301">
       <h1 class="dash-title">Panel del proyecto</h1>
       <p class="dash-fecha">Versión 1.4 · Actualizado 18 de agosto 2026</p>
     </div>
@@ -335,7 +338,7 @@
         <div class="dash-ring-graf">
           <svg viewBox="0 0 120 120" aria-hidden="true">
             <circle class="dash-ring-track" cx="60" cy="60" r="52"></circle>
-            <circle class="dash-ring-val" cx="60" cy="60" r="52" style="stroke: #93b389" stroke-dasharray="310.4 326.7" data-dash="310.4 326.7" transform="rotate(-90 60 60)"></circle>
+            <circle class="dash-ring-val" cx="60" cy="60" r="52" style="stroke: var(--oliva)" stroke-dasharray="310.4 326.7" data-dash="310.4 326.7" transform="rotate(-90 60 60)"></circle>
           </svg>
           <span class="dash-ring-num">95<small>%</small></span>
         </div>
@@ -346,7 +349,7 @@
         <div class="dash-ring-graf">
           <svg viewBox="0 0 120 120" aria-hidden="true">
             <circle class="dash-ring-track" cx="60" cy="60" r="52"></circle>
-            <circle class="dash-ring-val" cx="60" cy="60" r="52" style="stroke: var(--overlay)" stroke-dasharray="228.7 326.7" data-dash="228.7 326.7" transform="rotate(-90 60 60)"></circle>
+            <circle class="dash-ring-val" cx="60" cy="60" r="52" style="stroke: var(--cafe)" stroke-dasharray="228.7 326.7" data-dash="228.7 326.7" transform="rotate(-90 60 60)"></circle>
           </svg>
           <span class="dash-ring-num">70<small>%</small></span>
         </div>
@@ -503,6 +506,7 @@
 
   <footer class="dash-footer">
     <p class="dash-footer-detalle">Este panel no es una lista de tareas tuya — es el mapa de todo el proyecto, para que sepas siempre por dónde vamos. Se actualiza a medida que avanzamos.</p>
+    <p class="dash-fecha">Vertra Estudio</p>
   </footer>
 
   <script>
