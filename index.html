@@ -528,23 +528,26 @@
       revealables.forEach(function (el) { io.observe(el); });
     }
 
-    // Conteo de los números del resumen
-    var nums = document.querySelectorAll('.dash-pulse-num');
+    // Conteo de los números del resumen: solo los enteros ("86,4 mil" o "U$S 3,23" quedan como están).
+    // El valor real se guarda antes de ponerlo en 0; si no, el conteo lee el 0 y no arranca nunca.
+    var nums = [].filter.call(document.querySelectorAll('.dash-pulse-num'), function (el) {
+      return /^\d+$/.test(el.textContent.trim());
+    });
     function countUp(el) {
-      var target = parseInt(el.textContent, 10);
-      if (!target) return;
+      var final = el.dataset.final;
+      var target = parseInt(final, 10);
       var dur = 1000, t0 = null;
       function step(ts) {
         if (!t0) t0 = ts;
         var p = Math.min((ts - t0) / dur, 1);
         var eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = Math.round(eased * target);
+        el.textContent = p < 1 ? Math.round(eased * target) : final;
         if (p < 1) requestAnimationFrame(step);
       }
       requestAnimationFrame(step);
     }
     if (!reduce && hasIO) {
-      nums.forEach(function (el) { el.textContent = '0'; });
+      nums.forEach(function (el) { el.dataset.final = el.textContent.trim(); el.textContent = '0'; });
       var pio = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
           if (e.isIntersecting) { countUp(e.target); pio.unobserve(e.target); }
