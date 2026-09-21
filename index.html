@@ -7,7 +7,7 @@
   <meta name="description" content="Panel del proyecto Mercedes Ponte × Vertra. Estado de reels, sitios, campaña y lo que está esperando tu decisión.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400;1,500&family=Fraunces:opsz,wght@9..144,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -505,15 +505,26 @@
   </section>
 
   <footer class="dash-footer">
-    <p class="dash-footer-detalle">Este panel no es una lista de tareas tuya — es el mapa de todo el proyecto, para que sepas siempre por dónde vamos. Se actualiza a medida que avanzamos.</p>
-    <p class="dash-fecha">Vertra Estudio</p>
+    <span class="dash-footer-filete" aria-hidden="true"></span>
+    <p class="dash-footer-detalle">Este panel no es una lista de tareas tuya — es <em>el mapa de todo el proyecto</em>, para que sepas siempre por dónde vamos. Se actualiza a medida que avanzamos.</p>
+    <a class="dash-firma" href="https://vertra.com.ar" target="_blank" rel="noopener">
+      <span class="dash-firma-label">Hecho por</span>
+      <span class="dash-firma-marca">
+        <svg class="dash-firma-logo" viewBox="0 0 104 34" role="img" aria-label="Vertra">
+          <path d="M3 7 L15 27" stroke="#16211c" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <path class="dash-firma-trazo" d="M27 7 L15 27" stroke="#16211c" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <text x="31" y="27" font-family="Fraunces, Georgia, serif" font-weight="500" font-size="27" letter-spacing=".3" fill="#16211c">ertra</text>
+        </svg>
+        <span class="dash-firma-sub">Studio</span>
+      </span>
+    </a>
   </footer>
 
   <script>
   (function () {
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var hasIO = 'IntersectionObserver' in window;
-    var revealables = document.querySelectorAll('.dash-section, .dash-pulse');
+    var revealables = document.querySelectorAll('.dash-section, .dash-pulse, .dash-footer');
 
     // Aparición progresiva al scrollear
     if (reduce || !hasIO) {
