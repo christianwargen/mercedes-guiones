@@ -218,19 +218,41 @@
     .linea-t-nums span { flex: var(--s) 1 0; text-align: center; font-family: var(--serif); font-size: 0.85rem; color: rgba(244,238,230,.7); }
     .linea-t-esc { display: flex; justify-content: space-between; font-size: 0.66rem; color: rgba(244,238,230,.5); }
 
-    /* --- Lo que decís --- */
-    .partes { list-style: none; display: grid; }
-    .parte { display: grid; grid-template-columns: 2.4rem 1fr; gap: 0.9rem; align-items: start; padding: 1.1rem 0; border-top: 1px solid var(--line); }
-    .parte:first-child { border-top: none; padding-top: 0; }
-    .parte-num { width: 2.4rem; height: 2.4rem; border-radius: 50%; display: grid; place-items: center; background: var(--ink); color: #fff; font-family: var(--serif); font-size: 1.05rem; }
-    .parte-cab { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2rem 0.6rem; margin-bottom: 0.45rem; }
-    .parte-cab b { font-size: 1rem; font-weight: 600; }
-    .parte-cab small { font-size: 0.74rem; color: var(--muted); }
-    .modo { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terra); }
-    .dice { font-family: var(--serif); font-size: 1.12rem; line-height: 1.45; color: var(--ink); }
-    .dice + .dice { margin-top: 0.6rem; }
-    .dice small { display: block; font-family: var(--sans); font-size: 0.64rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--terra); margin-bottom: 0.15rem; }
-    .extra { margin-top: 0.45rem; font-size: 0.82rem; color: var(--text); }
+    /* --- Lo que decís: formato estándar de guion (una imagen por parte) --- */
+    .como { font-size: 0.95rem; color: var(--ink); background: var(--soft); border: 1px solid var(--line); border-radius: 12px; padding: 0.85rem 1rem; margin-bottom: 1.6rem; }
+    .como strong { color: var(--terra); font-weight: 600; }
+    .guion-eyebrow { display: block; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.8rem; }
+    .parts { display: flex; flex-direction: column; gap: 0.7rem; }
+    .part { display: grid; grid-template-columns: 120px 1fr; gap: 1rem; align-items: stretch; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 0.85rem; }
+    .part--hook { background: var(--soft); }
+    .part__imgwrap { position: relative; min-height: 150px; border-radius: 9px; overflow: hidden; background: var(--line); }
+    .part__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .part__imgwrap--dos .part__img { height: calc(50% - 2px); }
+    .part__imgwrap--dos .part__img + .part__img { top: auto; bottom: 0; }
+    .part__body { min-width: 0; }
+    .part__head { display: flex; flex-wrap: wrap; gap: 0.4rem 0.5rem; align-items: center; margin-bottom: 0.55rem; }
+    .part__label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--terra); }
+    .part__tag { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.03em; padding: 0.2em 0.65em; border-radius: 100px; white-space: nowrap; }
+    .part__tag--cam { background: var(--terra); color: #fff; }
+    .part__tag--voz { border: 1px solid var(--line); color: var(--text); }
+    .part__time { font-size: 0.7rem; color: var(--muted); }
+    .part__note { font-size: 0.86rem; color: var(--text); margin-bottom: 0.7rem; }
+    .part__say { font-size: 1.02rem; line-height: 1.5; color: var(--ink); margin-bottom: 0.55rem; }
+    .part__see { font-size: 0.88rem; color: var(--text); }
+    .part__see + .part__see { margin-top: 0.4rem; }
+    .part__see strong { color: var(--ink); font-weight: 600; }
+    .part__k { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-right: 0.45em; }
+    .part__placa { margin-top: 0.55rem; font-size: 0.88rem; font-weight: 500; color: var(--terra); }
+    .part .hooks { margin-bottom: 0.6rem; }
+    .part .hook { display: grid; grid-template-columns: auto 1fr; gap: 0.8rem; align-items: baseline; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 0.85rem 1rem; }
+    .part .hook + .hook { margin-top: 0.5rem; }
+    .part .hook-letra { font-family: var(--serif); font-style: italic; font-size: 1.25rem; line-height: 1; color: var(--terra); width: 1.2em; text-align: center; }
+    .part .hook-frase { font-size: 1.02rem; font-weight: 500; line-height: 1.5; color: var(--ink); }
+    .part .hook-frase small { display: block; margin-top: 0.3rem; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+    .parts-pie { margin-top: 0.9rem; font-size: 0.78rem; font-style: italic; color: var(--muted); }
+    @media (max-width: 520px) {
+      .part { grid-template-columns: 96px 1fr; gap: 0.8rem; }
+    }
 
     .aviso { margin-top: 2rem; border-radius: var(--r); background: var(--soft); border: 1px solid var(--line); padding: 1.25rem; }
     .aviso h3 { font-family: var(--serif); font-weight: 400; font-size: 1.35rem; line-height: 1.2; margin-bottom: 1rem; }
@@ -589,33 +611,62 @@
     <div class="wrap">
       <div class="cab">
         <p class="kicker">Parte por parte</p>
-        <h2>Lo que decís</h2>
+        <h2>Qué decís y qué se ve</h2>
       </div>
-      <ol class="partes">
-        <li class="parte"><span class="parte-num">1</span><div>
-          <div class="parte-cab"><b>Arranque</b><small>0 a 5 s</small><span class="modo">a cámara · grabás los dos</span></div>
-          <p class="dice"><small>A</small>Si acabás de comprar, te vas a mudar o estás por reformar, estás en el mejor momento para pensar tu casa.</p>
-          <p class="dice"><small>B</small>Cuando armás tu casa en otro país, pasa algo muy común: está todo en su lugar, y todavía no se siente tuya.</p>
-        </div></li>
-        <li class="parte"><span class="parte-num">2</span><div>
-          <div class="parte-cab"><b>Quién sos</b><small>5 a 11 s</small><span class="modo">a cámara</span></div>
-          <p class="dice">Soy Mercedes Ponte, interiorista argentina, con más de veinte años diseñando casas. Hago asesoría de interiorismo online.</p>
-        </div></li>
-        <li class="parte"><span class="parte-num">3</span><div>
-          <div class="parte-cab"><b>Cómo es</b><small>11 a 24 s</small><span class="modo">tu voz</span></div>
-          <p class="dice">Me mandás fotos y un video de la casa, nos vemos por videollamada y la miramos juntas: la luz, la distribución y lo que ya tenés. Y salís con decisiones tomadas: qué cambiar, qué no tocar y en qué vale la pena invertir.</p>
-          <p class="extra">Se ve: vos en videollamada, y después tus obras.</p>
-        </div></li>
-        <li class="parte"><span class="parte-num">4</span><div>
-          <div class="parte-cab"><b>Lo importante</b><small>24 a 33 s</small><span class="modo">a cámara, bajito</span></div>
-          <p class="dice">Que la casa se sienta tuya no depende de lo que compres. Depende de dónde te sentás a la mañana, de qué ves cuando entrás y de dónde ponés lo que trajiste.</p>
-        </div></li>
-        <li class="parte"><span class="parte-num">5</span><div>
-          <div class="parte-cab"><b>Cierre</b><small>33 a 38 s</small><span class="modo">a cámara</span></div>
-          <p class="dice">Si estás en ese momento, tocá el botón y escribime por WhatsApp. La miramos juntas.</p>
-          <p class="extra">En pantalla: Asesoría de interiorismo online · desde 300 €.</p>
-        </div></li>
-      </ol>
+      <p class="como">🎬 <strong>Cómo se graba.</strong> Te filmás a cámara en el arranque, la presentación, la revelación y el cierre. El medio va con tu voz sobre una toma nueva: vos en videollamada. Lo grabás el mismo día que «Acabás de comprar».</p>
+      <span class="guion-eyebrow">Parte por parte — qué decís y qué se ve</span>
+      <div class="parts">
+        <div class="part part--hook">
+          <div class="part__imgwrap"><img class="part__img" src="assets/reporte/mer-camara.jpg" alt="Referencia de la toma: vos a cámara, plano de pecho" loading="lazy"></div>
+          <div class="part__body">
+            <div class="part__head"><span class="part__label">1 · Arranque</span><span class="part__tag part__tag--cam">🎥 A cámara</span><span class="part__time">0 a 5 s</span></div>
+            <p class="part__note">Grabá los dos. Los probamos y vemos cuál engancha: no hace falta elegir ahora.</p>
+            <div class="hooks">
+              <div class="hook"><span class="hook-letra">A</span><span class="hook-frase">Si acabás de comprar, te vas a mudar o estás por reformar, estás en el mejor momento para pensar tu casa.<small>el momento</small></span></div>
+              <div class="hook"><span class="hook-letra">B</span><span class="hook-frase">Cuando armás tu casa en otro país, pasa algo muy común: está todo en su lugar, y todavía no se siente tuya.<small>la casa en otro país</small></span></div>
+            </div>
+            <p class="part__see"><span class="part__k">Se ve</span>Vos al lente, plano de pecho, en tu casa, con luz cálida y la misma ropa que en los otros anuncios.</p>
+            <p class="part__placa"><span class="part__k">En pantalla</span>A: «¿Acabás de comprar o te mudás?» · B: «Tu casa en otro país»</p>
+          </div>
+        </div>
+        <div class="part">
+          <div class="part__imgwrap"><img class="part__img" src="assets/reporte/mer-camara.jpg" alt="Referencia de la toma: seguís a cámara" loading="lazy"></div>
+          <div class="part__body">
+            <div class="part__head"><span class="part__label">2 · Quién sos</span><span class="part__tag part__tag--cam">🎥 A cámara</span><span class="part__time">5 a 11 s</span></div>
+            <p class="part__say">Soy Mercedes Ponte, interiorista argentina, con más de veinte años diseñando casas. Hago asesoría de interiorismo online.</p>
+            <p class="part__see"><span class="part__k">Se ve</span>Seguís a cámara, en el mismo plano.</p>
+            <p class="part__placa"><span class="part__k">En pantalla</span>Mercedes Ponte · interiorista</p>
+          </div>
+        </div>
+        <div class="part">
+          <div class="part__imgwrap part__imgwrap--dos"><img class="part__img" src="assets/reporte/ref-videollamada.jpg" alt="Referencia de la toma: la notebook con fotos y un plano, y tu mano señalando" loading="lazy"><img class="part__img" src="assets/reporte/casa-luz.jpg" alt="Referencia: una de tus obras, con la luz entrando" loading="lazy"></div>
+          <div class="part__body">
+            <div class="part__head"><span class="part__label">3 · Cómo es</span><span class="part__tag part__tag--voz">🎬 Voz en off</span><span class="part__time">11 a 24 s</span></div>
+            <p class="part__say">Me mandás fotos y un video de la casa, nos vemos por videollamada y la miramos juntas: la luz, la distribución y lo que ya tenés. Y salís con decisiones tomadas: qué cambiar, qué no tocar y en qué vale la pena invertir.</p>
+            <p class="part__see"><span class="part__k">Se ve</span><strong>La toma nueva, la más importante del anuncio: vos en videollamada.</strong> La notebook sobre la mesa, con fotos de una casa y un plano en la pantalla, y tu mano señalando. Así se entiende que es online.</p>
+            <p class="part__see">Después, tus obras: la luz entrando, un ambiente ya resuelto y un objeto en su lugar. Eso sale de tu archivo.</p>
+            <p class="part__see">En la pantalla van fotos de tu casa o de una obra, nunca la cara de una clienta.</p>
+          </div>
+        </div>
+        <div class="part">
+          <div class="part__imgwrap"><img class="part__img" src="assets/reporte/mer-cerca.jpg" alt="Referencia de la toma: vos a cámara, más cerca" loading="lazy"></div>
+          <div class="part__body">
+            <div class="part__head"><span class="part__label">4 · Lo importante</span><span class="part__tag part__tag--cam">🎥 A cámara, más cerca</span><span class="part__time">24 a 33 s</span></div>
+            <p class="part__say">Que la casa se sienta tuya no depende de lo que compres. Depende de dónde te sentás a la mañana, de qué ves cuando entrás y de dónde ponés lo que trajiste.</p>
+            <p class="part__see"><span class="part__k">Se ve</span>Vos a cámara, en un plano más cerrado. Decilo bajito, sin énfasis, como algo obvio: es la frase más importante del anuncio.</p>
+          </div>
+        </div>
+        <div class="part">
+          <div class="part__imgwrap"><img class="part__img" src="assets/reporte/mer-camara.jpg" alt="Referencia de la toma: volvés al plano del arranque" loading="lazy"></div>
+          <div class="part__body">
+            <div class="part__head"><span class="part__label">5 · Cierre</span><span class="part__tag part__tag--cam">🎥 A cámara</span><span class="part__time">33 a 38 s</span></div>
+            <p class="part__say">Si estás en ese momento, tocá el botón y escribime por WhatsApp. La miramos juntas.</p>
+            <p class="part__see"><span class="part__k">Se ve</span>Volvés al plano del arranque.</p>
+            <p class="part__placa"><span class="part__k">En pantalla</span>Asesoría de interiorismo online · desde 300&nbsp;€ · Escribime por WhatsApp, con una flecha hacia el botón</p>
+          </div>
+        </div>
+      </div>
+      <p class="parts-pie">Las fotos son tuyas, salvo la de la videollamada, que es un ejemplo del encuadre. Son referencia, no el anuncio.</p>
 
       <div class="aviso">
         <h3>Termina con el botón, no con HOGAR</h3>
