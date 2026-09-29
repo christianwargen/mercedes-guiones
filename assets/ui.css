@@ -1,0 +1,58 @@
+/* Encabezado y pie compartidos del panel · Mercedes Ponte Studio × Vertra
+   Misma estructura que el tablero v3 de Finca El Recreo, con la marca de Mer:
+   carbón de su web (#2B2926) + terracota (#A75239), su logo horizontal en crema,
+   Bodoni Moda para títulos e Inter para la interfaz. */
+:root{
+  --ui-carbon:#262320; --ui-carbon2:#302C28; --ui-terra:#A75239; --ui-terra-claro:#DDA88F; --ui-crema:#F7F0EA;
+  --ui-sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --hdr-h:68px;
+}
+::selection{background:rgba(167,82,57,.22);color:inherit}
+html{accent-color:#A75239}
+
+.hdr{position:relative;z-index:40;color:var(--ui-crema);
+  background:linear-gradient(180deg,var(--ui-carbon) 0%,var(--ui-carbon2) 100%);
+  border-bottom:1px solid rgba(221,168,143,.26);box-shadow:0 10px 30px -22px rgba(0,0,0,.9)}
+.hdr--fijo{position:sticky;top:0}
+.hdr-in{max-width:1200px;margin:0 auto;padding:.6rem 1.25rem;display:flex;align-items:center;gap:1.6rem;min-height:var(--hdr-h)}
+.hdr-brand{display:flex;align-items:center;gap:.9rem;text-decoration:none;color:inherit;flex:none}
+.hdr-logo{height:38px;width:auto;display:block;opacity:.96;transition:opacity .18s}
+.hdr-brand:hover .hdr-logo{opacity:1}
+.hdr-sub{display:block;font-family:var(--ui-sans);font-size:.8rem;line-height:1.25;color:rgba(247,240,234,.66);padding-left:.9rem;border-left:1px solid rgba(247,240,234,.2)}
+.hdr-nav{display:flex;gap:.25rem;margin-left:auto;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+  position:static;background:none;border:0;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+.hdr-nav::-webkit-scrollbar{display:none}
+.hdr-tab{font-family:var(--ui-sans);font-weight:500;font-size:.92rem;line-height:1;letter-spacing:0;text-transform:none;color:rgba(247,240,234,.8);text-decoration:none;padding:.72rem .92rem;border-radius:999px;white-space:nowrap;transition:background-color .2s cubic-bezier(.16,1,.3,1),color .2s cubic-bezier(.16,1,.3,1)}
+.hdr-tab:hover{color:#fff;background:rgba(247,240,234,.09)}
+.hdr-tab[aria-current="page"]{background:var(--ui-terra);color:#FFF8F3}
+.hdr-tab:focus-visible,.hdr-brand:focus-visible{outline:2px solid var(--ui-terra-claro);outline-offset:2px}
+@media(max-width:1180px){.hdr-in{gap:1.1rem}.hdr-tab{padding:.7rem .75rem;font-size:.9rem}.hdr-sub{display:none}}
+@media(max-width:860px){
+  .hdr--fijo{position:relative}
+  .hdr-in{flex-wrap:wrap;gap:.5rem;padding:.75rem 1rem .6rem}
+  .hdr-logo{height:32px}
+  .hdr-nav{margin-left:-.3rem;width:calc(100% + .6rem);-webkit-mask-image:linear-gradient(90deg,#000 86%,transparent);mask-image:linear-gradient(90deg,#000 86%,transparent);padding-right:1.5rem}
+}
+
+/* Pie oscuro con la firma real de Vertra (versión sobre oscuro: crema + dorado) */
+.pie{background:var(--ui-carbon);color:rgba(247,240,234,.72);margin-top:0}
+.pie-in{max-width:1200px;margin:0 auto;padding:2.4rem 1.25rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap}
+.pie-txt{font-family:var(--ui-sans);font-size:.92rem;line-height:1.6;max-width:56ch}
+.pie-txt em{font-family:"Bodoni Moda",Georgia,serif;font-style:italic;color:var(--ui-crema);font-size:1.05em}
+.pie-firma{display:flex;align-items:center;gap:.8rem;text-decoration:none;color:inherit}
+.pie-firma small{font-family:var(--ui-sans);font-size:.8rem;color:rgba(247,240,234,.55)}
+.pie-firma svg{height:26px;width:auto;display:block}
+.pie-firma .st{font-family:"JetBrains Mono",monospace;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:#A7BBB1;margin-left:.1rem}
+.pie-firma:hover .trazo{stroke:#E0CBA5}
+
+@media(prefers-reduced-motion:reduce){.hdr-tab,.hdr-logo{transition:none}}
+@media print{.hdr{position:static;box-shadow:none}}
+
+/* Subpáginas: el encabezado va a lo ancho aunque la página limite o rellene el body */
+html:has(.hdr--sub){overflow-x:clip}
+.hdr--sub{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);text-align:left}
+.hdr--sub *{box-sizing:border-box}
+.hdr--pad{margin-top:-1.25rem;margin-bottom:1.25rem}
+.hdr a,.hdr a:hover{text-decoration:none}
+/* el encabezado ya lleva la marca y la vuelta al panel */
+body:has(.hdr--sub) .hero-logo{display:none}
